@@ -1,0 +1,11 @@
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\bin\Debug\net8.0\AuctionMS.Core.deps.json
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\bin\Debug\net8.0\AuctionMS.Core.dll
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\bin\Debug\net8.0\AuctionMS.Core.pdb
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\AuctionMS.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\AuctionMS.Core.AssemblyInfoInputs.cache
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\AuctionMS.Core.AssemblyInfo.cs
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\AuctionMS.Core.csproj.CoreCompileInputs.cache
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\AuctionMS.Core.dll
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\refint\AuctionMS.Core.dll
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\AuctionMS.Core.pdb
+C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Core\obj\Debug\net8.0\ref\AuctionMS.Core.dll
