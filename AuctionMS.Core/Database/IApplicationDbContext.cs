@@ -1,12 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using AuctionMS.Core.Database;
+using AuctionMS.Domain.Entities.Auction;
+
 
 namespace AuctionMS.Core.Database
 {
-    internal interface IApplicationDbContext
+    public interface IApplicationDbContext
     {
+        DbContext DbContext { get; }
+        DbSet<AuctionEntity> Products { get; set; }
+
+
+
+        IDbContextTransactionProxy BeginTransaction();
+
+        void ChangeEntityState<TEntity>(TEntity entity, EntityState state);
+
+        Task<bool> SaveEfContextChanges(string user, CancellationToken cancellationToken = default);
     }
 }

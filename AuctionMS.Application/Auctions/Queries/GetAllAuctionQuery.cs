@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using AuctionMs.Common.Dtos.Auction.Response;
 
-namespace AuctionMS.Application.Auctions.Queries
+namespace AuctionMS.Application.Auction.Queries
 {
-    internal class GetAllAuctionQuery
+    public class GetAllAuctionQuery : IRequest<List<GetAuctionDto>>
     {
+        public GetAllAuctionQuery() { }
     }
 }

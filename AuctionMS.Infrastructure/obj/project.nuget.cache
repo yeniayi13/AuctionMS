@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "82qh0ZnMpzQ=",
+  "dgSpecHash": "fnolWq5r4JA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paola\\.nuget\\packages\\entityframeworkcore.exceptions.common\\8.1.3\\entityframeworkcore.exceptions.common.8.1.3.nupkg.sha512",
     "C:\\Users\\Paola\\.nuget\\packages\\entityframeworkcore.exceptions.postgresql\\8.1.3\\entityframeworkcore.exceptions.postgresql.8.1.3.nupkg.sha512",

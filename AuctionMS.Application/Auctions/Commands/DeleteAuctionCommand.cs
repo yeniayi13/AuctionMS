@@ -1,12 +1,20 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuctionMS.Application.Auctions.Commands
+namespace AuctionMS.Application.Auction.Commands
 {
-    internal class DeleteAuctionCommand
+    public class DeleteAuctionCommand : IRequest<Guid>
     {
+        public Guid AuctionId { get; set; }
+
+        public DeleteAuctionCommand(Guid auction
+            )
+        {
+            AuctionId = auction;
+        }
     }
 }

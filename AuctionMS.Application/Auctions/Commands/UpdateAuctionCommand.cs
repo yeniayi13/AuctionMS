@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using AuctionMS.Common.Dtos.Auction.Request;
 
-namespace AuctionMS.Application.Auctions.Commands
+namespace AuctionMS.Application.Auction.Commands
 {
-    internal class UpdateAuctionCommand
+    public class UpdateAuctionCommand : IRequest<Guid>
     {
+        public Guid Id { get; set; }
+        public UpdateAuctionDto Auction;
+
+        public UpdateAuctionCommand(Guid id, UpdateAuctionDto auction)
+        {
+            Id = id;
+            Auction = auction;
+        }
     }
 }

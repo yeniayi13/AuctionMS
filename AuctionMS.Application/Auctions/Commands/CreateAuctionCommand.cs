@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using AuctionMS.Common.Dtos.Auction.Request;
 
-namespace AuctionMS.Application.Auctions.Commands
+namespace AuctionMS.Application.Auction.Commands
 {
-    internal class CreateAuctionCommand
+    public class CreateAuctionCommand : IRequest<Guid>
     {
+        public CreateAuctionDto Product { get; set; }
+
+        public CreateAuctionMSCommand(CreateAuctionMSDto auction)
+        {
+            Auction = auction;
+        }
     }
 }

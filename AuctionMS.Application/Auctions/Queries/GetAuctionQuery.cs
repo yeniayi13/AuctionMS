@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using MediatR;
+using AuctionMS.Common.Dtos.Auction.Response;
+using ProductsMS.Common.Dtos.Auction.Response;
+
+
 
 namespace AuctionMS.Application.Auctions.Queries
 {
-    internal class GetAuctionQuery
+    public class GetAuctionQuery : IRequest<GetAuctionDto>
     {
+        public Guid Id { get; set; }
+
+        public GetAuctionQuery(Guid id)
+        {
+            Id = id;
+        }
     }
 }
+
+
+
+

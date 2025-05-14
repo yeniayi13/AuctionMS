@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
+using AuctionMS.Common.Dtos.Auction.Response;
+using AuctionMS.Common.Enum;
+
 
 namespace AuctionMS.Application.Auctions.Queries
 {
-    internal class GetFilteredAuctionQuery
+
+
+    public class GetFilteredAuctionQuery : IRequest<List<GetAuctionDto>>
     {
+
+        public AuctionPriceBase? PriceBase { get; set; }
+        public AuctionPriceReserva? PriceReserva { get; set; }
+
     }
+
 }

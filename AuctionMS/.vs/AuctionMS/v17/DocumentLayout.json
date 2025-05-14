@@ -1,154 +1,238 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS\\",
+  "WorkspaceRootPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\settings\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.infrastructure\\exceptions\\auctionnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\repositories\\auctionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.infrastructure\\exceptions\\invalidattributeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\database\\configuration\\auctionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.infrastructure\\dependecyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\database\\dbcontexttransactionproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.infrastructure\\repositories\\auctionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\database\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\primitives\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\primitives\\domainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\httpclienturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\primitives\\aggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\auctionms.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\entities\\auction\\auctionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8683211-A441-44B0-A9C4-8F76D4301F09}|..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.infrastructure\\dependecyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctiontime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctiontime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctionname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctionconditions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctioncondiciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctionpricebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.core\\repository\\iauctionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctionimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.core\\database\\idbcontexttransactionproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctionname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.core\\database\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\valueobjects\\auctiondescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\dependeciesinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\entities\\auction\\auctionentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\applicationassemblyref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE11ECE9-60CC-47FA-866C-649C25AF8814}|..\\AuctionMS.Domain\\AuctionMS.Domain.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.domain\\auctionms.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\queries\\getfilteredauctionquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.core\\auctionms.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\queries\\getauctionquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.core\\repository\\iauctionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\queries\\getallauctionquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.core\\database\\idbcontexttransactionproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\handlers\\queries\\getfilteredauctionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63E858CC-6EB5-412A-9691-C67044508CC0}|..\\AuctionMS.Core\\AuctionMS.Core.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.core\\database\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\handlers\\queries\\getauctionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\primitives\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\handlers\\queries\\getallauctionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\primitives\\domainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\handlers\\commands\\updateauctioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\primitives\\aggregateroot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\handlers\\commands\\deleteauctioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\exceptions\\auctionnotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\handlers\\commands\\createauctioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\exceptions\\nullattributeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\commands\\updateauctioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\exceptions\\invalidattributeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\commands\\deleteauctioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\exceptions\\validator\\validatorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms.application\\auctions\\commands\\createauctioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\enum\\auctionavailability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\dtos\\response\\getauctiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\dtos\\request\\updateauctiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\dtos\\request\\createauctiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52323470-0B64-42E8-ABCC-231308D2E0BB}|..\\AuctionMS.Common\\AuctionMS.Common.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.common\\auctionms.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\dependeciesinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctionms.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\applicationassemblyref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\queries\\getauctionquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\queries\\getfilteredauctionquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\queries\\getallauctionquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\handlers\\queries\\getauctionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\handlers\\queries\\getfilteredauctionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\handlers\\queries\\getallauctionqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\handlers\\commands\\updateauctioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\handlers\\commands\\deleteauctioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\handlers\\commands\\createauctioncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\commands\\deleteauctioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\commands\\updateauctioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE0C0AAA-B115-4A2F-8D28-94E778DCFE4E}|..\\AuctionMS.Application\\AuctionMS.Application.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms.application\\auctions\\commands\\createauctioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44BAE362-E67F-4A35-8D58-AC8D626E0D05}|AuctionMS.csproj|c:\\users\\paola\\onedrive\\desktop\\auctionms\\auctionms\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44BAE362-E67F-4A35-8D58-AC8D626E0D05}|AuctionMS.csproj|c:\\users\\paola\\onedrive\\desktop\\subastams\\auctionms\\auctionms\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44BAE362-E67F-4A35-8D58-AC8D626E0D05}|AuctionMS.csproj|solutionrelative:controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\Configuration\\AuctionConfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\DbContextTransactionProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContextFactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -163,11 +247,375 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuctionNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\Exceptions\\AuctionNotFoundException.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\Exceptions\\AuctionNotFoundException.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\Exceptions\\AuctionNotFoundException.cs",
+              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Exceptions\\AuctionNotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:49:03.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvalidAttributeException.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\Exceptions\\InvalidAttributeException.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\Exceptions\\InvalidAttributeException.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\Exceptions\\InvalidAttributeException.cs",
+              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Exceptions\\InvalidAttributeException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:48:44.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DependecyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:46:36.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuctionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
+              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:46:26.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Primitives\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Primitives\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Primitives\\IUnitOfWork.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Primitives\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:45:16.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DomainEvent.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Primitives\\DomainEvent.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Primitives\\DomainEvent.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Primitives\\DomainEvent.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Primitives\\DomainEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:45:15.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AggregateRoot.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Primitives\\AggregateRoot.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Primitives\\AggregateRoot.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Primitives\\AggregateRoot.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Primitives\\AggregateRoot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:45:11.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuctionEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:44:40.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuctionTime.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:44:27.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuctionName.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:44:20.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuctionCondiciones.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionCondiciones.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionCondiciones.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionCondiciones.cs",
+              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionCondiciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:43:25.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IAuctionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "RelativeToolTip": "..\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:41:45.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IDbContextTransactionProxy.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "RelativeToolTip": "..\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:41:21.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "RelativeToolTip": "..\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:41:15.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DependeciesInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\DependeciesInjection.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\DependeciesInjection.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:39:52.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApplicationAssemblyRef.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:39:47.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GetFilteredAuctionQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:39:22.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GetAuctionQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:39:12.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GetAllAuctionQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:38:58.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GetFilteredAuctionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:38:43.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GetAuctionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAkwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:38:29.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GetAllAuctionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAkwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:38:14.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UpdateAuctionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:37:54.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DeleteAuctionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:37:41.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateAuctionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:37:35.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UpdateAuctionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:37:03.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DeleteAuctionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:36:49.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateAuctionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T22:36:41.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "AppSettings.cs",
               "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs",
               "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Settings\\AppSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T14:29:58.488Z",
@@ -175,627 +623,579 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 30,
               "Title": "AuctionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
               "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Repositories\\AuctionRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:29:35.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuctionConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\Configuration\\AuctionConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\DataBase\\Configuration\\AuctionConfiguration.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\Configuration\\AuctionConfiguration.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\DataBase\\Configuration\\AuctionConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:28:51.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DbContextTransactionProxy.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\DbContextTransactionProxy.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\DataBase\\DbContextTransactionProxy.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\DbContextTransactionProxy.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\DataBase\\DbContextTransactionProxy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:28:22.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContextFactory.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContextFactory.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:28:05.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContext.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\DataBase\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:27:50.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HttpClientUrl.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:27:24.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuctionMS.Infrastructure",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-12T14:25:30.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DependecyInjection.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Infrastructure\\DependecyInjection.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
-              "RelativeToolTip": "..\\AuctionMS.Infrastructure\\DependecyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:27:07.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuctionTime.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:22:32.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AuctionConditions.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:22:22.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AuctionPriceBase.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:22:03.156Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuctionImage.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:21:51.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AuctionName.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:21:37.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AuctionDescription.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:21:28.231Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AuctionEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:20:57.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AuctionMS.Domain",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
-              "RelativeToolTip": "..\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-12T14:20:00.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AuctionMS.Core",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\AuctionMS.Core.csproj",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj",
-              "RelativeToolTip": "..\\AuctionMS.Core\\AuctionMS.Core.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-12T13:51:34.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IAuctionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
-              "RelativeToolTip": "..\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:18:50.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IDbContextTransactionProxy.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "RelativeToolTip": "..\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:08:58.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
-              "RelativeToolTip": "..\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T14:07:20.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:51:12.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DomainEvent.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:50:58.814Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "AggregateRoot.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:50:48.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AuctionNotFoundException.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:50:22.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "NullAttributeException.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:49:43.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "InvalidAttributeException.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:49:32.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ValidatorException.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:48:59.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "AuctionAvailability.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:48:16.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "GetAuctionDto.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:47:42.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "UpdateAuctionDto.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:47:28.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:29:35.574Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "CreateAuctionDto.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
-              "RelativeToolTip": "..\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
+              "Title": "AuctionConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\Configuration\\AuctionConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\Configuration\\AuctionConfiguration.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\Configuration\\AuctionConfiguration.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\Configuration\\AuctionConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:47:18.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:28:51.232Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
-              "Title": "AuctionMS.Common",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Common\\AuctionMS.Common.csproj",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj",
-              "RelativeToolTip": "..\\AuctionMS.Common\\AuctionMS.Common.csproj",
+              "Title": "DbContextTransactionProxy.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\DbContextTransactionProxy.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\DbContextTransactionProxy.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\DbContextTransactionProxy.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\DbContextTransactionProxy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-12T13:44:25.293Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T14:28:22.135Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 33,
-              "Title": "DependeciesInjection.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\DependeciesInjection.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\DependeciesInjection.cs",
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContextFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:44:09.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:28:05.449Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "AuctionMS.Application",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\AuctionMS.Application.csproj",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
-              "RelativeToolTip": "..\\AuctionMS.Application\\AuctionMS.Application.csproj",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContext.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\Database\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-12T13:29:18.639Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T14:27:50.49Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "ApplicationAssemblyRef.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "Title": "HttpClientUrl.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\HttpClientUrl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:43:56.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:27:24.639Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
-              "Title": "GetAuctionQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "Title": "AuctionMS.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:42:11.609Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-12T14:25:30.331Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 37,
-              "Title": "GetFilteredAuctionQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "Title": "DependecyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Infrastructure\\DependecyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:42:01.457Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:27:07.966Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 38,
-              "Title": "GetAllAuctionQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "Title": "AuctionTime.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionTime.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:41:50.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:22:32.47Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
-              "Title": "GetAuctionQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "Title": "AuctionConditions.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionConditions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:41:27.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:22:22.146Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
-              "Title": "GetFilteredAuctionQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "Title": "AuctionPriceBase.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionPriceBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:41:10.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:22:03.156Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
-              "Title": "GetAllAuctionQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "Title": "AuctionImage.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionImage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:41:00.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:21:51.036Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 42,
-              "Title": "UpdateAuctionCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "Title": "AuctionName.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionName.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:40:23.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:21:37.725Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 43,
-              "Title": "DeleteAuctionCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "Title": "AuctionDescription.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\ValueObjects\\AuctionDescription.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:40:16.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:21:28.231Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 44,
-              "Title": "CreateAuctionCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "Title": "AuctionEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\Entities\\Auction\\AuctionEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:40:08.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:20:57.085Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
-              "Title": "DeleteAuctionCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "Title": "AuctionMS.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:39:22.372Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-12T14:20:00.646Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 46,
-              "Title": "UpdateAuctionCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "Title": "AuctionMS.Core.csproj",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:39:05.824Z",
-              "EditorCaption": ""
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-12T13:51:34.055Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 47,
-              "Title": "CreateAuctionCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
-              "RelativeDocumentMoniker": "..\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
-              "RelativeToolTip": "..\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "Title": "IAuctionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\Repository\\IAuctionRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:37:16.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T14:18:50.202Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 48,
+              "Title": "IDbContextTransactionProxy.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\Database\\IDbContextTransactionProxy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T14:08:58.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Core\\Database\\IApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T14:07:20.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Primitives\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:51:12.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "DomainEvent.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Primitives\\DomainEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:50:58.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "AggregateRoot.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Primitives\\AggregateRoot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:50:48.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "AuctionNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\AuctionNotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:50:22.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "NullAttributeException.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\NullAttributeException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:49:43.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "InvalidAttributeException.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\InvalidAttributeException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:49:32.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ValidatorException.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Exceptions\\Validator\\ValidatorException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:48:59.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "AuctionAvailability.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Enum\\AuctionAvailability.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:48:16.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "GetAuctionDto.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Dtos\\Response\\GetAuctionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:47:42.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "UpdateAuctionDto.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\UpdateAuctionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:47:28.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "CreateAuctionDto.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\Dtos\\Request\\CreateAuctionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:47:18.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "AuctionMS.Common.csproj",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-12T13:44:25.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "DependeciesInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\DependeciesInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:44:09.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "AuctionMS.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-12T13:29:18.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ApplicationAssemblyRef.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\ApplicationAssemblyRef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:43:56.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "GetAuctionQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAuctionQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:42:11.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "GetFilteredAuctionQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetFilteredAuctionQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:42:01.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "GetAllAuctionQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Queries\\GetAllAuctionQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:41:50.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "GetAuctionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAuctionQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:41:27.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "GetFilteredAuctionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetFilteredAuctionQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:41:10.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "GetAllAuctionQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Queries\\GetAllAuctionQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:41:00.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "UpdateAuctionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\UpdateAuctionCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:40:23.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "DeleteAuctionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\DeleteAuctionCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:40:16.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "CreateAuctionCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Handlers\\Commands\\CreateAuctionCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:40:08.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "DeleteAuctionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\DeleteAuctionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:39:22.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "UpdateAuctionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\UpdateAuctionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:39:05.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "CreateAuctionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "RelativeToolTip": "..\\..\\..\\AuctionMS\\AuctionMS.Application\\Auctions\\Commands\\CreateAuctionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T13:37:16.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "AuctionController.cs",
-              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS\\Controllers\\AuctionController.cs",
+              "DocumentMoniker": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS\\Controllers\\AuctionController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuctionController.cs",
-              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\AuctionMS\\AuctionMS\\Controllers\\AuctionController.cs",
+              "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS\\Controllers\\AuctionController.cs",
               "RelativeToolTip": "Controllers\\AuctionController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:25:16.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T13:25:16.998Z"
             }
           ]
         }

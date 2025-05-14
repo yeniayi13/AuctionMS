@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuctionMS.Common.Exceptions
+namespace AuctionMS.Domain.Entities.Auction.ValueObjects
 {
-    internal class AuctionNotFoundException
+    internal class AuctionIncremento
     {
     }
 }

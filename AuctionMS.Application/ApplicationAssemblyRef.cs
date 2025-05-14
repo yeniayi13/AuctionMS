@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AuctionMS.Application
 {
-    internal class ApplicationAssemblyRef
+    public class ApplicationAssemblyRef
     {
+        internal static readonly Assembly assembly = typeof(ApplicationAssemblyRef).Assembly;
     }
 }

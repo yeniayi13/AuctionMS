@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
+    <Folder Include="Service\Firebase\" />
+    <Folder Include="Service\User\" />
   </ItemGroup>
 
 </Project>
