@@ -3,7 +3,7 @@ using AuctionMS.Core.Repository;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Application.Auction.Commands;
-using AuctionMS.Common.Enum;
+
 using AuctionMS.Infrastructure.Repositories;
 
 
