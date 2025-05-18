@@ -9,3 +9,12 @@ C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\Auct
 C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\refint\AuctionMS.Domain.dll
 C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.pdb
 C:\Users\Paola\OneDrive\Desktop\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\ref\AuctionMS.Domain.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.csproj.AssemblyReference.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.AssemblyInfoInputs.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.AssemblyInfo.cs
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.sourcelink.json
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\refint\AuctionMS.Domain.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Domain\obj\Debug\net8.0\AuctionMS.Domain.pdb

@@ -4,13 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using AuctionMS.Core.Database;
 using AuctionMS.Core.Repository;
-using AuctionMS.Domain.Entities.Category;
-using AuctionMS.Domain.Entities.Category.ValueObject;
-using AuctionMS.Domain.Entities.Products;
-using AuctionMS.Domain.Entities.Products.ValueObjects;
-using AuctionMS.Common.Dtos.Product.Response;
-using AuctionMS.Common.Enum;
-using AuctionMS.Domain.Entities.Products.ValueObjects;
+using AuctionMS.Domain.Entities.Auction;
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
+using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Infrastructure.Database.Context.Postgres;
 
 namespace AuctionMS.Infrastructure.Repositories
@@ -87,7 +83,27 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
+        public async Task DeleteAsync(AuctionId id)
+        {
+            var product = await _dbContext.Auction.FirstOrDefaultAsync(x => x.AuctionId == id);
+            //if (department == null) throw new DepartmentNotFoundException("department not found");
+            _dbContext.Auction.Remove(product);
+            //department.IsDeleted = true;
+            await _dbContext.SaveEfContextChanges("");
+        }
 
-        
+        public async Task<AuctionEntity?> UpdateAsync(AuctionEntity auction)
+        {
+            _dbContext.Auction.Update(auction);
+            await _dbContext.SaveEfContextChanges("");
+            return auction;
+        }
+        public Task<bool> ExistsAsync(AuctionId id)
+        {
+            return _dbContext.Auction.AnyAsync(x => x.AuctionId == id);
+        }
+
+
+
     }
 }

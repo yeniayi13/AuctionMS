@@ -1,18 +1,19 @@
 ﻿
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
-using AuctionMS.Common.Enum;
+using AuctionMS.Common.Dtos.Auction.Response;
 
 namespace AuctionMS.Core.Repository
 {
     public interface IAuctionRepository
     {
-        Task<AuctionEntity?> GetByIdAsync(AuctionId id/*, Expression<Func<Provider, object>> include*/);
-        Task<List<AuctionEntity>> GetFilteredProductsAsync(AuctionPriceBase? priceBase, AuctionPriceReserva? priceReserva);
-        Task<AuctionEntity?> GetByNameAsync(AuctionName name/*, Expression<Func<Provider, object>> include*/);
+        Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId);
+        Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId);
+        Task<List<AuctionEntity?>> GetAvailableProductsAsync(AuctionUserId userId, decimal? priceBase = null, decimal? priceReserva = null);
+
         Task AddAsync(AuctionEntity auction);
         Task DeleteAsync(AuctionId id);
-        Task<List<AuctionEntity>> GetAllAsync();
+        Task<List<AuctionEntity>> GetAllAsync(AuctionUserId userId);
         Task<AuctionEntity?> UpdateAsync(AuctionEntity auction);
     }
 }

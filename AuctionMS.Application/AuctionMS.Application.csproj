@@ -17,8 +17,4 @@
     <ProjectReference Include="..\AuctionMS.Infrastructure\AuctionMS.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Auctions\Validators\" />
-  </ItemGroup>
-
 </Project>

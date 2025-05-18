@@ -1,4 +1,4 @@
-﻿using AuctionMS.Common.Exceptions;
+﻿//using AuctionMS.Common.Exceptions;
 using System.Text.RegularExpressions;
 
 namespace AuctionMS.Domain.Entities.Auction.ValueObjects
@@ -13,8 +13,8 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
         {
             try
             {
-                if (string.IsNullOrEmpty(url)) throw new NullAttributeException("Image URL is required");
-                if (!UrlRegex().IsMatch(url)) throw new InvalidAttributeException("Invalid image URL format");
+                //if (string.IsNullOrEmpty(url)) throw new NullAttributeException("Image URL is required");
+               // if (!UrlRegex().IsMatch(url)) throw new InvalidAttributeException("Invalid image URL format");
 
                 return new AuctionImage(url);
             }

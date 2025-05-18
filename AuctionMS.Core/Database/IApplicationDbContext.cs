@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using AuctionMS.Core.Database;
 using AuctionMS.Domain.Entities.Auction;
+using AuctionMS.Core.Database;
 
 
 namespace AuctionMS.Core.Database
@@ -12,8 +12,7 @@ namespace AuctionMS.Core.Database
     public interface IApplicationDbContext
     {
         DbContext DbContext { get; }
-        DbSet<AuctionEntity> Products { get; set; }
-
+        DbSet<AuctionEntity> Auction { get; set; }
 
 
         IDbContextTransactionProxy BeginTransaction();

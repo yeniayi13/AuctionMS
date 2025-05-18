@@ -1,45 +1,37 @@
-﻿using MediatR;
-using AuctionMS.Application.Auction.Queries;
+﻿using AuctionMS.Common.Exceptions;
 using AuctionMS.Core.Database;
+using AutoMapper;
+using MediatR;
+using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Core.Repository;
+using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Common.Dtos.Auction.Response;
-using AuctionMS.Common.Exceptions;
 using AuctionMS.Application.Auctions.Queries;
-using AuctionMS.Infrastructure.Repositories;
 
-namespace AuctionMS.Application.Auction.Handlers.Queries
+
+namespace AuctionMS.Application.Products.Auction.Queries
 {
     public class GetAuctionQueryHandler : IRequestHandler<GetAuctionQuery, GetAuctionDto>
     {
         public IAuctionRepository _auctionRepository;
         private readonly IApplicationDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetProductQueryHandler(IAuctionRepository auctionRepository, IApplicationDbContext dbContext)
+        public GetAuctionQueryHandler(IAuctionRepository auctionRepository, IApplicationDbContext dbContext, IMapper mapper)
         {
             _auctionRepository = auctionRepository;
             _dbContext = dbContext;
+            _mapper = mapper; // Inyectar el Mapper
         }
 
         public async Task<GetAuctionDto> Handle(GetAuctionQuery request, CancellationToken cancellationToken)
         {
             if (request.Id == Guid.Empty) throw new NullAttributeException("Auction id is required");
-            var auctionId = auctionId.Create(request.Id);
-            var auction = await _auctionRepository.GetByIdAsync(auctionId!);
-            var createdBy = auction.CreatedBy ?? string.Empty;
-
-            return new GetAuctionDto(
-               auction.Id.Value,
-                    auction.Name.Value,
-                    auction.Image.Url,
-                    auction.PriceBase.Value,
-                    auction.PriceReserva.Value,
-                    auction.Description.Value,
-                    auction.Incremento.Value,
-                    auction.Duracion.Value,
-                    auction.Condiciones.Value,
-                createdBy
-            );
+            var auctionId = AuctionId.Create(request.Id);
+            var auction = await _auctionRepository.GetByIdAsync(auctionId!, AuctionUserId.Create(request.UserId));
+            var auctionDto = _mapper.Map<GetAuctionDto>(auction);
+            return auctionDto;
         }
     }
 }

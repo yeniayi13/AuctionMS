@@ -1,4 +1,4 @@
-﻿using AuctionMS.Common.Exceptions;
+﻿//using AuctionMS.Common.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
         {
             try
             {
-                if (string.IsNullOrEmpty(value)) throw new NullAttributeException("Auction condiciones is required");
+               // if (string.IsNullOrEmpty(value)) throw new NullAttributeException("Auction condiciones is required");
 
                 return new AuctionCondiciones(value);
             }

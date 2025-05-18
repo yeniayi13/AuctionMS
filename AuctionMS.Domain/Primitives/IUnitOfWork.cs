@@ -7,7 +7,7 @@ namespace AuctionMS.Common.Primitives
 {
     public interface IUnitOfWork
     {
-        //TODO Borrar UnitOfWork
+       
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

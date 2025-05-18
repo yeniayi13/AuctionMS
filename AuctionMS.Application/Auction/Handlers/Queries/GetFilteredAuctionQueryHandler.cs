@@ -13,7 +13,7 @@ using AuctionMS.Application.Auctions.Queries;
 
 namespace AuctionMS.Application.Auction.Handlers.Queries
 {
-    public class GetFilteredAuctionQueryHandler : IRequestHandler<GetFilteredAuctionQuery, List<GetAuctionDto>>
+  /*  public class GetFilteredAuctionQueryHandler : IRequestHandler<GetFilteredAuctionQuery, List<GetAuctionDto>>
     {
         private readonly IAuctionRepository _auctionRepository;
 

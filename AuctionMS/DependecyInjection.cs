@@ -22,7 +22,8 @@ namespace AuctionsMs
             services.AddScoped<IAuctionRepository, AuctionRepository>();
 
             //Registro de handlers 
-
+          
+           
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(UpdateAuctionCommandHandler).Assembly));

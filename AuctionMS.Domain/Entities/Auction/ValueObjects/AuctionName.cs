@@ -1,4 +1,4 @@
-﻿using AuctionMS.Common.Exceptions;
+﻿//using AuctionMS.Common.Exceptions;
 using System.Text.RegularExpressions;
 
 namespace AuctionMS.Domain.Entities.Auction.ValueObjects
@@ -12,8 +12,8 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
         {
             try
             {
-                if (string.IsNullOrEmpty(value)) throw new NullAttributeException("Auction Name  is required");
-                if (!NameRegex().IsMatch(value)) throw new InvalidAttributeException("Auction Name is invalid");
+               // if (string.IsNullOrEmpty(value)) throw new NullAttributeException("Auction Name  is required");
+               // if (!NameRegex().IsMatch(value)) throw new InvalidAttributeException("Auction Name is invalid");
 
                 return new AuctionName(value);
             }

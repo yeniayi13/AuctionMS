@@ -8,16 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="MongoDB.Driver" Version="3.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AuctionMS.Common\AuctionMS.Common.csproj" />
     <ProjectReference Include="..\AuctionMS.Domain\AuctionMS.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Service\Firebase\" />
-    <Folder Include="Service\User\" />
   </ItemGroup>
 
 </Project>

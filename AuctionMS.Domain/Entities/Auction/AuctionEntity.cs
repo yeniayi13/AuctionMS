@@ -1,77 +1,69 @@
-﻿using ProductsMs.Domain.Entities.Category;
-using ProductsMs.Domain.Entities.Category.ValueObject;
-using ProductsMs.Domain.Entities.Products.ValueObjects;
-using ProductsMS.Common.Enum;
-using ProductsMS.Common.Primitives;
-using ProductsMS.Domain.Entities.Products.ValueObjects;
+﻿
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
+using AuctionMS.Common.Primitives;
 
-namespace ProductsMs.Domain.Entities.Products
+
+namespace AuctionMS.Domain.Entities.Auction
 {
-    public sealed class ProductEntity : AggregateRoot
+    public sealed class AuctionEntity : AggregateRoot
     {
-        public ProductId ProductId { get; private set; }
-        public ProductName ProductName { get; private set; }
-        public ProductImage ProductImage { get; private set; }
-        public ProductPrice ProductPrice { get; private set; }
-        public ProductDescription ProductDescription { get; private set; }
+        public AuctionId AuctionId { get; private set; }
+        public AuctionName AuctiontName { get; private set; }
+        public AuctionImage AuctionImage { get; private set; }
+        public AuctionPriceBase AuctionPriceBase { get; private set; }
+        public AuctionPriceReserva AuctionPriceReserva { get; private set; }
+        public AuctionDescription AuctionDescription { get; private set; }
+        public AuctionIncremento AuctionIncremento { get; private set; }
 
-        public CategoryId CategoryId { get; private set; } //FK
+        public AuctionCondiciones AuctionCondiciones { get; private set; }
+        public AuctionDuracion AuctionDuracion{ get; private set; }
 
-        public CategoryEntity Category { get; private set; } //Navigation Property
+        public AuctionUserId AuctionUserId { get; private set; } //FK
 
-        public ProductAvilability ProductAvilability { get; private set; }
 
-        public ProductStock ProductStock { get; private set; }
-
-        public ProductUserId ProductUserId { get; private set; } //FK
-        public ProductEntity(ProductId productId, ProductName productName, ProductImage productImage, ProductPrice productPrice, ProductDescription productDescription, ProductAvilability productavilability, ProductStock productStock, CategoryId categoryId, ProductUserId productUserId)
+        public AuctionEntity (AuctionId auctionId, AuctionName auctionName, AuctionImage auctionImage, AuctionPriceBase auctionPriceBase,
+            AuctionPriceReserva auctionPriceReserva, AuctionDescription auctionDescription, AuctionIncremento auctionIncremento,
+            AuctionCondiciones auctionCondiciones, AuctionDuracion auctionDuracion, AuctionUserId auctionUserId)
         {
-            ProductId = productId;
-            ProductName = productName;
-            ProductImage = productImage;
-            ProductPrice = productPrice;
-            ProductDescription = productDescription;
-            ProductAvilability = productavilability;
-            ProductStock = productStock;
-            CategoryId = categoryId;
-            ProductUserId = productUserId;
+            AuctionId = auctionId;
+            AuctionName = auctionName;
+            AuctionImage = auctionImage;
+            AuctionPriceBase = auctionPriceBase;
+            AuctionPriceReserva = auctionPriceReserva;
+            AuctionDescription = auctionDescription;
+            AuctionIncremento = auctionIncremento;
+            AuctionCondiciones = auctionCondiciones;
+            AuctionDuracion = auctionDuracion;
+            AuctionUserId = auctionUserId; 
 
         }
 
-        public ProductEntity() { }
+        public AuctionEntity() { }
 
 
         //actualiza las propiedades de un objeto
-        public static ProductEntity Update(ProductEntity product, ProductName name, ProductImage image, ProductPrice price, ProductDescription description, ProductAvilability avilability, ProductStock stock, CategoryId categoryId, ProductUserId productUserId)
+        public static AuctionEntity Update(AuctionEntity product, AuctionName name, AuctionImage image, 
+            AuctionPriceBase priceBase, AuctionPriceReserva priceReserva, AuctionDescription description, 
+            AuctionIncremento incremento, AuctionCondiciones condiciones, AuctionDuracion duracion, AuctionUserId auctionUserId)
         {
 
             var updates = new List<Action>()
                 {
-                    () => { if (name != null) product.ProductName = name; },
-                    () => { if (image != null) product.ProductImage = image; },
-                    () => { if (price != null) product.ProductPrice = price; },
-                    () => { if (description != null) product.ProductDescription = description; },
-                    () => { if (stock != null) product.ProductStock = stock; },
-                    () =>
-                    {
-                        if (avilability != null)
-                        {
-                            if (Enum.TryParse<ProductAvilability>(avilability.ToString(), out var availabilityEnum))
-                            {
-                                product.ProductAvilability = availabilityEnum;
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Error: No se pudo convertir '{avilability}' a ProductAvailability.");
-                            }
-                        }
-                    },
-                    () => { if (product.CategoryId != null) product.CategoryId = categoryId; },
-                    () => { if (product.ProductUserId != null) product.ProductUserId = productUserId; }
+                    () => { if (name != null)  auction.AuctionName = name; },
+                    () => { if (image != null) auction.AuctionImage = image; },
+                    () => { if (priceBase != null) auction.AuctionPriceBase = priceBase; },
+                    () => { if (priceReserva != null) auction.AuctionPriceReserva = priceReserva; },
+                    () => { if (description != null) auction.AuctionDescription = description; },
+
+                    () => { if (incremento != null) auction.AuctionIncremento = incremento; },
+                    () => { if (condiciones != null) auction.AuctionCondiciones = condiciones; },
+                    () => { if (duracion != null) auction.AuctionDuracion = duracion; },
+
+                    () => { if (auction.AuctionUserId != null) auction.AuctionUserId = auctionUserId; }
                 };
 
             updates.ForEach(update => update());
-            return product;
+            return auction;
         }
 
     }

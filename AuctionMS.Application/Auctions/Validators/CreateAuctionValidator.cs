@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuctionMS.Domain.Entities.Auction.ValueObjects
+namespace AuctionMS.Application.Auctions.Validators
 {
-    internal class AuctionTime
+    internal class CreateAuctionValidator
     {
     }
 }

@@ -1,31 +1,33 @@
 ﻿using AutoMapper;
-using ProductsMS.Common.Dtos.Category.Response;
-using ProductsMs.Domain.Entities.Category;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProductsMs.Domain.Entities.Products;
-using ProductsMS.Common.Dtos.Product.Response;
+using AuctionMS.Domain.Entities.Auction;
+using AuctionMS.Common.Dtos.Auction.Response;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace ProductsMS.Common.AutoMapper
+namespace AuctionMS.Common.AutoMapper
 {
-    public class ProductProfile : Profile
+    public class AuctionProfile : Profile
     {
-        public ProductProfile()
+        public AuctionProfile()
         {
-            CreateMap<ProductEntity, GetProductDto>()
-            .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId.Value))
-            .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName.Value))
-            .ForMember(dest => dest.ProductImage, opt => opt.MapFrom(src => src.ProductImage.Url))
-            .ForMember(dest => dest.ProductPrice, opt => opt.MapFrom(src => src.ProductPrice.Value))
-            .ForMember(dest => dest.ProductDescription, opt => opt.MapFrom(src => src.ProductDescription.Value))
-            .ForMember(dest => dest.ProductStock, opt => opt.MapFrom(src => src.ProductStock.Value))
-            .ForMember(dest => dest.ProductUserId, opt => opt.MapFrom(src => src.ProductUserId.Value))
-            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId.Value))
-            .ForMember(dest => dest.ProductAvilability, opt => opt.MapFrom(src => src.ProductAvilability.ToString())) // Convertir Enum a string
+            CreateMap<AuctionEntity, GetAuctionDto>()
+            .ForMember(dest => dest.AuctionId, opt => opt.MapFrom(src => src.AuctionId.Value))
+            .ForMember(dest => dest.AuctionName, opt => opt.MapFrom(src => src.AuctionName.Value))
+            .ForMember(dest => dest.AuctionImage, opt => opt.MapFrom(src => src.AuctionImage.Url))
+            .ForMember(dest => dest.AuctionPriceBase, opt => opt.MapFrom(src => src.AuctionPriceBase.Value))
+            .ForMember(dest => dest.AuctionPriceReserva, opt => opt.MapFrom(src => src.AuctionPriceReserva.Value))
+            .ForMember(dest => dest.AuctionDescription, opt => opt.MapFrom(src => src.AuctionDescription.Value))
+            .ForMember(dest => dest.AuctionDuracion, opt => opt.MapFrom(src => src.AuctionDuracion.Value))
+            .ForMember(dest => dest.AuctionIncremento, opt => opt.MapFrom(src => src.AuctionIncremento.Value))
+            .ForMember(dest => dest.AuctionCondiciones, opt => opt.MapFrom(src => src.AuctionCondiciones.Value))
+
+            .ForMember(dest => dest.AuctionUserId, opt => opt.MapFrom(src => src.AuctionUserId.Value))
+   
+            
             .ReverseMap();
         }
     }

@@ -1,4 +1,4 @@
-﻿using AuctionMS.Common.Exceptions;
+﻿//using AuctionMS.Common.Exceptions;
 using System.Text.RegularExpressions;
 
 namespace AuctionMS.Domain.Entities.Auction.ValueObjects
@@ -12,9 +12,9 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
         {
             try
             {
-                if (value == default) throw new NullAttributeException("Value is required");
+               // if (value == default) throw new NullAttributeException("Value is required");
                 //if (!BasePriceRegex().IsMatch(value)) throw new InvalidAttributeException("Client ci is invalid");
-                if (value < 0) throw new InvalidAttributeException("Value is invalid");
+               // if (value < 0) throw new InvalidAttributeException("Value is invalid");
 
                 return new AuctionPriceBase(value);
             }
