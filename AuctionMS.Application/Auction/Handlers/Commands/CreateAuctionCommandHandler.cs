@@ -44,8 +44,8 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     AuctionIncremento.Create(request.Auction.AuctionIncremento),
                     AuctionDuracion.Create(request.Auction.AuctionDuracion),
                     AuctionCondiciones.Create(request.Auction.AuctionCondiciones),
-                    AuctionUserId.Create(request.Auction.AuctionUserId) // Asignar el ID del usuario
-
+                    AuctionUserId.Create(request.Auction.AuctionUserId), // Asignar el ID del usuario
+                     AuctionProductId.Create(request.Auction.AuctionProductId)
 
 
 
@@ -60,7 +60,9 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
             catch (Exception ex)
             {
                 // Manejo de errores adicional si es necesario
-                throw new Exception("An error occurred while registering the auction", ex);
+                Console.WriteLine($"An error occurred while registering the auction, {ex.Message}");
+                throw;
+
             }
         }
     }

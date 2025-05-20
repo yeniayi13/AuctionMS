@@ -29,13 +29,14 @@ namespace AuctionMS.Infrastructure.Repositories
             await _dbContext.SaveEfContextChanges("");
         }
 
-        public async Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId)
+        public async Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId, AuctionProductId productId)
         {
-            Console.WriteLine($"Buscando una subasta con ID: {id} y usuario: {userId.Value}");
+            Console.WriteLine($"Buscando una subasta con ID: {id} y usuario: {userId.Value} y producto : {productId.Value}");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value),
-                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value) 
+                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value) ,
+                  Builders<AuctionEntity>.Filter.Eq("AuctionProductId", productId.Value)
             );
 
             var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
@@ -56,13 +57,14 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
-        public async Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId)
+        public async Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId, AuctionProductId productId)
         {
-            Console.WriteLine($"Buscando subasta con nombre: {name} y usuario: {userId.Value}");
+            Console.WriteLine($"Buscando subasta con nombre: {name} usuario: {userId.Value} y producto: {productId.Value}");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionName", name.Value),
-                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value) 
+                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value),
+                Builders<AuctionEntity>.Filter.Eq("AuctionProductId", productId.Value)
             );
 
             var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
@@ -99,7 +101,7 @@ namespace AuctionMS.Infrastructure.Repositories
 
             if (auctionDto == null || auctionDto.Count == 0)
             {
-                Console.WriteLine("No se encontraron productos para este usuario.");
+                Console.WriteLine("No se encontraron subastas para este usuario.");
                 return new List<AuctionEntity>(); // Retorna una lista vacía en lugar de `null` para evitar errores
             }
 

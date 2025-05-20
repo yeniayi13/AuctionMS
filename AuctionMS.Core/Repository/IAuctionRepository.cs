@@ -7,8 +7,8 @@ namespace AuctionMS.Core.Repository
 {
     public interface IAuctionRepository
     {
-        Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId);
-        Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId);
+        Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId, AuctionProductId productId);
+        Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId, AuctionProductId productId);
 
         Task AddAsync(AuctionEntity auction);
         Task DeleteAsync(AuctionId id);

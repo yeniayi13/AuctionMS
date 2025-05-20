@@ -29,7 +29,8 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
             {
                 var auctionId = AuctionId.Create(request.AuctionId);
                 var userId = AuctionUserId.Create(request.UserId);
-                var auction = await _auctionRepository.GetByIdAsync(auctionId, userId);
+                var productId = AuctionProductId.Create(request.ProductId);
+                var auction = await _auctionRepository.GetByIdAsync(auctionId, userId, productId);
                 await _auctionRepository.DeleteAsync(auctionId);
                 var auctionDto = _mapper.Map<GetAuctionDto>(auction);
                 await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_DELETED");

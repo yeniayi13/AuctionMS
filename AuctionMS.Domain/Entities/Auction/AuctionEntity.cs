@@ -21,10 +21,12 @@ namespace AuctionMS.Domain.Entities.Auction
 
         public AuctionUserId AuctionUserId { get; private set; } //FK
 
+        public AuctionProductId AuctionProductId { get; private set; } //FK
+
 
         public AuctionEntity (AuctionId auctionId, AuctionName auctionName, AuctionImage auctionImage, AuctionPriceBase auctionPriceBase,
             AuctionPriceReserva auctionPriceReserva, AuctionDescription auctionDescription, AuctionIncremento auctionIncremento
-           , AuctionDuracion auctionDuracion, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId)
+           , AuctionDuracion auctionDuracion, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId, AuctionProductId auctionProductId)
         {
             AuctionId = auctionId;
             AuctionName = auctionName;
@@ -36,7 +38,9 @@ namespace AuctionMS.Domain.Entities.Auction
         
             AuctionDuracion = auctionDuracion;
             AuctionCondiciones = auctionCondiciones;
-            AuctionUserId = auctionUserId; 
+            AuctionUserId = auctionUserId;
+            AuctionProductId = auctionProductId;
+
 
         }
 
@@ -46,7 +50,7 @@ namespace AuctionMS.Domain.Entities.Auction
         //actualiza las propiedades de un objeto
         public static AuctionEntity Update(AuctionEntity auction, AuctionName name, AuctionImage image, 
             AuctionPriceBase priceBase, AuctionPriceReserva priceReserva, AuctionDescription description, 
-            AuctionIncremento incremento,  AuctionDuracion duracion, AuctionCondiciones condiciones, AuctionUserId auctionUserId)
+            AuctionIncremento incremento,  AuctionDuracion duracion, AuctionCondiciones condiciones, AuctionUserId auctionUserId, AuctionProductId  auctionProductId)
         {
 
             var updates = new List<Action>()
@@ -62,8 +66,11 @@ namespace AuctionMS.Domain.Entities.Auction
                     () => { if (condiciones != null) auction.AuctionCondiciones = condiciones; },
                   
 
-                    () => { if (auction.AuctionUserId != null) auction.AuctionUserId = auctionUserId; }
+                    () => { if (auction.AuctionUserId != null) auction.AuctionUserId = auctionUserId; },
+
+                    () => { if (auction.AuctionProductId != null) auction.AuctionProductId = auctionProductId; }
                 };
+
 
             updates.ForEach(update => update());
             return auction;

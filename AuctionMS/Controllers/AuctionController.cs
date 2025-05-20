@@ -23,10 +23,50 @@ namespace AuctionMS.Controllers
             _mediator = mediator;
         }
 
-        
+        //[Authorize(Policy = "AdminOnly")]
+        [HttpPost]
+        public async Task<IActionResult> CreateAuction([FromBody] CreateAuctionDto createAuctionDto)
+        {
+            try
+            {
+                
+                var command = new CreateAuctionCommand(createAuctionDto);
+                var auctionId = await _mediator.Send(command);
+
+                return Ok(auctionId);
+            
+            }
+            catch (AuctionNotFoundException e)
+            {
+                _logger.LogError("An error occurred while trying to create an Auction: {Message}", e.Message);
+                return StatusCode(404, e.Message);
+            }
+            catch (NullAttributeException e)
+            {
+                _logger.LogError("An error occurred while trying to create an Auction: {Message}", e.Message);
+                return StatusCode(400, e.Message);
+            }
+            catch (InvalidAttributeException e)
+            {
+                _logger.LogError("An error occurred while trying to create an Auction: {Message}", e.Message);
+                return StatusCode(400, e.Message);
+            }
+            catch (ValidatorException e)
+            {
+                _logger.LogError("An error occurred while trying to create an Auction: {Message}", e.Message);
+                return StatusCode(400, e.Message);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("An error occurred while trying to create an Auction: {Message}", e.Message);
+                return StatusCode(500, "An error occurred while trying to create an Auction");
+            }
+        }
+
+
         //[Authorize(Policy = "AdminProviderOnly")]
         [HttpGet]
-        public async Task<IActionResult> GetAllAuction([FromQuery] Guid userId)
+        public async Task<IActionResult> GetAllAuction([FromQuery] Guid userId, [FromQuery] Guid productId)
         {
             try
             {
@@ -59,7 +99,7 @@ namespace AuctionMS.Controllers
 
 
         [HttpGet("name/auction/{name}")]
-        public async Task<IActionResult> GetAllNameAuction([FromRoute] string name, [FromQuery] Guid userId)
+        public async Task<IActionResult> GetAllNameAuction([FromRoute] string name, [FromQuery] Guid userId, [FromQuery] Guid productId)
         {
             try
             {
@@ -68,7 +108,7 @@ namespace AuctionMS.Controllers
                     return BadRequest("El nombre de la subasta es requerido.");
                 }
 
-                var query = new GetNameAuctionQuery(name, userId);
+                var query = new GetNameAuctionQuery(name, userId, productId);
                 var auction = await _mediator.Send(query);
 
                 return Ok(auction);
@@ -97,11 +137,11 @@ namespace AuctionMS.Controllers
 
         //[Authorize(Policy = "AdminProviderOnly")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAuction([FromRoute] Guid id, [FromQuery] Guid userId)
+        public async Task<IActionResult> GetAuction([FromRoute] Guid id, [FromQuery] Guid userId, [FromQuery] Guid productId)
         {
             try
             {
-                var command = new GetAuctionQuery(id, userId);
+                var command = new GetAuctionQuery(id, userId, productId);
                 var Auction = await _mediator.Send(command);
                 return Ok(Auction);
             }
@@ -128,12 +168,12 @@ namespace AuctionMS.Controllers
         //[Authorize(Policy = "AdminProviderOnly")]
         [HttpPut]
         [Route("{id}")]
-        public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId)
+        public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId, [FromQuery] Guid productId)
         {
             try
             
             {
-                var command = new UpdateAuctionCommand(id, updateAuctionDto, userId);
+                var command = new UpdateAuctionCommand(id, updateAuctionDto, userId, productId);
                 var AuctionId = await _mediator.Send(command);
                 return Ok(AuctionId);
             }
@@ -158,11 +198,11 @@ namespace AuctionMS.Controllers
         //[Authorize(Policy = "AdminOnly")]
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteAuction([FromRoute] Guid id, [FromQuery] Guid userId)
+        public async Task<IActionResult> DeleteAuction([FromRoute] Guid id, [FromQuery] Guid userId, [FromQuery] Guid productId)
         {
             try
             {
-                var command = new DeleteAuctionCommand(id, userId);
+                var command = new DeleteAuctionCommand(id, userId, productId);
                 var AuctionId = await _mediator.Send(command);
                 return Ok(AuctionId);
             }

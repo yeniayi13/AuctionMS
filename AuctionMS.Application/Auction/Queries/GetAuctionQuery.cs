@@ -13,10 +13,13 @@ namespace AuctionMS.Application.Auctions.Queries
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
 
-        public GetAuctionQuery(Guid id, Guid userId)
+        public Guid ProductId { get; set; }
+
+        public GetAuctionQuery(Guid id, Guid userId, Guid productId)
         {
             Id = id;
             UserId = userId;
+            ProductId = productId;
         }
     }
 }

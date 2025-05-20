@@ -25,8 +25,8 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
         {
             try
             {
-                Console.WriteLine($"Actualizando subasta: {request.Id} para el usuario: {request.UserId}"); // Agregar log para depuración
-                var oldAuction = await _auctionRepository.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!);
+                Console.WriteLine($"Actualizando subasta: {request.Id} para el usuario: {request.UserId} y para el producto: {request.ProductId} "); // Agregar log para depuración
+                var oldAuction = await _auctionRepository.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!, AuctionProductId.Create(request.ProductId)!);
 
 
                 if (oldAuction == null) throw new AuctionNotFoundException("Auction not found");
@@ -44,7 +44,8 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     request.Auction.AuctionIncremento != null ? AuctionIncremento.Create(request.Auction.AuctionIncremento) : oldAuction.AuctionIncremento,
                     request.Auction.AuctionDuracion != null ? AuctionDuracion.Create(request.Auction.AuctionDuracion) : oldAuction.AuctionDuracion,
                     request.Auction.AuctionCondiciones != null ? AuctionCondiciones.Create(request.Auction.AuctionCondiciones) : oldAuction.AuctionCondiciones,
-                    request.Auction.AuctionUserId != null ? AuctionUserId.Create(request.Auction.AuctionUserId) : oldAuction.AuctionUserId
+                    request.Auction.AuctionUserId != null ? AuctionUserId.Create(request.Auction.AuctionUserId) : oldAuction.AuctionUserId,
+                     request.Auction.AuctionProductId != null ? AuctionProductId.Create(request.Auction.AuctionProductId) : oldAuction.AuctionProductId
 
                 );
 

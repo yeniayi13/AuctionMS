@@ -22,7 +22,7 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
             _rabbitMQConnection = rabbitMQConnection;
 
             // 🔹 Conexión a MongoDB Atlas
-            _mongoClient = new MongoClient("");
+            _mongoClient = new MongoClient("mongodb+srv://paascanio20:6CJrUJ5uhG2TcWMo@cluster0.mix2yla.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
             _database = _mongoClient.GetDatabase("AuctionMS");
             _collection = _database.GetCollection<GetAuctionDto>("Auction");
 
@@ -63,7 +63,10 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
                             .Set(a => a.AuctionCondiciones, eventMessageD.Data.AuctionCondiciones)
                             .Set(a => a.AuctionDuracion, eventMessageD.Data.AuctionDuracion)
                             .Set(a => a.AuctionIncremento, eventMessageD.Data.AuctionIncremento)
-                            .Set(a => a.AuctionUserId, eventMessageD.Data.AuctionUserId);
+                            .Set(a => a.AuctionUserId, eventMessageD.Data.AuctionUserId)
+                            .Set(a => a.AuctionProductId, eventMessageD.Data.AuctionProductId);
+
+
 
 
 

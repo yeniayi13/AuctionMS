@@ -59,6 +59,10 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
                                .HasConversion(AuctionUserId => AuctionUserId.Value, value => AuctionUserId.Create(value)!)
                                .IsRequired();
 
+            builder.Property(s => s.AuctionProductId)
+                              .HasConversion(AuctionProductId => AuctionProductId.Value, value => AuctionProductId.Create(value)!)
+                              .IsRequired();
+
         }
     }
 }

@@ -33,7 +33,8 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
             //if (request.Id == Guid.Empty) throw new NullAttributeException("Auction id is required");
             var auctionName = AuctionName.Create(request.Name);
             var userId = AuctionUserId.Create(request.UserId);
-            var auction = await _auctionRepository.GetByNameAsync(auctionName!, userId!);
+            var productId = AuctionProductId.Create(request.UserId);
+            var auction = await _auctionRepository.GetByNameAsync(auctionName!, userId!, productId!);
             var auctionDto = _mapper.Map<GetAuctionDto>(auction);
             return auctionDto;
         }

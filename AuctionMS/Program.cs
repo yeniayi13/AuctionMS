@@ -43,7 +43,7 @@ foreach (var profileType in profileTypes)
 
 builder.Services.AddSingleton<IApplicationDbContextMongo>(sp =>
 {
-    const string connectionString = "";
+    const string connectionString = "mongodb+srv://paascanio20:6CJrUJ5uhG2TcWMo@cluster0.mix2yla.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     var databaseName = "AuctionMS";
     return new ApplicationDbContextMongo(connectionString, databaseName);
 });

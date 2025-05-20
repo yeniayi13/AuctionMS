@@ -48,6 +48,6 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
                 )
             ).ToList();
         }
-    }
+    }*/
 
 }
