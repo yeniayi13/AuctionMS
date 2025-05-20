@@ -1,5 +1,4 @@
-﻿//using AuctionMS.Common.Exceptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,18 +12,13 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
 
         public static AuctionCondiciones Create(string value)
         {
-            try
-            {
-               // if (string.IsNullOrEmpty(value)) throw new NullAttributeException("Auction condiciones is required");
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("Las condiciones de la subasta son requeridas.");
 
-                return new AuctionCondiciones(value);
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+            return new AuctionCondiciones(value.Trim());
         }
 
-        public string Value { get; init; } //*init no permite setear desde afuera, solo desde el constructor
+        public string Value { get; init; } // Solo asignable desde el constructor
     }
 }
+

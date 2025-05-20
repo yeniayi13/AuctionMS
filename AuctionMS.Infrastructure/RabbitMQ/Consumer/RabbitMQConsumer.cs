@@ -45,7 +45,7 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
                 try
                 {
                     var eventMessageD = JsonConvert.DeserializeObject<EventMessage<GetAuctionDto>>(message);
-                    if (eventMessageD?.EventType == "PRODUCT_CREATED")
+                    if (eventMessageD?.EventType == "AUCTION_CREATED")
                     {
                         await _collection.InsertOneAsync(eventMessageD.Data);
                         Console.WriteLine($"Subasta insertada en MongoDB: {JsonConvert.SerializeObject(eventMessageD.Data)}");

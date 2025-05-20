@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AuctionMS.Common.Exceptions
+namespace AuctionMS.Infrastructure.Exceptions
+{ 
+
+public class InvalidAttributeException : Exception
 {
-    public class InvalidAttributeException : Exception
-    {
-        public InvalidAttributeException() { }
+    public InvalidAttributeException() { }
 
-        public InvalidAttributeException(string message)
-            : base(message) { }
+    public InvalidAttributeException(string message)
+        : base(message) { }
 
-        public InvalidAttributeException(string message, Exception inner)
-            : base(message, inner) { }
-    }
+    public InvalidAttributeException(string message, Exception inner)
+        : base(message, inner) { }
+}
+
 }

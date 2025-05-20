@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AuctionMS.Common.Exceptions
+﻿namespace AuctionMS.Infrastructure.Exceptions
 {
     public class AuctionNotFoundException : Exception
     {

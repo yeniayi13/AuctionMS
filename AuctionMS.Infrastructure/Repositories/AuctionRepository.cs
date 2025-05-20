@@ -83,11 +83,36 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
+        public async Task<List<AuctionEntity>> GetAllAsync(AuctionUserId userId)
+        {
+            Console.WriteLine($"Consulta de subastas en proceso para el usuario: {userId.Value}");
+
+            var filter = Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value); // Filtrar por usuario propietario
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDto = await _collection
+                .Find(filter) // Aplicamos el filtro
+                .Project<GetAuctionDto>(projection) // Convertir los datos al DTO
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDto == null || auctionDto.Count == 0)
+            {
+                Console.WriteLine("No se encontraron productos para este usuario.");
+                return new List<AuctionEntity>(); // Retorna una lista vacía en lugar de `null` para evitar errores
+            }
+
+            var auctionEntities = _mapper.Map<List<AuctionEntity>>(auctionDto);
+
+            return auctionEntities;
+        }
+
         public async Task DeleteAsync(AuctionId id)
         {
-            var product = await _dbContext.Auction.FirstOrDefaultAsync(x => x.AuctionId == id);
+            var auction = await _dbContext.Auction.FirstOrDefaultAsync(x => x.AuctionId == id);
             //if (department == null) throw new DepartmentNotFoundException("department not found");
-            _dbContext.Auction.Remove(product);
+            _dbContext.Auction.Remove(auction);
             //department.IsDeleted = true;
             await _dbContext.SaveEfContextChanges("");
         }
@@ -103,7 +128,6 @@ namespace AuctionMS.Infrastructure.Repositories
             return _dbContext.Auction.AnyAsync(x => x.AuctionId == id);
         }
 
-
-
+        
     }
 }

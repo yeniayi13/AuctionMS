@@ -10,11 +10,12 @@ namespace AuctionMS.Application.Auction.Commands
     public class DeleteAuctionCommand : IRequest<Guid>
     {
         public Guid AuctionId { get; set; }
+        public Guid UserId { get; set; }
 
-        public DeleteAuctionCommand(Guid auction
-            )
+        public DeleteAuctionCommand(Guid auction, Guid userId)
         {
-            AuctionId = auction;
+            AuctionId = auction  ;
+            UserId = userId;
         }
     }
 }

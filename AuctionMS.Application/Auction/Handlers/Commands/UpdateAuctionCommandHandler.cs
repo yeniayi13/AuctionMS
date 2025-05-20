@@ -3,9 +3,9 @@ using AuctionMS.Core.Repository;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Application.Auction.Commands;
-using AuctionMS.Common.Enum;
-using AuctionMS.Common.Exceptions;
+using AuctionMS.Core.RabbitMQ;
 using AuctionMS.Infrastructure.Repositories;
+using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Common.Dtos.Auction.Request;
 
 namespace AuctionMS.Application.Auction.Handlers.Commands
@@ -37,11 +37,13 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 var updatedAuction = AuctionEntity.Update(
                     oldAuction, // Se debe proporcionar la entidad base para la actualización
                     request.Auction.AuctionName != null ? AuctionName.Create(request.Auction.AuctionName) : oldAuction.AuctionName,
-                    request.Auction.AuctionImage != null ? AuctionImage.Create(request.Auction.ProductImage) : oldAuction.AuctionImage,
+                    request.Auction.AuctionImage != null ? AuctionImage.Create(request.Auction.AuctionImage) : oldAuction.AuctionImage,
                     request.Auction.AuctionPriceBase != null ? AuctionPriceBase.Create(request.Auction.AuctionPriceBase) : oldAuction.AuctionPriceBase,
+                    request.Auction.AuctionPriceReserva != null ? AuctionPriceReserva.Create(request.Auction.AuctionPriceReserva) : oldAuction.AuctionPriceReserva,
                     request.Auction.AuctionDescription != null ? AuctionDescription.Create(request.Auction.AuctionDescription) : oldAuction.AuctionDescription,
+                    request.Auction.AuctionIncremento != null ? AuctionIncremento.Create(request.Auction.AuctionIncremento) : oldAuction.AuctionIncremento,
                     request.Auction.AuctionDuracion != null ? AuctionDuracion.Create(request.Auction.AuctionDuracion) : oldAuction.AuctionDuracion,
-
+                    request.Auction.AuctionCondiciones != null ? AuctionCondiciones.Create(request.Auction.AuctionCondiciones) : oldAuction.AuctionCondiciones,
                     request.Auction.AuctionUserId != null ? AuctionUserId.Create(request.Auction.AuctionUserId) : oldAuction.AuctionUserId
 
                 );

@@ -6,7 +6,7 @@ using AuctionMS.Application.Auction.Handlers.Commands;
 using AuctionMS.Application.Auction.Handlers.Queries;
 using AuctionMS.Infrastructure.Database.Context.Postgres;
 
-namespace AuctionsMs
+namespace AuctionMS
 {
     public static class DependencyInjection
     {
@@ -28,7 +28,6 @@ namespace AuctionsMs
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(UpdateAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetNameAuctionQueryHandler).Assembly));
-            services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetAvailableAuctionQueryHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetAuctionQueryHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetAllAuctionQueryHandler).Assembly));
             //services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetFilteredAuctionQueryHandler).Assembly));

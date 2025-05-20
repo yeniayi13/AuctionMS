@@ -29,7 +29,7 @@ public class RabbitMQConnection
             throw new InvalidOperationException("No se pudo crear el canal de comunicación con RabbitMQ.");
         }
 
-        await _channel.QueueDeclareAsync(queue: "productQueue", durable: true, exclusive: false, autoDelete: false);
+        await _channel.QueueDeclareAsync(queue: "auctionQueue", durable: true, exclusive: false, autoDelete: false);
     }
 
     public IChannel GetChannel()

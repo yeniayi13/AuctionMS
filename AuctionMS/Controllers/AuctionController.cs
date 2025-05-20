@@ -1,11 +1,9 @@
-using AuctionMS.Common.Exceptions;
+
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Application.Auction.Commands;
-using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Common.Dtos.Auction.Request;
-using AuctionMS.Common.Exceptions;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Application.Auctions.Queries;
@@ -58,37 +56,6 @@ namespace AuctionMS.Controllers
             }
         }
 
-
-        [HttpGet("available")]
-        public async Task<IActionResult> GetAvailableAuction(
-            [FromQuery] Guid userId,
-            [FromQuery] decimal? priceBase = null,
-    
-        {
-            try
-            {
-                if (userId == Guid.Empty)
-                {
-                    return BadRequest("El ID del usuario es requerido.");
-                }
-
-
-                var query = new GetAvailableAuctionQuery(userId, priceBase);
-                var auction = await _mediator.Send(query);
-
-                if (auction == null || !auction.Any())
-                {
-                    return NotFound("No se encontraron Subastas disponibles.");
-                }
-
-                return Ok(auction);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error en GetAvailableAuction: {ex.Message}");
-                return StatusCode(500, "Ocurrió un error inesperado al obtener las subastas.");
-            }
-        }
 
 
         [HttpGet("name/auction/{name}")]
@@ -164,8 +131,9 @@ namespace AuctionMS.Controllers
         public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId)
         {
             try
+            
             {
-                var command = new UpdateAuctionCommand(id, UpdateAuctionDto, userId);
+                var command = new UpdateAuctionCommand(id, updateAuctionDto, userId);
                 var AuctionId = await _mediator.Send(command);
                 return Ok(AuctionId);
             }

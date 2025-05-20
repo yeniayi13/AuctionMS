@@ -9,7 +9,6 @@ namespace AuctionMS.Core.Repository
     {
         Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId);
         Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId);
-        Task<List<AuctionEntity?>> GetAvailableProductsAsync(AuctionUserId userId, decimal? priceBase = null, decimal? priceReserva = null);
 
         Task AddAsync(AuctionEntity auction);
         Task DeleteAsync(AuctionId id);

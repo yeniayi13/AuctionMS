@@ -1,0 +1,7 @@
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.csproj.AssemblyReference.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.AssemblyInfoInputs.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.AssemblyInfo.cs
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.csproj.CoreCompileInputs.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.sourcelink.json

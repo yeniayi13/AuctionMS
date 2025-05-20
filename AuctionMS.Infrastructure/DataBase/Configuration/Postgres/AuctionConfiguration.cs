@@ -8,51 +8,55 @@ using AuctionMS.Domain.Entities.Auction.ValueObjects;
 
 namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<AuctionEntity>
+    public class AuctionConfiguration : IEntityTypeConfiguration<AuctionEntity>
     {
         public void Configure(EntityTypeBuilder<AuctionEntity> builder)
         {
 
 
             builder.ToTable("Auction");
-            builder.HasKey(s => s.ProductId);
-            builder.Property(s => s.ProductId)
-                    .HasConversion(productId => productId.Value, value => ProductId.Create(value)!)
+            builder.HasKey(s => s.AuctionId);
+            builder.Property(s => s.AuctionId)
+                    .HasConversion(auctionId => auctionId.Value, value => AuctionId.Create(value)!)
                     .IsRequired();
 
-            builder.Property(s => s.ProductName)
-                    .HasConversion(productName => productName.Value, value => ProductName.Create(value)!)
+            builder.Property(s => s.AuctionName)
+                    .HasConversion(auctionName => auctionName.Value, value => AuctionName.Create(value)!)
                     .IsRequired();
 
-            builder.Property(s => s.ProductDescription)
-                    .HasConversion(productDescription => productDescription.Value, value => ProductDescription.Create(value)!)
+            builder.Property(s => s.AuctionDescription)
+                    .HasConversion(auctionDescription => auctionDescription.Value, value => AuctionDescription.Create(value)!)
                     .IsRequired();
 
-            builder.Property(s => s.ProductImage)
-                  .HasConversion(productImage => productImage.Url, value => ProductImage.Create(value)!)
+            builder.Property(s => s.AuctionImage)
+                  .HasConversion(auctionImage => auctionImage.Url, value => AuctionImage.Create(value)!)
                   .IsRequired();
 
-            builder.Property(s => s.ProductStock)
-                  .HasConversion(productStock => productStock.Value, value => ProductStock.Create(value)!)
+            builder.Property(s => s.AuctionCondiciones)
+                  .HasConversion(auctionCondiciones => auctionCondiciones.Value, value => AuctionCondiciones.Create(value)!)
                   .IsRequired();
 
-            builder.Property(s => s.ProductPrice)
-                                .HasConversion(productPrice => productPrice.Value, value => ProductPrice.Create(value)!)
+            builder.Property(s => s.AuctionPriceBase)
+                                .HasConversion(auctionPriceBase => auctionPriceBase.Value, value => AuctionPriceBase.Create(value)!)
                                 .IsRequired();
 
-            builder.Property(s => s.ProductAvilability)
-                    .HasConversion<string>()
-                    .IsRequired();
-            builder.Property(p => p.CategoryId)
-                   .IsRequired(); // La clave foránea no puede ser nula
 
-            builder.HasOne(p => p.Category)
-.WithMany(c => c.Products)
-.HasForeignKey(p => p.CategoryId)
-.OnDelete(DeleteBehavior.Cascade) // Ajusta según tu lógica de negocio
-.IsRequired();
-            builder.Property(s => s.ProductUserId)
-                               .HasConversion(ProductUserId => ProductUserId.Value, value => ProductUserId.Create(value)!)
+            builder.Property(s => s.AuctionPriceReserva)
+                                .HasConversion(auctionPriceReserva => auctionPriceReserva.Value, value => AuctionPriceReserva.Create(value)!)
+                                .IsRequired();
+
+            builder.Property(s => s.AuctionDuracion)
+                              .HasConversion(auctionDuracion => auctionDuracion.Value, value => AuctionDuracion.Create(value)!)
+                              .IsRequired();
+
+            builder.Property(s => s.AuctionIncremento)
+                             .HasConversion(auctionIncremento => auctionIncremento.Value, value => AuctionIncremento.Create(value)!)
+                             .IsRequired();
+
+
+
+            builder.Property(s => s.AuctionUserId)
+                               .HasConversion(AuctionUserId => AuctionUserId.Value, value => AuctionUserId.Create(value)!)
                                .IsRequired();
 
         }

@@ -5,9 +5,9 @@ namespace AuctionMS.Application.Auction.Commands
 {
     public class CreateAuctionCommand : IRequest<Guid>
     {
-        public CreateAuctionDto Product { get; set; }
+        public CreateAuctionDto Auction { get; set; }
 
-        public CreateAuctionMSCommand(CreateAuctionMSDto auction)
+        public CreateAuctionCommand(CreateAuctionDto auction)
         {
             Auction = auction;
         }

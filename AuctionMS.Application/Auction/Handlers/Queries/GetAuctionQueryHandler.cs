@@ -1,4 +1,4 @@
-﻿using AuctionMS.Common.Exceptions;
+﻿using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Core.Database;
 using AutoMapper;
 using MediatR;
@@ -10,7 +10,7 @@ using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Application.Auctions.Queries;
 
 
-namespace AuctionMS.Application.Products.Auction.Queries
+namespace AuctionMS.Application.Auction.Handlers.Queries
 {
     public class GetAuctionQueryHandler : IRequestHandler<GetAuctionQuery, GetAuctionDto>
     {

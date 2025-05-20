@@ -4,7 +4,7 @@ using AuctionMS.Core.Repository;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Common.Dtos.Auction.Response;
-using AuctionMS.Common.Exceptions;
+using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 
 namespace AuctionMS.Application.Auction.Handlers.Queries

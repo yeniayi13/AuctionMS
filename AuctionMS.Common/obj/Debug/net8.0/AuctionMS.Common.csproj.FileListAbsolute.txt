@@ -4,3 +4,13 @@ C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\n
 C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\AuctionMS.Common.AssemblyInfo.cs
 C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\AuctionMS.Common.csproj.CoreCompileInputs.cache
 C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\AuctionMS.Common.sourcelink.json
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\bin\Debug\net8.0\AuctionMS.Common.deps.json
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\bin\Debug\net8.0\AuctionMS.Common.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\bin\Debug\net8.0\AuctionMS.Common.pdb
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\bin\Debug\net8.0\AuctionMS.Domain.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\bin\Debug\net8.0\AuctionMS.Domain.pdb
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\AuctionM.AAAC79A4.Up2Date
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\AuctionMS.Common.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\refint\AuctionMS.Common.dll
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\AuctionMS.Common.pdb
+C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Common\obj\Debug\net8.0\ref\AuctionMS.Common.dll

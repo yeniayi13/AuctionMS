@@ -1,4 +1,4 @@
-﻿namespace ProductsMS.Infrastructure.Exceptions
+﻿namespace AuctionMS.Infrastructure.Exceptions
 {
     public class ValidatorException : Exception
     {

@@ -1,9 +1,12 @@
 ﻿using MediatR;
+using AutoMapper;
 using AuctionMS.Core.Repository;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Application.Auction.Commands;
 using AuctionMS.Infrastructure.Repositories;
 using AuctionMS.Common.Dtos.Auction.Response;
+using AuctionMS.Infrastructure.Exceptions;
+using AuctionMS.Core.RabbitMQ;
 
 namespace AuctionMS.Application.Auction.Handlers.Commands
 {
@@ -25,11 +28,11 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
             try
             {
                 var auctionId = AuctionId.Create(request.AuctionId);
-                var userId = AuctiontUserId.Create(request.UserId);
+                var userId = AuctionUserId.Create(request.UserId);
                 var auction = await _auctionRepository.GetByIdAsync(auctionId, userId);
                 await _auctionRepository.DeleteAsync(auctionId);
                 var auctionDto = _mapper.Map<GetAuctionDto>(auction);
-                await _eventBus.PublishMessageAsync(auctionDto, "productQueue", "PRODUCT_DELETED");
+                await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_DELETED");
                 return auctionId.Value;
             }
             catch (Exception ex)

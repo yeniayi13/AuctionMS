@@ -6,19 +6,18 @@ using AuctionMS.Application;
 using AuctionMS.Infrastructure;
 using AuctionMS.Infrastructure.Settings;
 using AuctionMS.Common.AutoMapper;
-using UserMs.Core.Database;
+using AuctionMS.Core.Database;
 using AuctionMS.Infrastructure.Database.Context.Mongo;
 using AuctionMS.Core.RabbitMQ;
 using AuctionMS.Infrastructure.RabbitMQ.Connection;
 using AuctionMS.Infrastructure.RabbitMQ.Consumer;
 using AuctionMS.Infrastructure.RabbitMQ;
-using AuctionMS.Common.Dtos.Product.Request;
-using AuctionMS.Common.Dtos.Product.Response;
-using AuctionMS.Domain.Entities.Products;
-using AuctionMS.Core.Service.Firebase;
-using AuctionMS.Infrastructure.Services.Firebase;
 using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Common.Dtos.Auction.Response;
+using AuctionMS.Domain.Entities.Auction;
+using AuctionMS.Core.Service.Firebase;
+using AuctionMS.Infrastructure.Services.Firebase;
+
 
 
 var builder = WebApplication.CreateBuilder(args);

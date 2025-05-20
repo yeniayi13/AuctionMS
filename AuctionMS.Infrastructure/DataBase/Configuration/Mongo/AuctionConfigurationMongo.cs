@@ -12,34 +12,36 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Mongo
     {
         public static void Configure(IMongoCollection<AuctionEntity> collection)
         {
-            // Índice único en AuctionId para evitar duplicados
+      
             var indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionId.Value);
             var indexOptions = new CreateIndexOptions { Unique = true };
             var indexModel = new CreateIndexModel<AuctionEntity>(indexKeysDefinition, indexOptions);
             collection.Indexes.CreateOne(indexModel);
 
-            // Índice en AuctionName para optimizar búsqueda por nombre
             indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionName.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
-            // Índice en ProductPrice para consultas de rango de precios
-            indexKeysDefinition = Builders<ProductEntity>.IndexKeys.Ascending(p => p.ProductPrice.Value);
+            
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionPriceBase.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
-            // Índice en ProductAvilability (considerando que es un ENUM)
-            indexKeysDefinition = Builders<ProductEntity>.IndexKeys.Ascending(p => p.ProductAvilability.ToString());
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionPriceReserva.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
-            // Índice en ProductStock para optimizar búsquedas por disponibilidad en inventario
-            indexKeysDefinition = Builders<ProductEntity>.IndexKeys.Ascending(p => p.ProductStock.Value);
+
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionCondiciones.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
-            // Índice en CategoryId para mejorar las relaciones entre categorías y productos
-            indexKeysDefinition = Builders<ProductEntity>.IndexKeys.Ascending(p => p.CategoryId.Value);
+
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionIncremento.Value);
+            collection.Indexes.CreateOne(indexKeysDefinition);
+
+
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionDuracion.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
             // Índice en ProductUserId para mejorar consultas por usuario propietario
-            indexKeysDefinition = Builders<ProductEntity>.IndexKeys.Ascending(p => p.ProductUserId.Value);
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(p => p.AuctionUserId.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
         }
     }
