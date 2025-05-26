@@ -40,7 +40,14 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Mongo
             indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionDuracion.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
-            // Índice en ProductUserId para mejorar consultas por usuario propietario
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionCantidadProducto.Value);
+            collection.Indexes.CreateOne(indexKeysDefinition);
+
+            // Índice en AuctionUserId y AuctionProductId para mejorar consultas por usuario propietario
+
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(p => p.AuctionProductId.Value);
+            collection.Indexes.CreateOne(indexKeysDefinition);
+
             indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(p => p.AuctionUserId.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
         }

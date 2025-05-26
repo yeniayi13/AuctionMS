@@ -1,8 +1,11 @@
-﻿namespace AuctionMS.Infrastructure.Exceptions
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AuctionMS.Infrastructure.Exceptions
 {
 
+    [ExcludeFromCodeCoverage]
 
-        public class NullAttributeException : Exception
+    public class NullAttributeException : Exception
         {
             public NullAttributeException() { }
 

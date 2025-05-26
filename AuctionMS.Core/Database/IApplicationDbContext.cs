@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AuctionMS.Domain.Entities.Auction;
-using AuctionMS.Core.Database;
 
 
 namespace AuctionMS.Core.Database

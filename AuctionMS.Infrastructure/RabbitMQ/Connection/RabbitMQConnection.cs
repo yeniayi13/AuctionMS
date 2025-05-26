@@ -1,21 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using RabbitMQ.Client;
+using AuctionMS.Core.RabbitMQ;
 
-public class RabbitMQConnection
+public class RabbitMQConnection : IConnectionRabbbitMQ
 {
     private IConnection _connection;
     private IChannel _channel;
+    private readonly IConnectionFactory _connectionFactory;
+
+    public RabbitMQConnection(IConnectionFactory connectionFactory)
+    {
+        _connectionFactory = connectionFactory;
+    }
 
     public async Task InitializeAsync()
     {
-        var factory = new ConnectionFactory()
-        {
-            HostName = "localhost",
-            UserName = "guest",
-            Password = "guest"
-        };
-
-        _connection = await factory.CreateConnectionAsync();
+        // 🔹 Usa la instancia inyectada en el constructor
+        _connection = await _connectionFactory.CreateConnectionAsync(CancellationToken.None);
 
         if (_connection == null)
         {
@@ -29,7 +30,7 @@ public class RabbitMQConnection
             throw new InvalidOperationException("No se pudo crear el canal de comunicación con RabbitMQ.");
         }
 
-        await _channel.QueueDeclareAsync(queue: "auctionQueue", durable: true, exclusive: false, autoDelete: false);
+        await _channel.QueueDeclareAsync("auctionQueue", true, false, false);
     }
 
     public IChannel GetChannel()

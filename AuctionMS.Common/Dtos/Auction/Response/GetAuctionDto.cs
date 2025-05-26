@@ -12,7 +12,7 @@ namespace AuctionMS.Common.Dtos.Auction.Response
 {
     public class GetAuctionDto
     {
-        public Guid AuctionId { get; init; } = Guid.NewGuid(); // Genera un nuevo GUID por defecto
+        public Guid AuctionId { get; init; } 
         public string? AuctionName { get; init; }
         public string? AuctionImage { get; init; }
         public decimal AuctionPriceBase { get; init; }
@@ -23,6 +23,8 @@ namespace AuctionMS.Common.Dtos.Auction.Response
 
         public decimal AuctionDuracion { get; init; }
         public string? AuctionCondiciones { get; init; }
+
+        public string? AuctionCantidadProducto { get; init; }
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }// Genera un nuevo GUID por defecto
     }

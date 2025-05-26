@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Firebase.Auth;
+//using Firebase.Auth;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using AuctionMS.Core.Database;
@@ -130,6 +130,17 @@ namespace AuctionMS.Infrastructure.Repositories
             return _dbContext.Auction.AnyAsync(x => x.AuctionId == id);
         }
 
-        
+        public async Task<AuctionEntity> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId)
+        {
+            var ahora = DateTime.UtcNow;
+
+            return await _dbContext.Auction
+                .Where(a =>
+                    a.AuctionProductId.Value == productId.Value &&  a.AuctionDuracion.FechaInicio <= ahora &&  a.AuctionDuracion.FechaFin >= ahora)
+                .FirstOrDefaultAsync();
+        }
+
+
+
     }
 }

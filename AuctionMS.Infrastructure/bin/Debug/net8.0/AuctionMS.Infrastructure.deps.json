@@ -14,6 +14,7 @@
           "FirebaseAdmin": "3.2.0",
           "FirebaseAuthentication.net": "4.1.0",
           "FirebaseStorage.net": "1.0.3",
+          "FluentValidation": "12.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Design": "9.0.4",
@@ -106,6 +107,14 @@
           "lib/netstandard1.1/Firebase.Storage.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FluentValidation/12.0.0": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.0.0"
           }
         }
       },
@@ -1669,7 +1678,8 @@
           "AuctionMS.Common": "1.0.0",
           "AuctionMS.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
-          "MongoDB.Driver": "3.4.0"
+          "MongoDB.Driver": "3.4.0",
+          "RabbitMQ.Client": "7.1.2"
         },
         "runtime": {
           "AuctionMS.Core.dll": {
@@ -1745,6 +1755,13 @@
       "sha512": "sha512-SupDHNUwNqcVwEo/HdFEWAXveQe3fU16q4wrrCxUVwP0a77zaddKp7vo2sHIW56DAsJn/gUfjDK3w0MuBhvzjQ==",
       "path": "firebasestorage.net/1.0.3",
       "hashPath": "firebasestorage.net.1.0.3.nupkg.sha512"
+    },
+    "FluentValidation/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8NVLxtMUXynRHJIX3Hn1ACovaqZIJASufXIIFkD0EUbcd5PmMsL1xUD5h548gCezJ5BzlITaR9CAMrGe29aWpA==",
+      "path": "fluentvalidation/12.0.0",
+      "hashPath": "fluentvalidation.12.0.0.nupkg.sha512"
     },
     "Google.Api.Gax/4.8.0": {
       "type": "package",

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuctionMS.Domain.Entities.EstadoSubasta
+namespace AuctionMS.Core.RabbitMQ
 {
-    internal class EstadoEntity
+    public interface IRabbitMQConsumer
     {
+        Task ConsumeMessagesAsync(string queueName);
     }
 }

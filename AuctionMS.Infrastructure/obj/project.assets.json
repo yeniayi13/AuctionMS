@@ -114,6 +114,19 @@
           "lib/netstandard1.1/Firebase.Storage.dll": {}
         }
       },
+      "FluentValidation/12.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Google.Api.Gax/4.8.0": {
         "type": "package",
         "dependencies": {
@@ -2784,7 +2797,8 @@
           "AuctionMS.Common": "1.0.0",
           "AuctionMS.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
-          "MongoDB.Driver": "3.4.0"
+          "MongoDB.Driver": "3.4.0",
+          "RabbitMQ.Client": "7.1.2"
         },
         "compile": {
           "bin/placeholder/AuctionMS.Core.dll": {}
@@ -2928,6 +2942,21 @@
         "firebasestorage.net.1.0.3.nupkg.sha512",
         "firebasestorage.net.nuspec",
         "lib/netstandard1.1/Firebase.Storage.dll"
+      ]
+    },
+    "FluentValidation/12.0.0": {
+      "sha512": "8NVLxtMUXynRHJIX3Hn1ACovaqZIJASufXIIFkD0EUbcd5PmMsL1xUD5h548gCezJ5BzlITaR9CAMrGe29aWpA==",
+      "type": "package",
+      "path": "fluentvalidation/12.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.12.0.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net8.0/FluentValidation.dll",
+        "lib/net8.0/FluentValidation.xml"
       ]
     },
     "Google.Api.Gax/4.8.0": {
@@ -8782,6 +8811,7 @@
       "FirebaseAdmin >= 3.2.0",
       "FirebaseAuthentication.net >= 4.1.0",
       "FirebaseStorage.net >= 1.0.3",
+      "FluentValidation >= 12.0.0",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.3.0",
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
@@ -8866,6 +8896,10 @@
           "FirebaseStorage.net": {
             "target": "Package",
             "version": "[1.0.3, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[12.0.0, )"
           },
           "Microsoft.AspNetCore.Http.Abstractions": {
             "target": "Package",

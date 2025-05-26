@@ -1,12 +1,14 @@
 ﻿//using AuctionMS.Common.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AuctionMS.Domain.Entities.Auction.ValueObjects
 {
+    [ExcludeFromCodeCoverage]
     public partial class AuctionDescription
     {
         private AuctionDescription(string value) => Value = value;

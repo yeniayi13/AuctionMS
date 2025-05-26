@@ -1,13 +1,16 @@
-﻿namespace AuctionMS.Infrastructure.Exceptions
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AuctionMS.Infrastructure.Exceptions
 {
+    [ExcludeFromCodeCoverage]
     public class ValidatorException : Exception
     {
-        public ValidatorException()
+        public ValidatorException(List<global::FluentValidation.Results.ValidationFailure> errors)
         {
+            Errors = errors;
         }
 
-        public ValidatorException(string message)
-            : base(message)
+        public ValidatorException(string message) : base(message)
         {
         }
 
@@ -15,5 +18,7 @@
             : base(message, inner)
         {
         }
+
+        public List<global::FluentValidation.Results.ValidationFailure> Errors { get; }
     }
 }

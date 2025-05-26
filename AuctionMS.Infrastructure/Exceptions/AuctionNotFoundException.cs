@@ -1,5 +1,8 @@
-﻿namespace AuctionMS.Infrastructure.Exceptions
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AuctionMS.Infrastructure.Exceptions
 {
+    [ExcludeFromCodeCoverage]
     public class AuctionNotFoundException : Exception
     {
         public AuctionNotFoundException() { }

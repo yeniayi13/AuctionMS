@@ -18,8 +18,11 @@ namespace AuctionMS.Common.Dtos.Auction.Request
 
         public decimal AuctionIncremento { get; init; }
 
-        public decimal AuctionDuracion { get; init; }
+        public DateTime AuctionDuracion { get; init; }
         public string? AuctionCondiciones { get; init; }
+
+        public int AuctionCantidadProducto { get; init; }
+
 
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }// Genera un nuevo GUID por defecto

@@ -9,9 +9,12 @@ namespace AuctionMS.Application.Auction.Queries
     {
 
         public Guid UserId { get; set; }
-        public GetAllAuctionQuery(Guid userId)
+        public Guid ProductId { get; set; }
+
+        public GetAllAuctionQuery(Guid userId, Guid productId)
         {
             UserId = userId;
+            ProductId = productId;
         }
     }
 }

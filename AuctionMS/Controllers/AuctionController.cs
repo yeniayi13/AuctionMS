@@ -7,6 +7,7 @@ using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Application.Auctions.Queries;
+using AuctionMS.Infrastructure.Repositories;
 
 namespace AuctionMS.Controllers
 {
@@ -24,13 +25,13 @@ namespace AuctionMS.Controllers
         }
 
         //[Authorize(Policy = "AdminOnly")]
-        [HttpPost]
-        public async Task<IActionResult> CreateAuction([FromBody] CreateAuctionDto createAuctionDto)
+        [HttpPost("addAuction/{userId}")]
+        public async Task<IActionResult> CreateAuction([FromBody] CreateAuctionDto createAuctionDto, [FromRoute] Guid userId, [FromRoute] Guid productId)
         {
             try
             {
                 
-                var command = new CreateAuctionCommand(createAuctionDto);
+                var command = new CreateAuctionCommand(createAuctionDto, userId, productId );
                 var auctionId = await _mediator.Send(command);
 
                 return Ok(auctionId);
@@ -70,8 +71,13 @@ namespace AuctionMS.Controllers
         {
             try
             {
-                var query = new GetAllAuctionQuery(userId);
+                var query = new GetAllAuctionQuery(userId, productId);
                 var Auction = await _mediator.Send(query);
+                
+                if (Auction == null || !Auction.Any()) {
+                    return NotFound("No Auctions found");
+                }
+
                 return Ok(Auction);
             }
             catch (AuctionNotFoundException e)
@@ -224,6 +230,36 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, "An error occurred while trying to delete an Auction");
             }
         }
+
+        [HttpGet("producto-activo/{productId}")] //Trae los productos activos de una subasta
+        public async Task<IActionResult> GetProductoActivo(
+     [FromRoute] Guid productId,
+     [FromQuery] Guid userId)
+        {
+            try
+            {
+                if (productId == Guid.Empty)
+                    return BadRequest("El ID del producto es requerido.");
+
+                var query = new GetProductAuctionQuery(productId, userId);
+                var auctionDto = await _mediator.Send(query);
+
+                if (auctionDto == null)
+                    return NotFound("No hay una subasta activa para este producto.");
+
+                return Ok(auctionDto);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error al obtener subasta activa del producto: {Message}", e.Message);
+                return StatusCode(500, "Error inesperado.");
+            }
+        }
+
+
+
+
+
 
 
     }

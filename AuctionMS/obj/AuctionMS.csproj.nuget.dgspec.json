@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj": {
+                "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj"
+              },
               "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj": {
                 "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj"
-              },
-              "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj": {
-                "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Domain\\AuctionMS.Domain.csproj"
               },
               "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj": {
                 "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\SubastaMS\\AuctionMS\\AuctionMS.Infrastructure\\AuctionMS.Infrastructure.csproj"
@@ -63,7 +63,7 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.11.0, )"
+              "version": "[12.0.0, )"
             },
             "MediatR": {
               "target": "Package",
@@ -231,6 +231,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[3.4.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[7.1.2, )"
             }
           },
           "imports": [
@@ -394,6 +398,10 @@
             "FirebaseStorage.net": {
               "target": "Package",
               "version": "[1.0.3, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",

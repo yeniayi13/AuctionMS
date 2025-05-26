@@ -14,5 +14,8 @@ namespace AuctionMS.Core.Repository
         Task DeleteAsync(AuctionId id);
         Task<List<AuctionEntity>> GetAllAsync(AuctionUserId userId);
         Task<AuctionEntity?> UpdateAsync(AuctionEntity auction);
+        Task<AuctionEntity> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId);
+
+
     }
 }

@@ -8,26 +8,28 @@ using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Infrastructure.RabbitMQ.Consumer;
+using AuctionMS.Core.RabbitMQ;
 
 namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
 {
-    public class RabbitMQConsumer
+    public class RabbitMQConsumer : IRabbitMQConsumer
     {
-        private readonly RabbitMQConnection _rabbitMQConnection;
-        private readonly MongoClient _mongoClient;
+        private readonly IConnectionRabbbitMQ _rabbitMQConnection;
+        private readonly IMongoClient _mongoClient;
         private readonly IMongoDatabase _database;
         private readonly IMongoCollection<GetAuctionDto> _collection;
-        public RabbitMQConsumer(RabbitMQConnection rabbitMQConnection)
+        public RabbitMQConsumer(IConnectionRabbbitMQ rabbitMQConnection, IMongoCollection<GetAuctionDto> collection)
         {
             _rabbitMQConnection = rabbitMQConnection;
 
             // 🔹 Conexión a MongoDB Atlas
             _mongoClient = new MongoClient("mongodb+srv://paascanio20:6CJrUJ5uhG2TcWMo@cluster0.mix2yla.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
             _database = _mongoClient.GetDatabase("AuctionMS");
-            _collection = _database.GetCollection<GetAuctionDto>("Auction");
+            _collection = collection;
 
         }
 
+        public RabbitMQConsumer() { }
 
         public async Task ConsumeMessagesAsync(string queueName)
         {
@@ -63,6 +65,7 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
                             .Set(a => a.AuctionCondiciones, eventMessageD.Data.AuctionCondiciones)
                             .Set(a => a.AuctionDuracion, eventMessageD.Data.AuctionDuracion)
                             .Set(a => a.AuctionIncremento, eventMessageD.Data.AuctionIncremento)
+                             .Set(a => a.AuctionCantidadProducto, eventMessageD.Data.AuctionCantidadProducto)
                             .Set(a => a.AuctionUserId, eventMessageD.Data.AuctionUserId)
                             .Set(a => a.AuctionProductId, eventMessageD.Data.AuctionProductId);
 
@@ -71,13 +74,13 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
 
 
                         await _collection.UpdateOneAsync(filter, update);
-                        Console.WriteLine($"Usuario actualizado en MongoDB: {JsonConvert.SerializeObject(eventMessageD.Data)}");
+                        Console.WriteLine($"Subasta actualizado en MongoDB: {JsonConvert.SerializeObject(eventMessageD.Data)}");
                     }
                     else if (eventMessageD?.EventType == "AUCTION_DELETED")
                     {
                         var filter = Builders<GetAuctionDto>.Filter.Eq("AuctionId", eventMessageD.Data.AuctionId);
                         await _collection.DeleteOneAsync(filter);
-                        Console.WriteLine($"Usuario eliminado en MongoDB con ID: {eventMessageD.Data.AuctionUserId}");
+                        Console.WriteLine($"Subasta eliminado en MongoDB con ID: {eventMessageD.Data.AuctionId}");
                     }
                    
 

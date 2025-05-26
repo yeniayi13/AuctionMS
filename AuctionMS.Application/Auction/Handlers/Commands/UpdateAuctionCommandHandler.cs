@@ -3,8 +3,8 @@ using AuctionMS.Core.Repository;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Application.Auction.Commands;
+using AuctionMS.Application.Auction.Validators.Auctions;
 using AuctionMS.Core.RabbitMQ;
-using AuctionMS.Infrastructure.Repositories;
 using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Common.Dtos.Auction.Request;
 
@@ -25,13 +25,30 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
         {
             try
             {
-                Console.WriteLine($"Actualizando subasta: {request.Id} para el usuario: {request.UserId} y para el producto: {request.ProductId} "); // Agregar log para depuración
+                if (request == null)
+                {
+                    throw new ArgumentNullException(nameof(request), "Request cannot be null.");
+                }
+
+                if (request.Auction == null)
+                {
+                    throw new ArgumentNullException(nameof(request.Auction), "Auction cannot be null.");
+                }
+
+
+     
                 var oldAuction = await _auctionRepository.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!, AuctionProductId.Create(request.ProductId)!);
 
-
+                //Valido los datos de entrada
+                var validator = new UpdateAuctionEntityValidator();
+                var validationResult = await validator.ValidateAsync(request.Auction, cancellationToken);
+                if (!validationResult.IsValid)
+                {
+                    throw new FluentValidation.ValidationException(validationResult.Errors);
+                }
                 if (oldAuction == null) throw new AuctionNotFoundException("Auction not found");
 
-               
+
 
                 //Crear el objeto actualizado con los cambios
                 var updatedAuction = AuctionEntity.Update(
@@ -42,7 +59,10 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     request.Auction.AuctionPriceReserva != null ? AuctionPriceReserva.Create(request.Auction.AuctionPriceReserva) : oldAuction.AuctionPriceReserva,
                     request.Auction.AuctionDescription != null ? AuctionDescription.Create(request.Auction.AuctionDescription) : oldAuction.AuctionDescription,
                     request.Auction.AuctionIncremento != null ? AuctionIncremento.Create(request.Auction.AuctionIncremento) : oldAuction.AuctionIncremento,
-                    request.Auction.AuctionDuracion != null ? AuctionDuracion.Create(request.Auction.AuctionDuracion) : oldAuction.AuctionDuracion,
+                    request.Auction.AuctionCantidadProducto != null ? AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto, request.Auction.AuctionCantidadProducto) : oldAuction.AuctionCantidadProducto,
+
+                    request.Auction.AuctionDuracion != null ? AuctionDuracion.Create(request.Auction.AuctionDuracion, request.Auction.AuctionDuracion) : oldAuction.AuctionDuracion,
+
                     request.Auction.AuctionCondiciones != null ? AuctionCondiciones.Create(request.Auction.AuctionCondiciones) : oldAuction.AuctionCondiciones,
                     request.Auction.AuctionUserId != null ? AuctionUserId.Create(request.Auction.AuctionUserId) : oldAuction.AuctionUserId,
                      request.Auction.AuctionProductId != null ? AuctionProductId.Create(request.Auction.AuctionProductId) : oldAuction.AuctionProductId
@@ -59,7 +79,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error en UpdateAuctionCommandHandler: {ex.Message}");
+                
                 throw;
             }
         }

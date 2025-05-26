@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using AuctionMS.Core.Database;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AuctionMS.Infrastructure.Database
 {
+
+    [ExcludeFromCodeCoverage]
     public class DbContextTransactionProxy : IDbContextTransactionProxy
     {
 

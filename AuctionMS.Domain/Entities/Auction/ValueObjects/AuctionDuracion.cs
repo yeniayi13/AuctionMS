@@ -10,21 +10,32 @@ using System.Text.RegularExpressions;
 
 namespace AuctionMS.Domain.Entities.Auction.ValueObjects
 {
-
     public partial class AuctionDuracion
+    {
+        private AuctionDuracion(DateTime fechaInicio, DateTime fechaFin)
         {
-            private AuctionDuracion(decimal value) => Value = value;
-
-            public static AuctionDuracion Create(decimal value)
-            {
-                if (value <= 0)
-                    throw new ArgumentException("La duración de la subasta debe ser mayor a cero.");
-
-                return new AuctionDuracion(value);
-            }
-
-            public decimal Value { get; init; } // Representa duración en horas
+            FechaInicio = fechaInicio;
+            FechaFin = fechaFin;
+            DuracionEnHoras = (decimal)(fechaFin - fechaInicio).TotalHours;
         }
+
+        public static AuctionDuracion Create(DateTime fechaInicio, DateTime fechaFin)
+        {
+            if (fechaFin <= fechaInicio)
+                throw new ArgumentException("La fecha de fin debe ser posterior a la fecha de inicio.");
+
+            return new AuctionDuracion(fechaInicio, fechaFin);
+        }
+
+        public DateTime FechaInicio { get; init; }
+        public DateTime FechaFin { get; init; }
+        public decimal DuracionEnHoras { get; init; }
+
+        // ✅ Esta propiedad permite usar `.Value` para indexar
+        public DateTime Value => FechaInicio;
     }
+
+}
+
 
 

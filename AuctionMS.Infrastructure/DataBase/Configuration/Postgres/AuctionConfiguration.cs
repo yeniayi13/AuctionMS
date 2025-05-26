@@ -46,11 +46,15 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
                                 .IsRequired();
 
             builder.Property(s => s.AuctionDuracion)
-                              .HasConversion(auctionDuracion => auctionDuracion.Value, value => AuctionDuracion.Create(value)!)
+                              .HasConversion(auctionDuracion => auctionDuracion.Value, value => AuctionDuracion.Create(value,value)!)
                               .IsRequired();
 
             builder.Property(s => s.AuctionIncremento)
                              .HasConversion(auctionIncremento => auctionIncremento.Value, value => AuctionIncremento.Create(value)!)
+                             .IsRequired();
+
+            builder.Property(s => s.AuctionCantidadProducto)
+                             .HasConversion(auctionCantidadProducto => auctionCantidadProducto.Value, value => AuctionCantidadProducto.Create(value,value)!)
                              .IsRequired();
 
 

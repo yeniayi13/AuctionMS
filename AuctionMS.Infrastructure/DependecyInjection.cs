@@ -6,10 +6,12 @@ using AuctionMS.Core.Repository;
 using AuctionMS.Infrastructure.Repositories;
 using AuctionMS.Common.Primitives;
 using AuctionMS.Infrastructure.Database.Context.Postgres;
+using System.Diagnostics.CodeAnalysis;
 
 
 namespace AuctionMS.Infrastructure
 {
+    [ExcludeFromCodeCoverage]
     public static class DependencyInjection
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)

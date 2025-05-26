@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AuctionMS.Common\AuctionMS.Common.csproj" />
     <ProjectReference Include="..\AuctionMS.Core\AuctionMS.Core.csproj" />
-    <ProjectReference Include="..\AuctionMS.Domain\AuctionMS.Domain.csproj" />
     <ProjectReference Include="..\AuctionMS.Infrastructure\AuctionMS.Infrastructure.csproj" />
   </ItemGroup>
 

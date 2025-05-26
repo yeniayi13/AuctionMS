@@ -6,9 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AuctionMS.Core.Database;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AuctionMS.Infrastructure.Database.Context.Mongo
 {
+    [ExcludeFromCodeCoverage]
     public class ApplicationDbContextMongo : IApplicationDbContextMongo
     {
         private readonly IMongoDatabase _database;

@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Common.Dtos.Auction.Response;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AuctionMS.Common.AutoMapper
 {
+    [ExcludeFromCodeCoverage]
     public class AuctionProfile : Profile
     {
         public AuctionProfile()
