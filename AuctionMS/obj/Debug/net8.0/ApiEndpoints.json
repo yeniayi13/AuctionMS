@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_8",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_10",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -16,22 +16,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "AuctionMS.Controllers.AuctionController",
-    "Method": "CreateAuction",
-    "RelativePath": "auctioneer/auction",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createAuctionDto",
-        "Type": "AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
@@ -139,6 +123,32 @@
   },
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "CreateAuction",
+    "RelativePath": "auctioneer/auction/addAuction/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createAuctionDto",
+        "Type": "AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetAllNameAuction",
     "RelativePath": "auctioneer/auction/name/auction/{name}",
     "HttpMethod": "GET",
@@ -164,17 +174,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AuctionMS.Controllers.FirebaseController",
-    "Method": "UploadImage",
-    "RelativePath": "auctioner/firebase/upload",
-    "HttpMethod": "POST",
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "GetProductoActivo",
+    "RelativePath": "auctioneer/auction/producto-activo/{productId}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "AuctionMS.Common.Dtos.Firebase.ImageDto",
+        "Name": "productId",
+        "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

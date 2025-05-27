@@ -5,26 +5,46 @@
     "version": "1.0"
   },
   "paths": {
-    "/auctioneer/auction": {
+    "/auctioneer/auction/addAuction/{userId}": {
       "post": {
         "tags": [
           "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateAuctionDto"
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateAuctionDto"
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateAuctionDto"
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto"
               }
             }
           }
@@ -34,7 +54,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/auctioneer/auction": {
       "get": {
         "tags": [
           "Auction"
@@ -175,17 +197,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateAuctionDto"
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateAuctionDto"
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateAuctionDto"
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto"
               }
             }
           }
@@ -234,6 +256,37 @@
         }
       }
     },
+    "/auctioneer/auction/producto-activo/{productId}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/": {
       "get": {
         "tags": [
@@ -252,42 +305,11 @@
           }
         }
       }
-    },
-    "/auctioner/firebase/upload": {
-      "post": {
-        "tags": [
-          "Firebase"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ImageDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ImageDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ImageDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
-      "CreateAuctionDto": {
+      "AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto": {
         "type": "object",
         "properties": {
           "auctionId": {
@@ -318,13 +340,21 @@
             "type": "number",
             "format": "double"
           },
-          "auctionDuracion": {
-            "type": "number",
-            "format": "double"
+          "fechaInicioSubasta": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaFinSubasta": {
+            "type": "string",
+            "format": "date-time"
           },
           "auctionCondiciones": {
             "type": "string",
             "nullable": true
+          },
+          "auctionCantidadProducto": {
+            "type": "integer",
+            "format": "int32"
           },
           "auctionUserId": {
             "type": "string",
@@ -337,21 +367,7 @@
         },
         "additionalProperties": false
       },
-      "ImageDto": {
-        "type": "object",
-        "properties": {
-          "fileName": {
-            "type": "string",
-            "nullable": true
-          },
-          "fileBase64": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdateAuctionDto": {
+      "AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto": {
         "type": "object",
         "properties": {
           "auctionID": {
@@ -382,13 +398,21 @@
             "type": "number",
             "format": "double"
           },
-          "auctionDuracion": {
-            "type": "number",
-            "format": "double"
+          "auctionFechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "auctionFechaFin": {
+            "type": "string",
+            "format": "date-time"
           },
           "auctionCondiciones": {
             "type": "string",
             "nullable": true
+          },
+          "auctionCantidadProducto": {
+            "type": "integer",
+            "format": "int32"
           },
           "auctionUserId": {
             "type": "string",
@@ -401,6 +425,25 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Keycloak": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://localhost:18080/realms/auth/protocol/openid-connect/auth",
+            "scopes": {
+              "openid": "openid",
+              "profile": "profile"
+            }
+          }
+        }
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Keycloak": [ ]
+    }
+  ]
 }
