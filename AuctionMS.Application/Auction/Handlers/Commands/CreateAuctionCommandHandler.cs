@@ -63,8 +63,8 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     AuctionDescription.Create(request.Auction.AuctionDescription),
                     AuctionIncremento.Create(request.Auction.AuctionIncremento),
                     AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto),            
-                    AuctionFechaInicio.Create(request.Auction.FechaInicioSubasta),
-                    AuctionFechaFin.Create(request.Auction.FechaFinSubasta),
+                    AuctionFechaInicio.Create(request.Auction.AuctionFechaInicio),
+                    AuctionFechaFin.Create(request.Auction.AuctionFechaFin),
                     AuctionCondiciones.Create(request.Auction.AuctionCondiciones),
                     AuctionUserId.Create(request.Auction.AuctionUserId), // Asignar el ID del usuario
                     AuctionProductId.Create(request.Auction.AuctionProductId)
