@@ -130,13 +130,15 @@ namespace AuctionMS.Infrastructure.Repositories
             return _dbContext.Auction.AnyAsync(x => x.AuctionId == id);
         }
 
-        public async Task<AuctionEntity> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId)
+        public async Task<AuctionEntity?> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId)
         {
             var ahora = DateTime.UtcNow;
 
             return await _dbContext.Auction
                 .Where(a =>
-                    a.AuctionProductId.Value == productId.Value &&  a.AuctionDuracion.FechaInicio <= ahora &&  a.AuctionDuracion.FechaFin >= ahora)
+                    a.AuctionProductId.Value == productId.Value &&
+                    a.AuctionFechaInicio.Value <= ahora &&
+                    a.AuctionFechaFin.Value >= ahora)
                 .FirstOrDefaultAsync();
         }
 

@@ -7,32 +7,22 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
 {
     public class AuctionCantidadProducto
     {
-        private AuctionCantidadProducto(int cantidad, int stockRestante)
-        {
-            Cantidad = cantidad;
-            StockRestante = stockRestante;
+            private AuctionCantidadProducto(int cantidad)
+            {
+                Cantidad = cantidad;
+            }
+
+            public static AuctionCantidadProducto Create(int cantidad)
+            {
+                if (cantidad <= 0)
+                    throw new ArgumentException("La cantidad a subastar debe ser mayor a cero.");
+
+                return new AuctionCantidadProducto(cantidad);
+            }
+
+            public int Cantidad { get; init; }
+
+            // Valor expuesto para facilitar búsquedas e indexaciones
+            public int Value => Cantidad;
         }
-
-        public static AuctionCantidadProducto Create(int cantidad, int stockActual)
-        {
-            if (cantidad <= 0)
-                throw new ArgumentException("La cantidad a subastar debe ser mayor a cero.");
-
-            if (cantidad > stockActual)
-                throw new ArgumentException("La cantidad a subastar no puede ser mayor al stock disponible.");
-
-            int stockRestante = stockActual - cantidad;
-
-            return new AuctionCantidadProducto(cantidad, stockRestante);
-        }
-
-
-
-        public int Cantidad { get; init; }
-        public int StockRestante { get; init; }
-
-        // ✅ Agrega esta propiedad para indexar
-        public int Value => Cantidad;
     }
-}
-

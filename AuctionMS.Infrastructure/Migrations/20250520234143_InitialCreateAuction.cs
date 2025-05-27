@@ -1,4 +1,5 @@
 ﻿using System;
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -22,7 +23,8 @@ namespace AuctionMS.Infrastructure.Migrations
                     AuctionPriceReserva = table.Column<decimal>(type: "numeric", nullable: false),
                     AuctionDescription = table.Column<string>(type: "text", nullable: false),
                     AuctionIncremento = table.Column<decimal>(type: "numeric", nullable: false),
-                    AuctionDuracion = table.Column<decimal>(type: "numeric", nullable: false),
+               
+
                     AuctionCondiciones = table.Column<string>(type: "text", nullable: false),
                     AuctionUserId = table.Column<Guid>(type: "uuid", nullable: false),
                     AuctionProductId = table.Column<Guid>(type: "uuid", nullable: false),

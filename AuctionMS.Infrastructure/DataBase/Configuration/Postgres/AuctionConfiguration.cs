@@ -45,8 +45,12 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
                                 .HasConversion(auctionPriceReserva => auctionPriceReserva.Value, value => AuctionPriceReserva.Create(value)!)
                                 .IsRequired();
 
-            builder.Property(s => s.AuctionDuracion)
-                              .HasConversion(auctionDuracion => auctionDuracion.Value, value => AuctionDuracion.Create(value,value)!)
+            builder.Property(s => s.AuctionFechaInicio)
+                              .HasConversion(auctionFechaInicio => auctionFechaInicio.Value, value => AuctionFechaInicio.Create(value)!)
+                              .IsRequired();
+
+            builder.Property(s => s.AuctionFechaFin)
+                              .HasConversion(auctionFechaFin => auctionFechaFin.Value, value => AuctionFechaFin.Create(value)!)
                               .IsRequired();
 
             builder.Property(s => s.AuctionIncremento)
@@ -54,7 +58,7 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
                              .IsRequired();
 
             builder.Property(s => s.AuctionCantidadProducto)
-                             .HasConversion(auctionCantidadProducto => auctionCantidadProducto.Value, value => AuctionCantidadProducto.Create(value,value)!)
+                             .HasConversion(auctionCantidadProducto => auctionCantidadProducto.Value, value => AuctionCantidadProducto.Create(value)!)
                              .IsRequired();
 
 

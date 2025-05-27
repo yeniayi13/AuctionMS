@@ -35,9 +35,12 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Mongo
 
             indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionIncremento.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
+          
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionFechaInicio.Value);
+            collection.Indexes.CreateOne(indexKeysDefinition);
 
 
-            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionDuracion.Value);
+            indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionFechaFin.Value);
             collection.Indexes.CreateOne(indexKeysDefinition);
 
             indexKeysDefinition = Builders<AuctionEntity>.IndexKeys.Ascending(a => a.AuctionCantidadProducto.Value);

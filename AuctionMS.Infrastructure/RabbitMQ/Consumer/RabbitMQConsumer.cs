@@ -63,7 +63,8 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
 
                             .Set(a => a.AuctionDescription, eventMessageD.Data.AuctionDescription)
                             .Set(a => a.AuctionCondiciones, eventMessageD.Data.AuctionCondiciones)
-                            .Set(a => a.AuctionDuracion, eventMessageD.Data.AuctionDuracion)
+                            .Set(a => a.AuctionFechaInicio, eventMessageD.Data.AuctionFechaInicio)
+                            .Set(a => a.AuctionFechaFin, eventMessageD.Data.AuctionFechaFin)
                             .Set(a => a.AuctionIncremento, eventMessageD.Data.AuctionIncremento)
                              .Set(a => a.AuctionCantidadProducto, eventMessageD.Data.AuctionCantidadProducto)
                             .Set(a => a.AuctionUserId, eventMessageD.Data.AuctionUserId)

@@ -59,10 +59,10 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     request.Auction.AuctionPriceReserva != null ? AuctionPriceReserva.Create(request.Auction.AuctionPriceReserva) : oldAuction.AuctionPriceReserva,
                     request.Auction.AuctionDescription != null ? AuctionDescription.Create(request.Auction.AuctionDescription) : oldAuction.AuctionDescription,
                     request.Auction.AuctionIncremento != null ? AuctionIncremento.Create(request.Auction.AuctionIncremento) : oldAuction.AuctionIncremento,
-                    request.Auction.AuctionCantidadProducto != null ? AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto, request.Auction.AuctionCantidadProducto) : oldAuction.AuctionCantidadProducto,
+                    request.Auction.AuctionCantidadProducto != null ? AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto) : oldAuction.AuctionCantidadProducto,
 
-                    request.Auction.AuctionDuracion != null ? AuctionDuracion.Create(request.Auction.AuctionDuracion, request.Auction.AuctionDuracion) : oldAuction.AuctionDuracion,
-
+                    request.Auction.AuctionFechaInicio != null ? AuctionFechaInicio.Create(request.Auction.AuctionFechaInicio) : oldAuction.AuctionFechaInicio,
+                     request.Auction.AuctionFechaFin != null ? AuctionFechaFin.Create(request.Auction.AuctionFechaFin) : oldAuction.AuctionFechaFin,
                     request.Auction.AuctionCondiciones != null ? AuctionCondiciones.Create(request.Auction.AuctionCondiciones) : oldAuction.AuctionCondiciones,
                     request.Auction.AuctionUserId != null ? AuctionUserId.Create(request.Auction.AuctionUserId) : oldAuction.AuctionUserId,
                      request.Auction.AuctionProductId != null ? AuctionProductId.Create(request.Auction.AuctionProductId) : oldAuction.AuctionProductId

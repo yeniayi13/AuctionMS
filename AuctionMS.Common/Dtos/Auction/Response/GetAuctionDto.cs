@@ -21,7 +21,8 @@ namespace AuctionMS.Common.Dtos.Auction.Response
 
         public decimal AuctionIncremento { get; init; }
 
-        public decimal AuctionDuracion { get; init; }
+        public DateTime AuctionFechaInicio { get; init; }
+        public DateTime AuctionFechaFin { get; init; }
         public string? AuctionCondiciones { get; init; }
 
         public string? AuctionCantidadProducto { get; init; }

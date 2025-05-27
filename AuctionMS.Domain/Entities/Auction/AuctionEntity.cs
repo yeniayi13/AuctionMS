@@ -15,7 +15,8 @@ namespace AuctionMS.Domain.Entities.Auction
         public AuctionDescription AuctionDescription { get; private set; }
         public AuctionIncremento AuctionIncremento { get; private set; }
 
-        public AuctionDuracion AuctionDuracion{ get; private set; }
+        public AuctionFechaInicio AuctionFechaInicio { get; private set; }
+        public AuctionFechaFin AuctionFechaFin { get; private set; }
 
         public AuctionCondiciones AuctionCondiciones { get; private set; }
 
@@ -30,7 +31,7 @@ namespace AuctionMS.Domain.Entities.Auction
 
         public AuctionEntity (AuctionId auctionId, AuctionName auctionName, AuctionImage auctionImage, AuctionPriceBase auctionPriceBase,
             AuctionPriceReserva auctionPriceReserva, AuctionDescription auctionDescription, AuctionIncremento auctionIncremento,
-           AuctionCantidadProducto auctionCantidadProducto, AuctionDuracion auctionDuracion, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId, AuctionProductId auctionProductId)
+           AuctionCantidadProducto auctionCantidadProducto, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId, AuctionProductId auctionProductId)
         {
             AuctionId = auctionId;
             AuctionName = auctionName;
@@ -40,9 +41,8 @@ namespace AuctionMS.Domain.Entities.Auction
             AuctionDescription = auctionDescription;
             AuctionIncremento = auctionIncremento;
             AuctionCantidadProducto = auctionCantidadProducto;
-
-
-            AuctionDuracion = auctionDuracion;
+            AuctionFechaInicio = auctionFechaInicio;
+            AuctionFechaFin = auctionFechaFin;
             AuctionCondiciones = auctionCondiciones;
             AuctionUserId = auctionUserId;
             AuctionProductId = auctionProductId;
@@ -56,7 +56,7 @@ namespace AuctionMS.Domain.Entities.Auction
         //actualiza las propiedades de un objeto
         public static AuctionEntity Update(AuctionEntity auction, AuctionName name, AuctionImage image, 
             AuctionPriceBase priceBase, AuctionPriceReserva priceReserva, AuctionDescription description, 
-            AuctionIncremento incremento, AuctionCantidadProducto auctionCantidadProducto, AuctionDuracion duracion, AuctionCondiciones condiciones, AuctionUserId auctionUserId, AuctionProductId  auctionProductId)
+            AuctionIncremento incremento, AuctionCantidadProducto auctionCantidadProducto, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones condiciones, AuctionUserId auctionUserId, AuctionProductId  auctionProductId)
         {
 
             var updates = new List<Action>()
@@ -68,8 +68,12 @@ namespace AuctionMS.Domain.Entities.Auction
                     () => { if (description != null) auction.AuctionDescription = description; },
 
                     () => { if (incremento != null) auction.AuctionIncremento = incremento; },
-                     () => { if (auctionCantidadProducto != null) auction.AuctionCantidadProducto = auctionCantidadProducto; },
-                      () => { if (duracion != null) auction.AuctionDuracion = duracion; },
+                     () => { if (auctionCantidadProducto != null) auction.AuctionCantidadProducto = auctionCantidadProducto; }, 
+
+                    () => { if (auctionFechaInicio != null) auction.AuctionFechaInicio = auctionFechaInicio; },
+                    () => { if (auctionFechaFin != null) auction.AuctionFechaFin = auctionFechaFin; },
+
+
                     () => { if (condiciones != null) auction.AuctionCondiciones = condiciones; },
                   
 

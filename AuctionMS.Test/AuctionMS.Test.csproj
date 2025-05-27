@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
+    <Folder Include="Application\Auction\Handlers\Queries\" />
     <Folder Include="Controllers\" />
     <Folder Include="DataSeed\" />
     <Folder Include="Infrastructure\" />
