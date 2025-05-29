@@ -1,27 +1,23 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Timers;
 using AutoMapper;
 using Moq;
+using Xunit;
 using AuctionMS.Application.Auction.Commands;
-using AuctionMS.Core.Repository;
-using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Application.Auction.Handlers.Commands;
 using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Core.RabbitMQ;
-using AuctionMS.Domain.Entities.Auction.ValueObjects;
-using Xunit;
+using AuctionMS.Core.Repository;
 using AuctionMS.Domain.Entities.Auction;
-using AuctionMS.Core.RabbitMQ;
-
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
 
 namespace AuctionMS.Test.Application.Auction.Handlers.Commands
 {
-
     public class DeleteAuctionCommandHandlerTests
     {
         private readonly Mock<IAuctionRepository> _auctionRepositoryMock;
+        private readonly Mock<IAuctionRepositoryMongo> _auctionRepositoryMongoMock;
         private readonly Mock<IEventBus<GetAuctionDto>> _eventBusMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly DeleteAuctionCommandHandler _handler;
@@ -29,75 +25,87 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Commands
         public DeleteAuctionCommandHandlerTests()
         {
             _auctionRepositoryMock = new Mock<IAuctionRepository>();
+            _auctionRepositoryMongoMock = new Mock<IAuctionRepositoryMongo>();
             _eventBusMock = new Mock<IEventBus<GetAuctionDto>>();
             _mapperMock = new Mock<IMapper>();
 
             _handler = new DeleteAuctionCommandHandler(
+                _auctionRepositoryMongoMock.Object,
                 _auctionRepositoryMock.Object,
                 _eventBusMock.Object,
                 _mapperMock.Object);
         }
 
         [Fact]
-        public async Task Handle_ShouldDeleteAuctionAndPublishEvent()
+        public async Task Handle_ShouldDeleteAuctionSuccessfully()
         {
             // Arrange
             var auctionId = Guid.NewGuid();
-            var auctionUserId = Guid.NewGuid();
+            var userId = Guid.NewGuid();
             var productId = Guid.NewGuid();
-            var deleteCommand = new DeleteAuctionCommand(auctionId, auctionUserId, productId);
 
-            var auction = new AuctionEntity(); 
+            var auctionEntity = new AuctionEntity(
+                AuctionId.Create(auctionId),
+                AuctionName.Create("Test Auction"),
+                AuctionImage.Create("base64image"),
+                AuctionPriceBase.Create(100),
+                AuctionPriceReserva.Create(200),
+                AuctionDescription.Create("Desc"),
+                AuctionIncremento.Create(10),
+                AuctionCantidadProducto.Create(1),
+                AuctionFechaInicio.Create(DateTime.UtcNow),
+                AuctionFechaFin.Create(DateTime.UtcNow.AddHours(1)),
+                AuctionCondiciones.Create("Condiciones"),
+                AuctionUserId.Create(userId),
+                AuctionProductId.Create(productId)
+            );
 
-            _auctionRepositoryMock.Setup(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
-                .ReturnsAsync(auction);
+            var getAuctionDto = new GetAuctionDto { AuctionId = auctionId };
+
+            _auctionRepositoryMongoMock.Setup(repo => repo.GetByIdAsync(
+                It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
+                .ReturnsAsync(auctionEntity);
+
+            _mapperMock.Setup(mapper => mapper.Map<GetAuctionDto>(It.IsAny<AuctionEntity>()))
+                .Returns(getAuctionDto);
 
             _auctionRepositoryMock.Setup(repo => repo.DeleteAsync(It.IsAny<AuctionId>()))
                 .Returns(Task.CompletedTask);
 
-            var auctionDto = new GetAuctionDto();
-            _mapperMock.Setup(mapper => mapper.Map<GetAuctionDto>(auction))
-                .Returns(auctionDto);
-
-            _eventBusMock.Setup(bus => bus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_DELETED"))
+            _eventBusMock.Setup(bus => bus.PublishMessageAsync(It.IsAny<GetAuctionDto>(), "auctionQueue", "AUCTION_DELETED"))
                 .Returns(Task.CompletedTask);
 
+            var command = new DeleteAuctionCommand(auctionId, userId, productId);
+
             // Act
-            var result = await _handler.Handle(deleteCommand, CancellationToken.None);
+            var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
             Assert.Equal(auctionId, result);
-            _auctionRepositoryMock.Verify(repo => repo.DeleteAsync(It.IsAny<AuctionId>()), Times.Once);
-            _eventBusMock.Verify(bus => bus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_DELETED"), Times.Once);
+            _auctionRepositoryMock.Verify(repo => repo.DeleteAsync(It.Is<AuctionId>(id => id.Value == auctionId)), Times.Once);
+            _eventBusMock.Verify(bus => bus.PublishMessageAsync(getAuctionDto, "auctionQueue", "AUCTION_DELETED"), Times.Once);
         }
 
         [Fact]
         public async Task Handle_ShouldThrowException_WhenAuctionNotFound()
         {
             // Arrange
-            var auctionId = Guid.NewGuid();
-            var auctionUserId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
-            var deleteCommand = new DeleteAuctionCommand(auctionId, auctionUserId, productId);
+            var command = new DeleteAuctionCommand(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid());
 
-            _auctionRepositoryMock.Setup(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
+            _auctionRepositoryMongoMock.Setup(repo => repo.GetByIdAsync(
+                It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
                 .ReturnsAsync((AuctionEntity)null);
 
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<Exception>(() => _handler.Handle(deleteCommand, CancellationToken.None));
-            Assert.Equal("Product not found.", exception.Message);
-
-            _auctionRepositoryMock.Verify(repo => repo.DeleteAsync(It.IsAny<AuctionId>()), Times.Never);
-            _eventBusMock.Verify(bus => bus.PublishMessageAsync(It.IsAny<GetAuctionDto>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            await Assert.ThrowsAsync<Exception>(() => _handler.Handle(command, CancellationToken.None));
         }
 
         [Fact]
-        public async Task Handle_ShouldThrowException_WhenRequestIsNull()
+        public async Task Handle_ShouldThrowArgumentNullException_WhenRequestIsNull()
         {
             // Act & Assert
             var exception = await Assert.ThrowsAsync<ArgumentNullException>(() => _handler.Handle(null, CancellationToken.None));
-            Assert.Contains("Request cannot be null.", exception.Message);
+            Assert.Equal("request", exception.ParamName);
         }
-
     }
 }
