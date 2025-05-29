@@ -12,14 +12,16 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
     public class DeleteAuctionCommandHandler : IRequestHandler<DeleteAuctionCommand, Guid>
     {
         private readonly IAuctionRepository _auctionRepository;
+        private readonly IAuctionRepositoryMongo _auctionRepositoryMongo;
         private readonly IEventBus<GetAuctionDto> _eventBus;
         private readonly IMapper _mapper;
 
-        public DeleteAuctionCommandHandler(IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus, IMapper mapper)
+        public DeleteAuctionCommandHandler(IAuctionRepositoryMongo auctionRepositoryMongo, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus, IMapper mapper)
         {
            _auctionRepository = auctionRepository ?? throw new ArgumentNullException(nameof(auctionRepository)); //*Valido que estas inyecciones sean exitosas
             _eventBus = eventBus;
             _mapper = mapper;//*Valido que estas inyecciones sean exitosas
+            _auctionRepositoryMongo = auctionRepositoryMongo;
         }
 
         public async Task<Guid> Handle(DeleteAuctionCommand request, CancellationToken cancellationToken)
@@ -34,7 +36,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
             var userId = AuctionUserId.Create(request.UserId);
             var productId = AuctionProductId.Create(request.ProductId);
 
-            var auction = await _auctionRepository.GetByIdAsync(auctionId, userId, productId);
+            var auction = await _auctionRepositoryMongo.GetByIdAsync(auctionId, userId, productId);
             if (auction == null)
             {
                 throw new Exception("Product not found."); // Esta excepción debe existir

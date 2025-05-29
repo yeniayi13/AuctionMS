@@ -14,5 +14,8 @@ namespace AuctionMS.Core.Repository
         Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId, AuctionProductId productId);
 
         Task<List<AuctionEntity>> GetAllAsync(AuctionUserId userId);
+        Task<AuctionEntity?> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId);
+
+        
     }
 }

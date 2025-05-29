@@ -108,6 +108,35 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntities;
         }
 
+        public async Task<AuctionEntity?> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId)
+        {
+            Console.WriteLine($"Buscando subasta activa para el producto con ID: {productId.Value}");
+
+            var ahora = DateTime.UtcNow;
+
+            var filter = Builders<AuctionEntity>.Filter.And(
+                Builders<AuctionEntity>.Filter.Eq("AuctionProductId.Value", productId.Value),
+                Builders<AuctionEntity>.Filter.Lte("AuctionFechaInicio.Value", ahora),
+                Builders<AuctionEntity>.Filter.Gte("AuctionFechaFin.Value", ahora)
+            );
+
+            var subastaActiva = await _collection
+                .Find(filter)
+                .FirstOrDefaultAsync()
+                .ConfigureAwait(false);
+
+            if (subastaActiva == null)
+            {
+                Console.WriteLine("No se encontró ninguna subasta activa para este producto.");
+            }
+            else
+            {
+                Console.WriteLine($"Subasta activa encontrada con ID: {subastaActiva.AuctionId.Value}");
+            }
+
+            return subastaActiva;
+        }
+
 
 
 

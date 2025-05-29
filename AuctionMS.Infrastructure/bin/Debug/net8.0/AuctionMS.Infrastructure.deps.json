@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "AuctionMS.Infrastructure/1.0.0": {
         "dependencies": {
+          "AuctionMS.Common": "1.0.0",
           "AuctionMS.Core": "1.0.0",
           "AuctionMS.Domain": "1.0.0",
           "EntityFrameworkCore.Exceptions.PostgreSQL": "8.1.3",

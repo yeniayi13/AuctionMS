@@ -18,10 +18,10 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 {
     public class GetNameAuctionQueryHandler : IRequestHandler<GetNameAuctionQuery, GetAuctionDto>
     {
-        public IAuctionRepository _auctionRepository;
+        public IAuctionRepositoryMongo _auctionRepository;
         private readonly IApplicationDbContext _dbContext;
         private readonly IMapper _mapper; // Agregar el Mapper
-        public GetNameAuctionQueryHandler(IAuctionRepository auctionRepository, IApplicationDbContext dbContext, IMapper mapper)
+        public GetNameAuctionQueryHandler(IAuctionRepositoryMongo auctionRepository, IApplicationDbContext dbContext, IMapper mapper)
         {
             _auctionRepository = auctionRepository;
             _dbContext = dbContext;

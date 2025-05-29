@@ -11,12 +11,10 @@ using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Infrastructure;
 using AuctionMS.Core.Service.Auction;
 using AuctionMS.Infrastructure;
-<<<<<<< HEAD
 using System.Net.Http;
-=======
 using Firebase.Auth;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
->>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
+
 
 namespace AuctionMS.Infrastructure.Services.Auction
 {
@@ -62,19 +60,15 @@ namespace AuctionMS.Infrastructure.Services.Auction
                 throw;
             }
         }
-<<<<<<< HEAD
-        public async Task<decimal?> GetProductStock(Guid auctionProductId)
-        {
-            try
-            {
-                var response = await _httpClient.GetAsync($"auction/product/{auctionProductId}");
-=======
+
+ 
+
         public async Task<decimal?> GetProductStock(Guid auctionProductId, Guid auctionUserId)
         {
             try
             {
                 var response = await _httpClient.GetAsync($"auctioneer/product/{auctionProductId}?userId={auctionUserId}");
->>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
+
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -99,10 +93,7 @@ namespace AuctionMS.Infrastructure.Services.Auction
                 throw;
             }
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
     }
 }
 

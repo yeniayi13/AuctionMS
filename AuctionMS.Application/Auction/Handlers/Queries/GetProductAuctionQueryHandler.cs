@@ -11,10 +11,10 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 {
     public class GetProductAuctionQueryHandler : IRequestHandler<GetProductAuctionQuery, GetAuctionDto>
     {
-        private readonly IAuctionRepository _auctionRepository;
+        private readonly IAuctionRepositoryMongo _auctionRepository;
         private readonly IMapper _mapper;
 
-        public GetProductAuctionQueryHandler(IAuctionRepository auctionRepository, IMapper mapper)
+        public GetProductAuctionQueryHandler(IAuctionRepositoryMongo auctionRepository, IMapper mapper)
         {
             _auctionRepository = auctionRepository;
             _mapper = mapper;

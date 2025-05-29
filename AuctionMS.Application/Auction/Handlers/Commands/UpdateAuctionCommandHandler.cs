@@ -14,10 +14,12 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
     {
         private readonly IAuctionRepository _auctionRepository;
         private readonly IEventBus<UpdateAuctionDto> _eventBus;
-        public UpdateAuctionCommandHandler(IAuctionRepository auctionRepository, IEventBus<UpdateAuctionDto> eventBus)
+        private readonly IAuctionRepositoryMongo _auctionRepositoryMongo;
+        public UpdateAuctionCommandHandler(IAuctionRepositoryMongo auctionRepositoryMongo,IAuctionRepository auctionRepository, IEventBus<UpdateAuctionDto> eventBus)
         {
             _auctionRepository = auctionRepository ?? throw new ArgumentNullException(nameof(auctionRepository)); //*Valido que estas inyecciones sean exitosas
             _eventBus = eventBus;
+            _auctionRepositoryMongo = auctionRepositoryMongo ?? throw new ArgumentNullException(nameof(auctionRepositoryMongo));
 
         }
 
@@ -37,7 +39,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
 
 
      
-                var oldAuction = await _auctionRepository.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!, AuctionProductId.Create(request.ProductId)!);
+                var oldAuction = await _auctionRepositoryMongo.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!, AuctionProductId.Create(request.ProductId)!);
 
                 //Valido los datos de entrada
                 var validator = new UpdateAuctionEntityValidator();
