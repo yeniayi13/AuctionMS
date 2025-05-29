@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AuctionMS.Common\AuctionMS.Common.csproj" />
     <ProjectReference Include="..\AuctionMS.Core\AuctionMS.Core.csproj" />
     <ProjectReference Include="..\AuctionMS.Domain\AuctionMS.Domain.csproj" />
   </ItemGroup>
