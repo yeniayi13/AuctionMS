@@ -11,6 +11,7 @@ using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Infrastructure;
 using AuctionMS.Core.Service.Auction;
 using AuctionMS.Infrastructure;
+using System.Net.Http;
 
 namespace AuctionMS.Infrastructure.Services.Auction
 {
@@ -56,5 +57,37 @@ namespace AuctionMS.Infrastructure.Services.Auction
                 throw;
             }
         }
+        public async Task<decimal?> GetProductStock(Guid auctionProductId)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"auction/product/{auctionProductId}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException($"Error al obtener el stock del producto: {response.StatusCode}");
+                }
+
+                await using var responseStream = await response.Content.ReadAsStreamAsync();
+                var product = await JsonSerializer.DeserializeAsync<GetProduct>(responseStream, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (product == null)
+                {
+                    throw new InvalidOperationException("El producto no fue encontrado.");
+                }
+
+                return product.ProductStock;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }
+
+

@@ -10,6 +10,7 @@ using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Core.RabbitMQ;
 using AuctionMS.Core.Service.User;
+using AuctionMS.Core.Service.Auction;
 //using AuctionMS.Core.Service.Product;
 
 
@@ -21,17 +22,18 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
         private readonly IAuctionRepository _auctionRepository;
         private readonly IEventBus<GetAuctionDto> _eventBus;
         private readonly IUserService _userService;
-       // private readonly IProductService productService;
+       /private readonly IProductService _productService;
         private readonly IMapper _mapper;
 
 
-        public CreateAuctionCommandHandler(IMapper mapper, IUserService userService, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus)
+        public CreateAuctionCommandHandler(IMapper mapper, IUserService userService, IProductService productService, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus)
         {
             _auctionRepository = auctionRepository;
             _eventBus = eventBus;
             _userService = userService;
+
             _mapper = mapper;
-           // _productService = productService;
+            _productService = productService;
 
         }
 
@@ -48,6 +50,15 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 }
 
                 var user = await _userService.AuctioneerExists(request.UserId);
+                var product = await _productService.ProductExist(request.ProductId);
+
+                var stockDisponible = await _productService.GetProductStock(request.ProductId);
+                if (stockDisponible == null)
+                    throw new InvalidOperationException($"No se pudo obtener el stock del producto con ID: {request.ProductId}");
+
+                if (stockDisponible < request.Auction.AuctionCantidadProducto)
+                    throw new InvalidOperationException($"Stock insuficiente para el producto con ID: {request.ProductId}. " +
+                        $"Stock disponible: {stockDisponible}, cantidad solicitada: {request.Auction.AuctionCantidadProducto}");
 
 
                 if (user == null) throw new NullReferenceException($"user with id {request.UserId} not found");

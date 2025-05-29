@@ -10,5 +10,7 @@ namespace AuctionMS.Core.Service.Auction
     public interface IProductService
     {
         Task<bool> ProductExist(Guid productId);
+        Task<decimal?> GetProductStock(Guid auctionProductId);
+
     }
 }
