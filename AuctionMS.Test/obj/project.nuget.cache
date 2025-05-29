@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "UFpS7O2IOj8=",
-=======
-  "dgSpecHash": "frqzAygraPI=",
->>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Test\\AuctionMS.Test.csproj",
   "expectedPackageFiles": [
@@ -171,5 +167,12 @@
     "C:\\Users\\LENOVO\\.nuget\\packages\\xunit.runner.visualstudio\\3.1.0\\xunit.runner.visualstudio.3.1.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Test\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AuctionMS.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26722d3291a3ca940a5788cd2308379fc95ab485")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af9d4085f3c11b0f3a4d89563be234e1c1808d7e")]
->>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25a8299e4d49770241b36689fa79c5b9b3aef4ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("AuctionMS.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AuctionMS.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

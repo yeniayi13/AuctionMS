@@ -175,3 +175,13 @@ C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Test\bin\Debug\net
 C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\AuctionMS.Infrastructure.pdb
 C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionM.39AA7DE8.Up2Date
 C:\Users\Paola\OneDrive\Desktop\SubastaMS\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.genruntimeconfig.cache
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\.msCoverageSourceRootsMapping_AuctionMS.Test
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.csproj.AssemblyReference.cache
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.AssemblyInfoInputs.cache
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.AssemblyInfo.cs
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.sourcelink.json
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.dll
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\refint\AuctionMS.Test.dll
+C:\Users\LENOVO\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.pdb

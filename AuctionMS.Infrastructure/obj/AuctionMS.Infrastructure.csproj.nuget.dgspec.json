@@ -272,12 +272,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj": {
                 "projectPath": "C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Common\\AuctionMS.Common.csproj"
               },
-=======
->>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
               "C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj": {
                 "projectPath": "C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj"
               },
