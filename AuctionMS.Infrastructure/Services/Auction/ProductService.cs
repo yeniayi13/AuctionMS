@@ -94,6 +94,39 @@ namespace AuctionMS.Infrastructure.Services.Auction
             }
         }
 
+        public async Task<bool> UpdateProductStockAsync(Guid productId, decimal newStock)
+        {
+            try
+            {
+                var stockUpdatePayload = new
+                {
+                    ProductStock = newStock
+                };
+
+                var content = new StringContent(
+                    JsonSerializer.Serialize(stockUpdatePayload),
+                    Encoding.UTF8,
+                    "application/json"
+                );
+
+                var response = await _httpClient.PatchAsync($"auction/product/{productId}/stock", content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Error actualizando el stock del producto: {response.StatusCode}");
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción al actualizar el stock del producto: {ex.Message}");
+                throw;
+            }
+        }
+
+
     }
 }
 

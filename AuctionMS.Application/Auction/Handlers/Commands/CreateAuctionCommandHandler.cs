@@ -101,6 +101,16 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 await _auctionRepository.AddAsync(auction);
                 await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_CREATED");
 
+                var nuevoStock = stock.Value - auctionDto.AuctionCantidadProducto;
+
+                var actualizado = await _productService.UpdateProductStockAsync(request.Auction.AuctionProductId, nuevoStock);
+
+
+                if (!actualizado)
+                {
+                    throw new ApplicationException("No se pudo actualizar el stock del producto luego de crear la subasta.");
+                }
+
                 // Retornar el ID de la subasta registrada
                 return auction.AuctionId.Value;
             }
