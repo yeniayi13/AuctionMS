@@ -14,7 +14,7 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
         {
 
 
-            builder.ToTable("Auction");
+            builder.ToTable("Auctions");
             builder.HasKey(s => s.AuctionId);
             builder.Property(s => s.AuctionId)
                     .HasConversion(auctionId => auctionId.Value, value => AuctionId.Create(value)!)

@@ -3097,7 +3097,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+<<<<<<< HEAD
           "AuctionMS.Common": "1.0.0",
+=======
+>>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
           "AuctionMS.Core": "1.0.0",
           "AuctionMS.Domain": "1.0.0",
           "EntityFrameworkCore.Exceptions.PostgreSQL": "8.1.3",

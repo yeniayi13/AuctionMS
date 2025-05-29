@@ -23,7 +23,7 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
             _rabbitMQConnection = rabbitMQConnection;
 
             // 🔹 Conexión a MongoDB Atlas
-            _mongoClient = new MongoClient("mongodb+srv://paascanio20:6CJrUJ5uhG2TcWMo@cluster0.mix2yla.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+            _mongoClient = new MongoClient("mongodb+srv://yadefreitas19:08092001@cluster0.owy2d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
             _database = _mongoClient.GetDatabase("AuctionMS");
             _collection = collection;
 

@@ -9,8 +9,14 @@ using AuctionMS.Application.Auction.Validators.Auctions;
 using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Core.RabbitMQ;
-using AuctionMS.Core.Service.User;
 using AuctionMS.Core.Service.Auction;
+using AuctionMS.Core.Service.User;
+<<<<<<< HEAD
+using AuctionMS.Core.Service.Auction;
+=======
+using AutoMapper.Configuration.Annotations;
+
+>>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
 //using AuctionMS.Core.Service.Product;
 
 
@@ -22,11 +28,19 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
         private readonly IAuctionRepository _auctionRepository;
         private readonly IEventBus<GetAuctionDto> _eventBus;
         private readonly IUserService _userService;
+<<<<<<< HEAD
        /private readonly IProductService _productService;
         private readonly IMapper _mapper;
 
 
         public CreateAuctionCommandHandler(IMapper mapper, IUserService userService, IProductService productService, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus)
+=======
+        private readonly IProductService _productService;
+        private readonly IMapper _mapper;
+
+
+        public CreateAuctionCommandHandler(IMapper mapper, IUserService userService, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus, IProductService productService)
+>>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
         {
             _auctionRepository = auctionRepository;
             _eventBus = eventBus;
@@ -50,6 +64,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 }
 
                 var user = await _userService.AuctioneerExists(request.UserId);
+<<<<<<< HEAD
                 var product = await _productService.ProductExist(request.ProductId);
 
                 var stockDisponible = await _productService.GetProductStock(request.ProductId);
@@ -61,6 +76,10 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                         $"Stock disponible: {stockDisponible}, cantidad solicitada: {request.Auction.AuctionCantidadProducto}");
 
 
+=======
+                var product= await _productService.ProductExist(request.ProductId,request.UserId);
+                
+>>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
                 if (user == null) throw new NullReferenceException($"user with id {request.UserId} not found");
 
 
@@ -85,7 +104,13 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 );
 
                 var auctionDto = _mapper.Map<GetAuctionDto>(auction);
+                var stock = await _productService.GetProductStock(request.Auction.AuctionProductId, request.UserId);
 
+                //Cambia esto y maneja un aexcepción específica si para stock insuficiente
+                if (stock < auctionDto.AuctionCantidadProducto)
+                {
+                    throw new InvalidOperationException($" Error: Stock insuficiente para el producto {request.Auction.AuctionProductId}. Disponible: {stock}, requerido: {auctionDto.AuctionCantidadProducto}");
+                }
                 // Guardar la subasta en el repositorio
                 await _auctionRepository.AddAsync(auction);
                 await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_CREATED");

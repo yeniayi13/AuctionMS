@@ -27,7 +27,7 @@ namespace AuctionMS.Common.AutoMapper
             .ForMember(dest => dest.AuctionFechaFin, opt => opt.MapFrom(src => src.AuctionFechaFin.Value))
             .ForMember(dest => dest.AuctionIncremento, opt => opt.MapFrom(src => src.AuctionIncremento.Value))
             .ForMember(dest => dest.AuctionCondiciones, opt => opt.MapFrom(src => src.AuctionCondiciones.Value))
-
+            .ForMember(dest => dest.AuctionCantidadProducto, opt => opt.MapFrom(src => src.AuctionCantidadProducto.Value))
             .ForMember(dest => dest.AuctionUserId, opt => opt.MapFrom(src => src.AuctionUserId.Value))
             .ForMember(dest => dest.AuctionProductId, opt => opt.MapFrom(src => src.AuctionProductId.Value))
 

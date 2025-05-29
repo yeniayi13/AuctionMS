@@ -124,7 +124,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "CreateAuction",
-    "RelativePath": "auctioneer/auction/addAuction/{userId}",
+    "RelativePath": "auctioneer/auction/addAuction/{userId}/{productId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -142,7 +142,7 @@
       {
         "Name": "productId",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

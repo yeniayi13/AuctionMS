@@ -1,1 +1,32 @@
+<<<<<<< HEAD
 .vs/
+=======
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/AuctionMS/.vs/AuctionMS/CopilotIndices/17.13.444.19527/CodeChunks.db
+/AuctionMS/.vs/AuctionMS/CopilotIndices/17.13.444.19527/CodeChunks.db-shm
+/AuctionMS/.vs/AuctionMS/CopilotIndices/17.13.444.19527/CodeChunks.db-wal
+/AuctionMS/.vs/AuctionMS/CopilotIndices/17.13.444.19527/SemanticSymbols.db
+/AuctionMS/.vs/AuctionMS/CopilotIndices/17.13.444.19527/SemanticSymbols.db-shm
+/AuctionMS/.vs/AuctionMS/CopilotIndices/17.13.444.19527/SemanticSymbols.db-wal
+/AuctionMS/.vs/AuctionMS/DesignTimeBuild/.dtbcache.v2
+/AuctionMS/.vs/AuctionMS/FileContentIndex/30dcd61b-0798-483e-acb3-f24338f1383e.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/463df286-15eb-463f-906c-868ba29e2ee2.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/485ebea2-9587-438d-ba81-3892059c6ac3.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/4d0a4f0f-f6b1-46c2-af15-509b6cbccd14.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/b13ea462-b3f6-4b25-b2e7-f670004249a0.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/c1fa735e-9049-424f-943e-104d4c4a936a.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/c5f973b4-e856-49ec-b6e1-fb491980b6b4.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/de10c340-6a66-4c01-bd51-a9c174bfd32e.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/ea0602d7-a657-47b8-a6ff-382cb5f681ae.vsidx
+/AuctionMS/.vs/AuctionMS/FileContentIndex/ee3067a1-0d96-4eac-83d9-5288a92b239f.vsidx
+/AuctionMS/.vs/AuctionMS/v17/.futdcache.v2
+/AuctionMS/.vs/AuctionMS/v17/.suo
+/AuctionMS/.vs/AuctionMS/v17/DocumentLayout.backup.json
+/AuctionMS/.vs/AuctionMS/v17/DocumentLayout.json
+/AuctionMS/.vs/ProjectEvaluation/auctionms.metadata.v9.bin
+/AuctionMS/.vs/ProjectEvaluation/auctionms.projects.v9.bin
+/AuctionMS/.vs/ProjectEvaluation/auctionms.strings.v9.bin
+>>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)

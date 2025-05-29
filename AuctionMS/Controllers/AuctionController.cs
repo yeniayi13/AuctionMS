@@ -25,7 +25,7 @@ namespace AuctionMS.Controllers
         }
 
         //[Authorize(Policy = "AdminOnly")]
-        [HttpPost("addAuction/{userId}")]
+        [HttpPost("addAuction/{userId}/{productId}")]
         public async Task<IActionResult> CreateAuction([FromBody] CreateAuctionDto createAuctionDto, [FromRoute] Guid userId, [FromRoute] Guid productId)
         {
             try

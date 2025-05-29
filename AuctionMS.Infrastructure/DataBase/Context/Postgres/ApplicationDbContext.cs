@@ -31,7 +31,7 @@ namespace AuctionMS.Infrastructure.Database.Context.Postgres
             get { return this; }
         }
 
-       public virtual DbSet<AuctionEntity> Auction { get; set; } = null!;
+       public virtual DbSet<AuctionEntity> Auctions { get; set; } = null!;
 
 
 

@@ -11,7 +11,7 @@ namespace AuctionMS.Core.Database
     public interface IApplicationDbContext
     {
         DbContext DbContext { get; }
-        DbSet<AuctionEntity> Auction { get; set; }
+        DbSet<AuctionEntity> Auctions { get; set; }
 
 
         IDbContextTransactionProxy BeginTransaction();

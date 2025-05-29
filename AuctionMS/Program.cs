@@ -15,8 +15,10 @@ using AuctionMS.Infrastructure.RabbitMQ.Consumer;
 using AuctionMS.Infrastructure.RabbitMQ;
 using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Common.Dtos.Auction.Response;
+using AuctionMS.Core.Service.Auction;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Core.Service.User;
+using AuctionMS.Infrastructure.Services.Auction;
 //using AuctionMS.Core.Service.Product;
 using AuctionMS.Infrastructure.Services.User;
 using RabbitMQ.Client;
@@ -46,7 +48,7 @@ foreach (var profileType in profileTypes)
 
 builder.Services.AddSingleton<IApplicationDbContextMongo>(sp =>
 {
-    const string connectionString = "mongodb+srv://paascanio20:6CJrUJ5uhG2TcWMo@cluster0.mix2yla.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    const string connectionString = "mongodb+srv://yadefreitas19:08092001@cluster0.owy2d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
     var databaseName = "AuctionMS";
     return new ApplicationDbContextMongo(connectionString, databaseName);
 });
@@ -106,7 +108,7 @@ builder.Services.AddSingleton<IEventBus<GetAuctionDto>>(provider =>
 
 builder.Services.AddSingleton<IMongoCollection<GetAuctionDto>>(provider =>
 {
-    var mongoClient = new MongoClient("mongodb+srv://paascanio20:6CJrUJ5uhG2TcWMo@cluster0.mix2yla.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    var mongoClient = new MongoClient("mongodb+srv://yadefreitas19:08092001@cluster0.owy2d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     var database = mongoClient.GetDatabase("AuctionMS");
     return database.GetCollection<GetAuctionDto>("Auction");
 });
@@ -149,7 +151,7 @@ builder.Services.Configure<HttpClientUrl>(
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IUserService, UserService>();
-//builder.Services.AddHttpClient<IProductService, ProductService>();
+builder.Services.AddHttpClient<IProductService, ProductService>();
 
 //Configurar Firebase Storage Settings desde appsettings.json
 

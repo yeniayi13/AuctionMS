@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/auctioneer/auction/addAuction/{userId}": {
+    "/auctioneer/auction/addAuction/{userId}/{productId}": {
       "post": {
         "tags": [
           "Auction"
@@ -340,11 +340,11 @@
             "type": "number",
             "format": "double"
           },
-          "fechaInicioSubasta": {
+          "auctionFechaInicio": {
             "type": "string",
             "format": "date-time"
           },
-          "fechaFinSubasta": {
+          "auctionFechaFin": {
             "type": "string",
             "format": "date-time"
           },
@@ -431,7 +431,7 @@
         "type": "oauth2",
         "flows": {
           "implicit": {
-            "authorizationUrl": "http://localhost:18080/realms/auth/protocol/openid-connect/auth",
+            "authorizationUrl": "http://localhost:18080/realms/auth-demo/protocol/openid-connect/auth",
             "scopes": {
               "openid": "openid",
               "profile": "profile"

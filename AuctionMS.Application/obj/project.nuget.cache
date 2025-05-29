@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "A8pq7bNMzc4=",
+=======
+  "dgSpecHash": "A16sDNEEbVY=",
+>>>>>>> d363556 (FIX se arreglo las peticione HTTP para product y user)
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj",
   "expectedPackageFiles": [
