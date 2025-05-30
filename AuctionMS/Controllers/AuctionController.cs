@@ -1,6 +1,7 @@
 
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Application.Auction.Commands;
 using AuctionMS.Common.Dtos.Auction.Request;
@@ -24,7 +25,8 @@ namespace AuctionMS.Controllers
             _mediator = mediator;
         }
 
-        //[Authorize(Policy = "AdminOnly")]
+       // [Authorize(Policy = "SubastadorPolicy")]
+
         [HttpPost("addAuction/{userId}/{productId}")]
         public async Task<IActionResult> CreateAuction([FromBody] CreateAuctionDto createAuctionDto, [FromRoute] Guid userId, [FromRoute] Guid productId)
         {
@@ -63,9 +65,10 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, "An error occurred while trying to create an Auction");
             }
         }
-
-
-        //[Authorize(Policy = "AdminProviderOnly")]
+//
+      //  [Authorize(Policy = "PostorPolicy")]
+      //  [Authorize(Policy = "SubastadorPolicy")]
+      //  [Authorize(Policy = "AdministradorPolicy")]
         [HttpGet]
         public async Task<IActionResult> GetAllAuction([FromQuery] Guid userId)
         {
@@ -103,8 +106,9 @@ namespace AuctionMS.Controllers
         }
 
 
-
-        [HttpGet("name/auction/{name}")]
+       // [Authorize(Policy = "SubastadorPolicy")]
+       // [Authorize(Policy = "PostorPolicy")]
+       // [HttpGet("name/auction/{name}")]
         public async Task<IActionResult> GetAllNameAuction([FromRoute] string name, [FromQuery] Guid userId)
         {
             try
@@ -141,7 +145,9 @@ namespace AuctionMS.Controllers
             }
         }
 
-        //[Authorize(Policy = "AdminProviderOnly")]
+       // [Authorize(Policy = "SubastadorPolicy")]
+       // [Authorize(Policy = "PostorPolicy")]
+
         [HttpGet("product/{productId}")]
         public async Task<IActionResult> GetAuction( [FromQuery] Guid userId, [FromRoute] Guid productId)
         {
@@ -171,7 +177,7 @@ namespace AuctionMS.Controllers
 
 
 
-        //[Authorize(Policy = "AdminProviderOnly")]
+       // [Authorize(Policy = "SubastadorPolicy")]
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId)
@@ -201,7 +207,7 @@ namespace AuctionMS.Controllers
             }
         }
 
-        //[Authorize(Policy = "AdminOnly")]
+       // [Authorize(Policy = "SubastadorPolicy")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteAuction([FromRoute] Guid id, [FromQuery] Guid userId)
@@ -231,6 +237,8 @@ namespace AuctionMS.Controllers
             }
         }
 
+      //  [Authorize(Policy = "SubastadorPolicy")]
+      //  [Authorize(Policy = "PostorPolicy")]
         [HttpGet("producto-activo/{productId}")] //Trae los productos activos de una subasta
         public async Task<IActionResult> GetProductoActivo(
      [FromRoute] Guid productId,

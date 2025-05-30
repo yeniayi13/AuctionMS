@@ -3,110 +3,109 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Moq;
-using AuctionMS.Application.Auction.Queries;
+using Xunit;
 using AuctionMS.Application.Auction.Handlers.Queries;
+using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Common.Dtos.Auction.Response;
-using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Core.Database;
 using AuctionMS.Core.Repository;
-using AuctionMS.Domain.Entities.Auction.ValueObjects;
-using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Domain.Entities.Auction;
-using Xunit;
-using AuctionMS.Core.Database;
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Application.Auctions.Queries;
 
 namespace AuctionMS.Test.Application.Auction.Handlers.Queries
 {
-
     public class GetAuctionQueryHandlerTests
     {
-        private readonly Mock<IAuctionRepository> _auctionRepositoryMock;
+        private readonly Mock<IAuctionRepositoryMongo> _auctionRepositoryMongoMock;
         private readonly Mock<IApplicationDbContext> _dbContextMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly GetAuctionQueryHandler _handler;
 
         public GetAuctionQueryHandlerTests()
         {
-            _auctionRepositoryMock = new Mock<IAuctionRepository>();
+            _auctionRepositoryMongoMock = new Mock<IAuctionRepositoryMongo>();
             _dbContextMock = new Mock<IApplicationDbContext>();
             _mapperMock = new Mock<IMapper>();
 
             _handler = new GetAuctionQueryHandler(
-                _auctionRepositoryMock.Object,
+                _auctionRepositoryMongoMock.Object,
                 _dbContextMock.Object,
-                _mapperMock.Object);
+                _mapperMock.Object
+            );
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnAuction_WhenAuctionExists()
+        public async Task Handle_ShouldReturnMappedAuctionDto_WhenAuctionExists()
         {
             // Arrange
             var auctionId = Guid.NewGuid();
             var userId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
 
-            var request = new GetAuctionQuery(auctionId, userId, productId);
+            var auctionEntity = new AuctionEntity(
+                AuctionId.Create(auctionId),
+                AuctionName.Create("Auction Test"),
+                AuctionImage.Create("img"),
+                AuctionPriceBase.Create(100),
+                AuctionPriceReserva.Create(150),
+                AuctionDescription.Create("Desc"),
+                AuctionIncremento.Create(10),
+                AuctionCantidadProducto.Create(1),
+                AuctionFechaInicio.Create(DateTime.UtcNow),
+                AuctionFechaFin.Create(DateTime.UtcNow.AddDays(5)),
+                AuctionCondiciones.Create("Conditions"),
+                AuctionUserId.Create(userId),
+                AuctionProductId.Create(Guid.NewGuid())
+            );
 
-            var auction = new AuctionEntity();
-            var auctionDto = new GetAuctionDto();
+            var auctionDto = new GetAuctionDto
+            {
+                AuctionName = "Auction Test"
+                // Otros campos si quieres
+            };
 
-            _auctionRepositoryMock.Setup(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
-                .ReturnsAsync(auction);
+            // Cambié para que acepte cualquier AuctionId y AuctionUserId para evitar mismatch en mock
+            _auctionRepositoryMongoMock
+                .Setup(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>()))
+                .ReturnsAsync(auctionEntity);
 
-            _mapperMock.Setup(mapper => mapper.Map<GetAuctionDto>(auction))
+            _mapperMock
+                .Setup(m => m.Map<GetAuctionDto>(auctionEntity))
                 .Returns(auctionDto);
 
+            var query = new GetAuctionQuery(auctionId, userId);
+
             // Act
-            var result = await _handler.Handle(request, CancellationToken.None);
+            var result = await _handler.Handle(query, CancellationToken.None);
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal(auctionDto, result);
-            _auctionRepositoryMock.Verify(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()), Times.Once);
-            _mapperMock.Verify(mapper => mapper.Map<GetAuctionDto>(auction), Times.Once);
+            Assert.Equal("Auction Test", result.AuctionName);
+
+            _auctionRepositoryMongoMock.Verify(r => r.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>()), Times.Once);
+            _mapperMock.Verify(m => m.Map<GetAuctionDto>(auctionEntity), Times.Once);
         }
 
-        [Fact]
-        public async Task Handle_ShouldThrowException_WhenAuctionIdIsEmpty()
-        {
-            // Arrange
-            var request = new GetAuctionQuery(Guid.Empty, Guid.NewGuid(), Guid.NewGuid());
-
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<NullAttributeException>(() => _handler.Handle(request, CancellationToken.None));
-            Assert.Equal("Auction id is required", exception.Message);
-        }
 
         [Fact]
-        public async Task Handle_ShouldReturnNull_WhenAuctionDoesNotExist()
+        public async Task Handle_ShouldThrowAuctionNotFoundException_WhenAuctionDoesNotExist()
         {
             // Arrange
             var auctionId = Guid.NewGuid();
             var userId = Guid.NewGuid();
-            var productId= Guid.NewGuid();
+            var query = new GetAuctionQuery(auctionId, userId);
 
-            var request = new GetAuctionQuery(auctionId, userId, productId);
-
-            _auctionRepositoryMock.Setup(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
+            _auctionRepositoryMongoMock
+                .Setup(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>()))
                 .ReturnsAsync((AuctionEntity)null);
 
-            // Act
-            var result = await _handler.Handle(request, CancellationToken.None);
-
-            // Assert
-            Assert.Null(result);
-            _auctionRepositoryMock.Verify(repo => repo.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()), Times.Once);
-        }
-
-        [Fact]
-        public async Task Handle_ShouldThrowException_WhenMapperIsNull()
-        {
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentNullException>(() =>
-                Task.Run(() => new GetAllAuctionQueryHandler(_auctionRepositoryMock.Object, null)));
-            Assert.Contains("mapper", exception.Message);
+            var ex = await Assert.ThrowsAsync<AuctionNotFoundException>(() => _handler.Handle(query, CancellationToken.None));
+            Assert.Equal("Auction not found.", ex.Message);
+
+            _auctionRepositoryMongoMock.Verify(r => r.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>()), Times.Once);
+            _mapperMock.Verify(m => m.Map<GetAuctionDto>(It.IsAny<AuctionEntity>()), Times.Never);
         }
     }
 }

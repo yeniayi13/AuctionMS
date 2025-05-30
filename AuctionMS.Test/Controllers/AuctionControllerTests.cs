@@ -1,23 +1,20 @@
-﻿using MediatR;
+﻿using Xunit;
+using Moq;
+using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Moq;
+using MediatR;
 using AuctionMS.Controllers;
 using AuctionMS.Application.Auction.Commands;
+using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Common.Dtos.Auction.Request;
-using System;
+using AuctionMS.Common.Dtos.Auction.Response;
+using AuctionMS.Infrastructure.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AuctionMS.Application.Auction.Queries;
-using AuctionMS.Common.Dtos.Auction.Response;
-using Xunit;
-using AuctionMS.Application.Auction.Queries;
-using AuctionMS.Infrastructure.Exceptions;
-using AuctionMS.Application.Auctions.Queries;
 
-namespace AuctionMS.Test.Controllers
+namespace AuctionMS.Tests.Controllers
 {
     public class AuctionControllerTests
     {
@@ -33,125 +30,224 @@ namespace AuctionMS.Test.Controllers
         }
 
         [Fact]
-        public async Task CreatedAuction_ShouldReturnOk_WhenAuctionIsCreated()
+        public async Task CreateAuction_ShouldReturnOk_WhenAuctionCreatedSuccessfully()
         {
-            var userId = Guid.NewGuid();
-            var productId = Guid.NewGuid(); 
-            var createAuctionDto = new CreateAuctionDto { AuctionName = "Antique Vase" };
-
-            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Guid.NewGuid());
-
-            var result = await _controller.CreateAuction(createAuctionDto, userId, productId);
-
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.NotNull(okResult.Value);
-        }
-
-        [Fact]
-        public async Task CreatedAuction_ShouldReturnBadRequest_WhenInvalidDataProvided()
-        {
+            var dto = new CreateAuctionDto();
             var userId = Guid.NewGuid();
             var productId = Guid.NewGuid();
-            var createAuctionDto = new CreateAuctionDto();
+            var expectedAuctionId = Guid.NewGuid();
 
-            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), It.IsAny<CancellationToken>()))
-                .ThrowsAsync(new NullAttributeException("Auction data is required"));
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default)).ReturnsAsync(expectedAuctionId);
 
-            var result = await _controller.CreateAuction(createAuctionDto, userId, productId);
+            var result = await _controller.CreateAuction(dto, userId, productId) as OkObjectResult;
 
-            var badRequestResult = Assert.IsType<ObjectResult>(result);
-            Assert.Equal(400, badRequestResult.StatusCode);
-            Assert.Equal("Auction data is required", badRequestResult.Value);
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+            Assert.Equal(expectedAuctionId, result.Value);
         }
 
         [Fact]
-        public async Task GetAllAuctions_ShouldReturnOk_WhenAuctionsExist()
+        public async Task CreateAuction_ShouldReturn404_WhenAuctionNotFound()
         {
-            var userId = Guid.NewGuid();
-            var productId  = Guid.NewGuid();
-            var expectedAuctions = new List<GetAuctionDto>
-            {
-                new GetAuctionDto { AuctionId = Guid.NewGuid(), AuctionName = "Painting" }
-            };
-
-            _mockMediator.Setup(m => m.Send(It.IsAny<GetAllAuctionQuery>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(expectedAuctions);
-
-            var result = await _controller.GetAllAuction(userId, productId);
-
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.NotNull(okResult.Value);
-        }
-
-        [Fact]
-        public async Task GetAllAuctions_ShouldReturnNotFound_WhenNoAuctionsExist()
-        {
+            var dto = new CreateAuctionDto();
             var userId = Guid.NewGuid();
             var productId = Guid.NewGuid();
 
-            _mockMediator.Setup(m => m.Send(It.IsAny<GetAllAuctionQuery>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<GetAuctionDto>());
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default))
+                .ThrowsAsync(new AuctionNotFoundException("Subasta no encontrada"));
 
-            var result = await _controller.GetAllAuction(userId, productId);
+            var result = await _controller.CreateAuction(dto, userId, productId) as ObjectResult;
 
-            var notFoundResult = Assert.IsType<NotFoundObjectResult>(result);
-            Assert.Equal(404, notFoundResult.StatusCode);
-            Assert.Equal("No Auctions found", notFoundResult.Value);
-
+            Assert.NotNull(result);
+            Assert.Equal(404, result.StatusCode);
+            Assert.Equal("Subasta no encontrada", result.Value);
         }
 
+        [Fact]
+        public async Task CreateAuction_ShouldReturn400_WhenNullAttributes()
+        {
+            var dto = new CreateAuctionDto();
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
 
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default))
+                .ThrowsAsync(new NullAttributeException("Atributos nulos"));
+
+            var result = await _controller.CreateAuction(dto, userId, productId) as ObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(400, result.StatusCode);
+            Assert.Equal("Atributos nulos", result.Value);
+        }
 
         [Fact]
-        public async Task GetAuction_ShouldReturnOk_WhenAuctionExists()
+        public async Task CreateAuction_ShouldReturn400_WhenInvalidAttributes()
         {
+            var dto = new CreateAuctionDto();
             var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default))
+                .ThrowsAsync(new InvalidAttributeException("Atributos inválidos"));
+
+            var result = await _controller.CreateAuction(dto, userId, productId) as ObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(400, result.StatusCode);
+            Assert.Equal("Atributos inválidos", result.Value);
+        }
+
+        [Fact]
+        public async Task CreateAuction_ShouldReturn400_WhenValidatorFails()
+        {
+            var dto = new CreateAuctionDto();
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default))
+                .ThrowsAsync(new ValidatorException("Error de validación"));
+
+            var result = await _controller.CreateAuction(dto, userId, productId) as ObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(400, result.StatusCode);
+            Assert.Equal("Error de validación", result.Value);
+        }
+
+        [Fact]
+        public async Task CreateAuction_ShouldReturn500_WhenUnexpectedError()
+        {
+            var dto = new CreateAuctionDto();
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default))
+                .ThrowsAsync(new Exception("Error inesperado"));
+
+            var result = await _controller.CreateAuction(dto, userId, productId) as ObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(500, result.StatusCode);
+            Assert.Equal("An error occurred while trying to create an Auction", result.Value);
+        }
+
+        [Fact]
+        public async Task CreateAuction_ShouldReturnOk_WhenSuccess()
+        {
+            var dto = new CreateAuctionDto();
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
             var auctionId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
-            var expectedAuction = new GetAuctionDto { AuctionId = auctionId, AuctionName = "Rare Book" };
 
-            _mockMediator.Setup(m => m.Send(It.IsAny<GetAuctionQuery>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(expectedAuction);
-
-            var result = await _controller.GetAuction(auctionId, userId, productId);
-
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.NotNull(okResult.Value);
-        }
-
-        [Fact]
-        public async Task GetAuction_ShouldReturnNotFound_WhenAuctionDoesNotExist()
-        {
-            var auctionId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
-            var userId = Guid.NewGuid();
-
-            _mockMediator.Setup(m => m.Send(It.IsAny<GetAuctionQuery>(), It.IsAny<CancellationToken>()))
-                .ThrowsAsync(new AuctionNotFoundException("Auction not found"));
-
-            var result = await _controller.GetAuction(auctionId, userId,productId);
-
-            var notFoundResult = Assert.IsType<ObjectResult>(result);
-            Assert.Equal(500, notFoundResult.StatusCode);
-            Assert.Equal("An error occurred while trying to search an Auction", notFoundResult.Value);
-        }
-
-         [Fact]
-        public async Task UpdateAuction_ShouldReturnOk_WhenUpdateIsSuccessful()
-        {
-            var auctionId = Guid.NewGuid();
-            var userId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
-            var updateAuctionDto = new UpdateAuctionDto { AuctionName = "Updated Auction" };
-
-            _mockMediator.Setup(m => m.Send(It.IsAny<UpdateAuctionCommand>(), It.IsAny<CancellationToken>()))
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateAuctionCommand>(), default))
                 .ReturnsAsync(auctionId);
 
-            var result = await _controller.UpdateAuction(auctionId, updateAuctionDto, userId, productId);
+            var result = await _controller.CreateAuction(dto, userId, productId) as OkObjectResult;
 
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.NotNull(okResult.Value);
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+            Assert.Equal(auctionId, result.Value);
+        }
+
+        [Fact]
+        public async Task GetProductoActivo_ShouldReturnBadRequest_WhenProductIdIsEmpty()
+        {
+            var userId = Guid.NewGuid();
+
+            var result = await _controller.GetProductoActivo(Guid.Empty, userId) as BadRequestObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(400, result.StatusCode);
+            Assert.Contains("El ID del producto es requerido", result.Value.ToString());
+        }
+
+        [Fact]
+        public async Task GetProductoActivo_ShouldReturnNotFound_WhenAuctionNotExists()
+        {
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetProductAuctionQuery>(), default)).ReturnsAsync((GetAuctionDto)null);
+
+            var result = await _controller.GetProductoActivo(productId, userId) as NotFoundObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(404, result.StatusCode);
+            Assert.Contains("No hay una subasta activa", result.Value.ToString());
+        }
+
+        [Fact]
+        public async Task GetProductoActivo_ShouldReturnOk_WhenAuctionExists()
+        {
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+            var auctionDto = new GetAuctionDto();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetProductAuctionQuery>(), default)).ReturnsAsync(auctionDto);
+
+            var result = await _controller.GetProductoActivo(productId, userId) as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+            Assert.Equal(auctionDto, result.Value);
+        }
+
+        [Fact]
+        public async Task GetProductoActivo_ShouldHandleConcurrentRequests()
+        {
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+            var auctionDto = new GetAuctionDto();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetProductAuctionQuery>(), default)).ReturnsAsync(auctionDto);
+
+            var tasks = Enumerable.Range(0, 10).Select(_ => _controller.GetProductoActivo(productId, userId)).ToArray();
+
+            var results = await Task.WhenAll(tasks);
+
+            Assert.All(results, result =>
+            {
+                var okResult = result as OkObjectResult;
+                Assert.NotNull(okResult);
+                Assert.Equal(200, okResult.StatusCode);
+            });
+        }
+
+        [Fact]
+        public async Task GetProductoActivo_ShouldHandleSlowResponse()
+        {
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+            var auctionDto = new GetAuctionDto();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetProductAuctionQuery>(), default))
+                .ReturnsAsync(() =>
+                {
+                    Task.Delay(3000).Wait();
+                    return auctionDto;
+                });
+
+            var result = await _controller.GetProductoActivo(productId, userId) as OkObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(200, result.StatusCode);
+            Assert.Equal(auctionDto, result.Value);
+        }
+
+        [Fact]
+        public async Task GetProductoActivo_ShouldReturnInternalServerError_WhenUnhandledExceptionOccurs()
+        {
+            var userId = Guid.NewGuid();
+            var productId = Guid.NewGuid();
+
+            _mockMediator.Setup(m => m.Send(It.IsAny<GetProductAuctionQuery>(), default))
+                .ThrowsAsync(new Exception("Unexpected error"));
+
+            var result = await _controller.GetProductoActivo(productId, userId) as ObjectResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(500, result.StatusCode);
+            Assert.Contains("Error inesperado", result.Value.ToString());
         }
     }
 }

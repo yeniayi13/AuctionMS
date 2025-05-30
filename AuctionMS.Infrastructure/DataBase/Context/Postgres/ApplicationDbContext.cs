@@ -14,6 +14,7 @@ using AuctionMS.Domain.Entities.Auction;
 
 namespace AuctionMS.Infrastructure.Database.Context.Postgres
 {
+
      public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWork
     {
         //*Nos ayudara con los eventos de dominio

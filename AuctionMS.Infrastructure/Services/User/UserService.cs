@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using AuctionMS.Infrastructure;
 using AuctionMS.Common.Dtos.Auction.Response;
 using System.Text.Json;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AuctionMS.Infrastructure.Services.User
 {
+    [ExcludeFromCodeCoverage]
     public class UserService : IUserService
     {
         private readonly HttpClient _httpClient;

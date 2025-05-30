@@ -8,27 +8,23 @@ using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Core.Database;
 using AuctionMS.Core.Repository;
-using AuctionMS.Domain.Entities.Auction.ValueObjects;
-using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Domain.Entities.Auction;
+using AuctionMS.Domain.Entities.Auction.ValueObjects;
+using AuctionMS.Infrastructure.Exceptions;
 using Xunit;
-using AuctionMS.Core.Database;
-using Google.Api.Gax.ResourceNames;
-
 
 namespace AuctionMS.Test.Application.Auction.Handlers.Queries
 {
-
     public class GetNameAuctionQueryHandlerTests
     {
-        private readonly Mock<IAuctionRepository> _auctionRepositoryMock;
+        private readonly Mock<IAuctionRepositoryMongo> _auctionRepositoryMock;
         private readonly Mock<IApplicationDbContext> _dbContextMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly GetNameAuctionQueryHandler _handler;
 
         public GetNameAuctionQueryHandlerTests()
         {
-            _auctionRepositoryMock = new Mock<IAuctionRepository>();
+            _auctionRepositoryMock = new Mock<IAuctionRepositoryMongo>();
             _dbContextMock = new Mock<IApplicationDbContext>();
             _mapperMock = new Mock<IMapper>();
 
@@ -39,20 +35,19 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnAuction_WhenAuctionExists()
+        public async Task Handle_ShouldReturnAuctionDto_WhenAuctionExists()
         {
             // Arrange
             var userId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
-            var request = new GetNameAuctionQuery("Existing Auction", userId, productId);
+            var request = new GetNameAuctionQuery("Existing Auction", userId);
 
-            var auction = new AuctionEntity();
+            var auctionEntity = new AuctionEntity();
             var auctionDto = new GetAuctionDto();
 
-            _auctionRepositoryMock.Setup(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
-                .ReturnsAsync(auction);
+            _auctionRepositoryMock.Setup(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>()))
+                .ReturnsAsync(auctionEntity);
 
-            _mapperMock.Setup(mapper => mapper.Map<GetAuctionDto>(auction))
+            _mapperMock.Setup(mapper => mapper.Map<GetAuctionDto>(auctionEntity))
                 .Returns(auctionDto);
 
             // Act
@@ -61,35 +56,29 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
             // Assert
             Assert.NotNull(result);
             Assert.Equal(auctionDto, result);
-            _auctionRepositoryMock.Verify(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()), Times.Once);
-            _mapperMock.Verify(mapper => mapper.Map<GetAuctionDto>(auction), Times.Once);
+            _auctionRepositoryMock.Verify(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>()), Times.Once);
+            _mapperMock.Verify(mapper => mapper.Map<GetAuctionDto>(auctionEntity), Times.Once);
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnNull_WhenAuctionDoesNotExist()
+        public async Task Handle_ShouldThrowAuctionNotFoundException_WhenAuctionDoesNotExist()
         {
             // Arrange
             var userId = Guid.NewGuid();
-            var productId = Guid.NewGuid();
-            var request = new GetNameAuctionQuery("Non existent Auction", userId, productId);
+            var request = new GetNameAuctionQuery("Nonexistent Auction", userId);
 
-            _auctionRepositoryMock.Setup(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()))
+            // Configuramos el mock para que devuelva null simulando que no encontró la subasta
+            _auctionRepositoryMock.Setup(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>()))
                 .ReturnsAsync((AuctionEntity)null);
 
-            // Act
-            var result = await _handler.Handle(request, CancellationToken.None);
-
-            // Assert
-            Assert.Null(result);
-            _auctionRepositoryMock.Verify(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>(), It.IsAny<AuctionProductId>()), Times.Once);
-        }
-
-        [Fact]
-        public async Task Handle_ShouldThrowException_WhenMapperIsNull()
-        {
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentNullException>(() => Task.Run(() => new GetAllAuctionQueryHandler(_auctionRepositoryMock.Object, null)));
-            Assert.Contains("mapper", exception.Message);
+            var exception = await Assert.ThrowsAsync<AuctionNotFoundException>(() =>
+                _handler.Handle(request, CancellationToken.None));
+
+            Assert.Equal("Auction not found.", exception.Message);
+
+            _auctionRepositoryMock.Verify(repo => repo.GetByNameAsync(It.IsAny<AuctionName>(), It.IsAny<AuctionUserId>()), Times.Once);
         }
+
     }
 }

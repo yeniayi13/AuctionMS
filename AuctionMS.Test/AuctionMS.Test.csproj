@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataSeed\**" />
+    <EmbeddedResource Remove="DataSeed\**" />
+    <None Remove="DataSeed\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
@@ -28,8 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataSeed\" />
-    <Folder Include="Infrastructure\" />
     <Folder Include="Service\" />
   </ItemGroup>
 

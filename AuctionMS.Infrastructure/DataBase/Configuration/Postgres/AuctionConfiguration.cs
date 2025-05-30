@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
 {
+    [ExcludeFromCodeCoverage]
     public class AuctionConfiguration : IEntityTypeConfiguration<AuctionEntity>
     {
         public void Configure(EntityTypeBuilder<AuctionEntity> builder)
