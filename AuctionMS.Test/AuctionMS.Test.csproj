@@ -33,8 +33,4 @@
     <ProjectReference Include="..\AuctionMS\AuctionMS.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
-
 </Project>

@@ -15,10 +15,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Firebase.Auth;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
+using System.Diagnostics.CodeAnalysis;
 
 
 namespace AuctionMS.Infrastructure.Services.Auction
 {
+    [ExcludeFromCodeCoverage]
     public class ProductService : IProductService
     {
         private readonly HttpClient _httpClient;
