@@ -98,19 +98,19 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     throw new InvalidOperationException($" Error: Stock insuficiente para el producto {request.Auction.AuctionProductId}. Disponible: {stock}, requerido: {auctionDto.AuctionCantidadProducto}");
                 }
                 // Guardar la subasta en el repositorio
-                await _auctionRepository.AddAsync(auction);
-                await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_CREATED");
+               
 
                 var nuevoStock = stock.Value - auctionDto.AuctionCantidadProducto;
 
-                var actualizado = await _productService.UpdateProductStockAsync(request.Auction.AuctionProductId, nuevoStock);
+              var actualizado = await _productService.UpdateProductStockAsync(request.Auction.AuctionProductId, nuevoStock,request.UserId);
 
 
                 if (!actualizado)
                 {
                     throw new ApplicationException("No se pudo actualizar el stock del producto luego de crear la subasta.");
                 }
-
+                await _auctionRepository.AddAsync(auction);
+                await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_CREATED");
                 // Retornar el ID de la subasta registrada
                 return auction.AuctionId.Value;
             }

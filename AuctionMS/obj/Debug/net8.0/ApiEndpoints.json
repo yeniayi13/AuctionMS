@@ -29,37 +29,6 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
-      },
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuctionMS.Controllers.AuctionController",
-    "Method": "GetAuction",
-    "RelativePath": "auctioneer/auction/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -86,11 +55,6 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
-      },
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -110,11 +74,6 @@
       },
       {
         "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": false
       }
@@ -164,11 +123,27 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "GetAuction",
+    "RelativePath": "auctioneer/auction/product/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
       },
       {
         "Name": "productId",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

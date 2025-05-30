@@ -11,13 +11,13 @@ namespace AuctionMS.Application.Auction.Commands
     {
         public Guid AuctionId { get; set; }
         public Guid UserId { get; set; }
-        public Guid ProductId { get; set; }
+      
 
-        public DeleteAuctionCommand(Guid auction, Guid userId, Guid productId)
+        public DeleteAuctionCommand(Guid auction, Guid userId)
         {
             AuctionId = auction;
             UserId = userId;
-            ProductId = productId;
+           
         }
     }
 }

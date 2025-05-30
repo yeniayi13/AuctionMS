@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AuctionMS.Common.Dtos.Auction.Response;
+using AuctionMS.Infrastructure.Exceptions;
 using AutoMapper;
 
 
@@ -30,13 +31,26 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 
         public async Task<GetAuctionDto> Handle(GetNameAuctionQuery request, CancellationToken cancellationToken)
         {
-            //if (request.Id == Guid.Empty) throw new NullAttributeException("Auction id is required");
-            var auctionName = AuctionName.Create(request.Name);
-            var userId = AuctionUserId.Create(request.UserId);
-            var productId = AuctionProductId.Create(request.UserId);
-            var auction = await _auctionRepository.GetByNameAsync(auctionName!, userId!, productId!);
-            var auctionDto = _mapper.Map<GetAuctionDto>(auction);
-            return auctionDto;
+
+            try
+            {
+                //if (request.Id == Guid.Empty) throw new NullAttributeException("Auction id is required");
+                var auctionName = AuctionName.Create(request.Name);
+                var userId = AuctionUserId.Create(request.UserId);
+                var auction = await _auctionRepository.GetByNameAsync(auctionName!, userId!);
+                if (auction == null)
+                {
+                    throw new AuctionNotFoundException("Auction not found."); // Esta excepción debe existir
+                }
+                var auctionDto = _mapper.Map<GetAuctionDto>(auction);
+                return auctionDto;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                throw;
+            }
+           
         }
     }
 }

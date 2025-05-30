@@ -27,6 +27,7 @@ namespace AuctionMS
             //* Sin los Scope no funciona!!
             services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
             services.AddScoped<IAuctionRepository, AuctionRepository>();
+            services.AddScoped<IAuctionRepositoryMongo, AuctionRepositoryMongo>();
             services.AddScoped<ApplicationDbContext>();
             services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 

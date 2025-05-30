@@ -34,9 +34,9 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
 
             var auctionId = AuctionId.Create(request.AuctionId);
             var userId = AuctionUserId.Create(request.UserId);
-            var productId = AuctionProductId.Create(request.ProductId);
+            
 
-            var auction = await _auctionRepositoryMongo.GetByIdAsync(auctionId, userId, productId);
+            var auction = await _auctionRepositoryMongo.GetByIdAsync(auctionId, userId);
             if (auction == null)
             {
                 throw new Exception("Product not found."); // Esta excepción debe existir

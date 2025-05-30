@@ -28,11 +28,24 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 
         public async Task<GetAuctionDto> Handle(GetAuctionQuery request, CancellationToken cancellationToken)
         {
-            if (request.Id == Guid.Empty) throw new NullAttributeException("Auction id is required");
-            var auctionId = AuctionId.Create(request.Id);
-            var auction = await _auctionRepository.GetByIdAsync(auctionId!, AuctionUserId.Create(request.UserId), AuctionProductId.Create(request.ProductId));
-            var auctionDto = _mapper.Map<GetAuctionDto>(auction);
-            return auctionDto;
+            try
+            {
+                if (request.Id == Guid.Empty) throw new NullAttributeException("Auction id is required");
+                var auctionId = AuctionId.Create(request.Id);
+                var auction = await _auctionRepository.GetByIdAsync(auctionId!, AuctionUserId.Create(request.UserId));
+                if (auction == null)
+                {
+                    throw new AuctionNotFoundException("Auction not found.");
+                }
+                var auctionDto = _mapper.Map<GetAuctionDto>(auction);
+                return auctionDto;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                throw;
+            }
+            
         }
     }
 }

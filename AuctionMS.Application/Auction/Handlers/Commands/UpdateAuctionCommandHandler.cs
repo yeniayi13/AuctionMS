@@ -39,7 +39,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
 
 
      
-                var oldAuction = await _auctionRepositoryMongo.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!, AuctionProductId.Create(request.ProductId)!);
+                var oldAuction = await _auctionRepositoryMongo.GetByIdAsync(AuctionId.Create(request.Id)!, AuctionUserId.Create(request.UserId)!);
 
                 //Valido los datos de entrada
                 var validator = new UpdateAuctionEntityValidator();

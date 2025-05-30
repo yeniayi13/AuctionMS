@@ -12,6 +12,7 @@ using AuctionMS.Infrastructure;
 using AuctionMS.Core.Service.Auction;
 using AuctionMS.Infrastructure;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Firebase.Auth;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
 
@@ -94,26 +95,60 @@ namespace AuctionMS.Infrastructure.Services.Auction
             }
         }
 
-        public async Task<bool> UpdateProductStockAsync(Guid productId, decimal newStock)
+        public async Task<bool> UpdateProductStockAsync(Guid productId, decimal newStock, Guid auctionUserId)
         {
             try
             {
-                var stockUpdatePayload = new
+                // 1️⃣ Obtener los datos completos del producto
+                var response = await _httpClient.GetAsync($"auctioneer/product/{productId}?userId={auctionUserId}");
+                if (!response.IsSuccessStatusCode)
                 {
-                    ProductStock = newStock
+                    Console.WriteLine($"Error obteniendo el producto: {response.StatusCode}");
+                    return false;
+                }
+
+                var productJson = await response.Content.ReadAsStringAsync();
+                var productData = JsonSerializer.Deserialize<GetProduct>(productJson);
+
+                if (productData == null)
+                {
+                    Console.WriteLine("Error: No se pudo deserializar el producto.");
+                    return false;
+                }
+
+                // 2️⃣ Actualizar solo el stock en el objeto del producto
+                productData.ProductStock = newStock;
+                var updatePayload = new GetProduct
+                {
+                    ProductId = productId,
+                    ProductStock = newStock,
+                    ProductUserId = auctionUserId, // Agregar userId en el cuerpo
+                    ProductName = productData.ProductName,
+                    ProductImage = productData.ProductImage,
+                    ProductPrice = productData.ProductPrice,
+                    ProductDescription = productData.ProductDescription,
+                    ProductAvilability = productData.ProductAvilability,
+                    CategoryId = productData.CategoryId
                 };
 
                 var content = new StringContent(
-                    JsonSerializer.Serialize(stockUpdatePayload),
+                    JsonSerializer.Serialize(updatePayload),
                     Encoding.UTF8,
                     "application/json"
                 );
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                var response = await _httpClient.PatchAsync($"auction/product/{productId}/stock", content);
+
+                // Enviar sin `userId` en la query
+                response = await _httpClient.PutAsync($"auctioneer/product/Update-Product/{productId}", content);
+                // 3️⃣ Enviar la actualización solo del stock
+               
 
                 if (!response.IsSuccessStatusCode)
                 {
                     Console.WriteLine($"Error actualizando el stock del producto: {response.StatusCode}");
+                    var errorDetails = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Detalles del error: {errorDetails}");
                     return false;
                 }
 

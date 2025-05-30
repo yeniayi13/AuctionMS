@@ -7,12 +7,12 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
 {
     public class AuctionCantidadProducto
     {
-            private AuctionCantidadProducto(int cantidad)
+            private AuctionCantidadProducto(decimal cantidad)
             {
                 Cantidad = cantidad;
             }
 
-            public static AuctionCantidadProducto Create(int cantidad)
+            public static AuctionCantidadProducto Create(decimal cantidad)
             {
                 if (cantidad <= 0)
                     throw new ArgumentException("La cantidad a subastar debe ser mayor a cero.");
@@ -20,9 +20,9 @@ namespace AuctionMS.Domain.Entities.Auction.ValueObjects
                 return new AuctionCantidadProducto(cantidad);
             }
 
-            public int Cantidad { get; init; }
+            public decimal Cantidad { get; init; }
 
             // Valor expuesto para facilitar búsquedas e indexaciones
-            public int Value => Cantidad;
+            public decimal Value => Cantidad;
         }
     }

@@ -23,8 +23,9 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
         public async Task<GetAuctionDto> Handle(GetProductAuctionQuery request, CancellationToken cancellationToken)
         {
             var productId = AuctionProductId.Create(request.ProductId);
+            var userId = AuctionUserId.Create(request.UserId);
 
-            var auction = await _auctionRepository.ObtenerSubastaActivaPorProductoAsync(productId);
+            var auction = await _auctionRepository.ObtenerSubastaActivaPorProductoAsync(productId,userId);
 
             if (auction == null)
                 return null;

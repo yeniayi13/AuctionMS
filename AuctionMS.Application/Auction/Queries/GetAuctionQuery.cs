@@ -10,16 +10,15 @@ namespace AuctionMS.Application.Auctions.Queries
 {
     public class GetAuctionQuery : IRequest<GetAuctionDto>
     {
-        public Guid Id { get; set; }
         public Guid UserId { get; set; }
 
-        public Guid ProductId { get; set; }
+        public Guid Id { get; set; }
 
-        public GetAuctionQuery(Guid id, Guid userId, Guid productId)
+        public GetAuctionQuery( Guid userId, Guid id)
         {
-            Id = id;
+            
             UserId = userId;
-            ProductId = productId;
+            Id = id;
         }
     }
 }

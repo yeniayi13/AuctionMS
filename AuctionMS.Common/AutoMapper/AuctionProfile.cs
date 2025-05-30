@@ -31,7 +31,6 @@ namespace AuctionMS.Common.AutoMapper
             .ForMember(dest => dest.AuctionUserId, opt => opt.MapFrom(src => src.AuctionUserId.Value))
             .ForMember(dest => dest.AuctionProductId, opt => opt.MapFrom(src => src.AuctionProductId.Value))
 
-
             .ReverseMap();
         }
     }

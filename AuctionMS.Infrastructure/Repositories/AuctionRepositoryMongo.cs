@@ -27,14 +27,13 @@ namespace AuctionMS.Infrastructure.Repositories
         }
 
 
-        public async Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId, AuctionProductId productId)
+        public async Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId)
         {
-            Console.WriteLine($"Buscando una subasta con ID: {id} y usuario: {userId.Value} y producto : {productId.Value}");
+            Console.WriteLine($"Buscando una subasta con ID: {id} y usuario: {userId.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value),
-                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value),
-                  Builders<AuctionEntity>.Filter.Eq("AuctionProductId", productId.Value)
+                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value)
             );
 
             var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
@@ -55,14 +54,13 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
-        public async Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId, AuctionProductId productId)
+        public async Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId)
         {
-            Console.WriteLine($"Buscando subasta con nombre: {name} usuario: {userId.Value} y producto: {productId.Value}");
+            Console.WriteLine($"Buscando subasta con nombre: {name} usuario: {userId.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionName", name.Value),
-                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value),
-                Builders<AuctionEntity>.Filter.Eq("AuctionProductId", productId.Value)
+                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value)
             );
 
             var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
@@ -108,16 +106,17 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntities;
         }
 
-        public async Task<AuctionEntity?> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId)
+        public async Task<AuctionEntity?> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId, AuctionUserId userId)
         {
             Console.WriteLine($"Buscando subasta activa para el producto con ID: {productId.Value}");
 
             var ahora = DateTime.UtcNow;
 
             var filter = Builders<AuctionEntity>.Filter.And(
-                Builders<AuctionEntity>.Filter.Eq("AuctionProductId.Value", productId.Value),
-                Builders<AuctionEntity>.Filter.Lte("AuctionFechaInicio.Value", ahora),
-                Builders<AuctionEntity>.Filter.Gte("AuctionFechaFin.Value", ahora)
+                Builders<AuctionEntity>.Filter.Eq("AuctionProductId", productId.Value),
+                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value),
+                Builders<AuctionEntity>.Filter.Lte("AuctionFechaInicio", ahora),
+                Builders<AuctionEntity>.Filter.Gte("AuctionFechaFin", ahora)
             );
 
             var subastaActiva = await _collection
