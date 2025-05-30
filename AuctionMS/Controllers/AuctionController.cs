@@ -12,7 +12,7 @@ using AuctionMS.Infrastructure.Repositories;
 namespace AuctionMS.Controllers
 {
     [ApiController]
-    [Route("auctioneer/auction")]
+    [Route("auction")]
     public class AuctionController : ControllerBase
     {
         private readonly ILogger<AuctionController> _logger;

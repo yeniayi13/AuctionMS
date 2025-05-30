@@ -107,30 +107,33 @@ namespace AuctionMS.Infrastructure.Services.Auction
                     return false;
                 }
 
-                var productJson = await response.Content.ReadAsStringAsync();
-                var productData = JsonSerializer.Deserialize<GetProduct>(productJson);
+                await using var responseStream = await response.Content.ReadAsStreamAsync();
+                var productData = await JsonSerializer.DeserializeAsync<GetProduct>(responseStream, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
 
                 if (productData == null)
                 {
                     Console.WriteLine("Error: No se pudo deserializar el producto.");
                     return false;
                 }
-
+                Console.WriteLine(JsonSerializer.Serialize(productData));
                 // 2️⃣ Actualizar solo el stock en el objeto del producto
                 productData.ProductStock = newStock;
                 var updatePayload = new GetProduct
                 {
                     ProductId = productId,
                     ProductStock = newStock,
-                    ProductUserId = auctionUserId, // Agregar userId en el cuerpo
+                    ProductUserId = productData.ProductUserId, // Agregar userId en el cuerpo
                     ProductName = productData.ProductName,
                     ProductImage = productData.ProductImage,
-                    ProductPrice = productData.ProductPrice,
+                    ProductPrice = productData.ProductPrice != null ? Convert.ToDecimal(productData.ProductPrice) : 0,
                     ProductDescription = productData.ProductDescription,
                     ProductAvilability = productData.ProductAvilability,
                     CategoryId = productData.CategoryId
                 };
-
+                Console.WriteLine($"User ID enviado: {productData.ProductUserId}");
                 var content = new StringContent(
                     JsonSerializer.Serialize(updatePayload),
                     Encoding.UTF8,
@@ -140,7 +143,7 @@ namespace AuctionMS.Infrastructure.Services.Auction
 
 
                 // Enviar sin `userId` en la query
-                response = await _httpClient.PutAsync($"auctioneer/product/Update-Product/{productId}", content);
+                response = await _httpClient.PutAsync($"auctioneer/product/Update-Product/{productId}?userId={auctionUserId}", content);
                 // 3️⃣ Enviar la actualización solo del stock
                
 

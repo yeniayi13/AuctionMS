@@ -114,13 +114,15 @@ namespace AuctionMS.Infrastructure.Repositories
 
             var filter = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionProductId", productId.Value),
-                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value),
-                Builders<AuctionEntity>.Filter.Lte("AuctionFechaInicio", ahora),
-                Builders<AuctionEntity>.Filter.Gte("AuctionFechaFin", ahora)
+                Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value)
+                //Builders<AuctionEntity>.Filter.Lte("AuctionFechaInicio", ahora),
+                //Builders<AuctionEntity>.Filter.Gte("AuctionFechaFin", ahora)
             );
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
 
             var subastaActiva = await _collection
                 .Find(filter)
+                .Project<GetAuctionDto>(projection)
                 .FirstOrDefaultAsync()
                 .ConfigureAwait(false);
 
@@ -130,10 +132,10 @@ namespace AuctionMS.Infrastructure.Repositories
             }
             else
             {
-                Console.WriteLine($"Subasta activa encontrada con ID: {subastaActiva.AuctionId.Value}");
+                Console.WriteLine($"Subasta activa encontrada con ID: {subastaActiva.AuctionId}");
             }
-
-            return subastaActiva;
+            var auctionEntity = _mapper.Map<AuctionEntity>(subastaActiva);
+            return auctionEntity;
         }
 
 

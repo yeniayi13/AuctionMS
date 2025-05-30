@@ -20,7 +20,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetAllAuction",
-    "RelativePath": "auctioneer/auction",
+    "RelativePath": "auction",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -36,7 +36,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "UpdateAuction",
-    "RelativePath": "auctioneer/auction/{id}",
+    "RelativePath": "auction/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -62,7 +62,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "DeleteAuction",
-    "RelativePath": "auctioneer/auction/{id}",
+    "RelativePath": "auction/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -83,7 +83,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "CreateAuction",
-    "RelativePath": "auctioneer/auction/addAuction/{userId}/{productId}",
+    "RelativePath": "auction/addAuction/{userId}/{productId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -109,7 +109,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetAllNameAuction",
-    "RelativePath": "auctioneer/auction/name/auction/{name}",
+    "RelativePath": "auction/name/auction/{name}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -130,7 +130,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetAuction",
-    "RelativePath": "auctioneer/auction/product/{productId}",
+    "RelativePath": "auction/product/{productId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -151,7 +151,7 @@
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetProductoActivo",
-    "RelativePath": "auctioneer/auction/producto-activo/{productId}",
+    "RelativePath": "auction/producto-activo/{productId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

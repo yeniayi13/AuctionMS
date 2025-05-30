@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/auctioneer/auction/addAuction/{userId}/{productId}": {
+    "/auction/addAuction/{userId}/{productId}": {
       "post": {
         "tags": [
           "Auction"
@@ -56,7 +56,7 @@
         }
       }
     },
-    "/auctioneer/auction": {
+    "/auction": {
       "get": {
         "tags": [
           "Auction"
@@ -78,7 +78,7 @@
         }
       }
     },
-    "/auctioneer/auction/name/auction/{name}": {
+    "/auction/name/auction/{name}": {
       "get": {
         "tags": [
           "Auction"
@@ -108,7 +108,7 @@
         }
       }
     },
-    "/auctioneer/auction/product/{productId}": {
+    "/auction/product/{productId}": {
       "get": {
         "tags": [
           "Auction"
@@ -139,7 +139,7 @@
         }
       }
     },
-    "/auctioneer/auction/{id}": {
+    "/auction/{id}": {
       "put": {
         "tags": [
           "Auction"
@@ -218,7 +218,7 @@
         }
       }
     },
-    "/auctioneer/auction/producto-activo/{productId}": {
+    "/auction/producto-activo/{productId}": {
       "get": {
         "tags": [
           "Auction"
