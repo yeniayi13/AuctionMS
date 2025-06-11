@@ -1,0 +1,411 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AuctionMS",
+    "version": "1.0"
+  },
+  "paths": {
+    "/auction/addAuction/{userId}/{productId}": {
+      "post": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction/name/auction/{name}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction/product/{productId}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction/{id}": {
+      "put": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction/producto-activo/{productId}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "AuctionMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto": {
+        "type": "object",
+        "properties": {
+          "auctionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auctionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionPriceBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "auctionPriceReserva": {
+            "type": "number",
+            "format": "double"
+          },
+          "auctionDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionIncremento": {
+            "type": "number",
+            "format": "double"
+          },
+          "auctionFechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "auctionFechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "auctionCondiciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionCantidadProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "auctionUserId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auctionProductId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuctionMS.Common.Dtos.Auction.Request.UpdateAuctionDto": {
+        "type": "object",
+        "properties": {
+          "auctionID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auctionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionPriceBase": {
+            "type": "number",
+            "format": "double"
+          },
+          "auctionPriceReserva": {
+            "type": "number",
+            "format": "double"
+          },
+          "auctionDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionIncremento": {
+            "type": "number",
+            "format": "double"
+          },
+          "auctionFechaInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "auctionFechaFin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "auctionCondiciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "auctionCantidadProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "auctionUserId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auctionProductId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Keycloak": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://localhost:18080/realms/auth-demo/protocol/openid-connect/auth",
+            "scopes": {
+              "openid": "openid",
+              "profile": "profile"
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Keycloak": [ ]
+    }
+  ]
+}
