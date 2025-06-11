@@ -176,7 +176,7 @@
               "RelativeDocumentMoniker": "..\\AuctionMS.Test\\Service\\MockHttpMessageHandlerException.cs",
               "ToolTip": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastass\\AuctionMS\\AuctionMS.Test\\Service\\MockHttpMessageHandlerException.cs",
               "RelativeToolTip": "..\\AuctionMS.Test\\Service\\MockHttpMessageHandlerException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T03:35:25.053Z",
               "EditorCaption": ""
@@ -191,8 +191,7 @@
               "RelativeToolTip": "..\\AuctionMS.Test\\Service\\MockHttpMessageHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:34:49.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T03:34:49.005Z"
             },
             {
               "$type": "Document",
@@ -204,8 +203,7 @@
               "RelativeToolTip": "..\\AuctionMS.Test\\Service\\UserServiceTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAPwAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:33:28.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T03:33:28.665Z"
             },
             {
               "$type": "Document",
@@ -217,8 +215,7 @@
               "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Repositories\\AuctionRepositoryMongo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:15:14.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T03:15:14.152Z"
             },
             {
               "$type": "Document",
@@ -242,8 +239,7 @@
               "RelativeToolTip": "..\\AuctionMS.Infrastructure\\Services\\User\\UserService.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAowA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:15:05.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T03:15:05.56Z"
             },
             {
               "$type": "Document",

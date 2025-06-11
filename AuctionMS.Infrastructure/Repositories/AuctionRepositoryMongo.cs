@@ -54,6 +54,29 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
+        public async Task<AuctionEntity?> GetByIdAsync(AuctionId id)
+        {
+            Console.WriteLine($"Buscando una subasta con ID: {id} ");
+
+            var filters = Builders<AuctionEntity>.Filter.And(
+                Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value)
+               
+            );
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDto = await _collection
+                .Find(filters)
+                .Project<GetAuctionDto>(projection) // Convertir el resultado al DTO
+                .FirstOrDefaultAsync()
+                .ConfigureAwait(false);
+
+           
+            var auctionEntity = _mapper.Map<AuctionEntity>(auctionDto);
+            return auctionEntity;
+        }
+
+
         public async Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId)
         {
             Console.WriteLine($"Buscando subasta con nombre: {name} usuario: {userId.Value} ");

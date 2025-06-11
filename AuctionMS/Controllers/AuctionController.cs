@@ -175,9 +175,42 @@ namespace AuctionMS.Controllers
             }
         }
 
+        //BUSCAR SUBASTA SOLO POR ID
+
+        [HttpGet("id/{id}")]
+        public async Task<IActionResult> GetAuctionById([FromRoute] Guid id)
+        {
+            try
+            {
+                if (id == Guid.Empty)
+                {
+                    return BadRequest("El ID de la subasta es requerido.");
+                }
+
+                var query = new GetAuctionByIdQuery(id); 
+                var Auction = await _mediator.Send(query);
+
+                if (Auction == null)
+                {
+                    return NotFound("No se encontró la subasta.");
+                }
+
+                return Ok(Auction);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error al buscar la subasta por ID: {Message}", e.Message);
+                return StatusCode(500, "Ocurrió un error al buscar la subasta.");
+            }
+        }
 
 
-       // [Authorize(Policy = "SubastadorPolicy")]
+
+
+
+
+
+        // [Authorize(Policy = "SubastadorPolicy")]
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId)

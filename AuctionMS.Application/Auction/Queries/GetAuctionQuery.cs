@@ -20,6 +20,9 @@ namespace AuctionMS.Application.Auctions.Queries
             UserId = userId;
             Id = id;
         }
+
+     
+
     }
 }
 
