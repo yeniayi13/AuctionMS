@@ -43,4 +43,4 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
             return _mapper.Map<GetAuctionDto>(auction);
         }
     }
-}
+}*/
