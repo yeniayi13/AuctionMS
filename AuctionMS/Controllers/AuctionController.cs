@@ -177,7 +177,7 @@ namespace AuctionMS.Controllers
 
         //BUSCAR SUBASTA SOLO POR ID
 
-        [HttpGet("id/{id}")]
+       /* [HttpGet("id/{id}")]
         public async Task<IActionResult> GetAuctionById([FromRoute] Guid id)
         {
             try
@@ -202,7 +202,7 @@ namespace AuctionMS.Controllers
                 _logger.LogError("Error al buscar la subasta por ID: {Message}", e.Message);
                 return StatusCode(500, "Ocurrió un error al buscar la subasta.");
             }
-        }
+        }*/
 
 
 

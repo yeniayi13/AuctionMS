@@ -1,4 +1,4 @@
-﻿using AuctionMS.Application.Auction.Queries;
+﻿/*using AuctionMS.Application.Auction.Queries;
 using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Core.Database;
 using AuctionMS.Core.Repository;
