@@ -928,3 +928,7 @@ C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\obj\Debug\net8.0\r
 C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.pdb
 C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.genruntimeconfig.cache
 C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\obj\Debug\net8.0\ref\AuctionMS.dll
+C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\bin\Debug\net8.0\MassTransit.dll
+C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\bin\Debug\net8.0\MassTransit.Abstractions.dll
+C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\bin\Debug\net8.0\MassTransit.EntityFrameworkCoreIntegration.dll
+C:\Users\Paola\OneDrive\Desktop\subastass\AuctionMS\AuctionMS\bin\Debug\net8.0\MassTransit.RabbitMqTransport.dll

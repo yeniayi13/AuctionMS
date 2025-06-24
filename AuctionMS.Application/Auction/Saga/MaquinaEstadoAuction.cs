@@ -1,6 +1,7 @@
 ﻿using MassTransit;
-using AuctionMS.Application.Auction.Saga.Events.Eventos;
 using AuctionMS.Domain.Entities;
+using AuctionMS.Domain.Entities.Auction;
+using AuctionMS.Application.Saga.Events;
 
 namespace AuctionMS.Application.Saga
 {

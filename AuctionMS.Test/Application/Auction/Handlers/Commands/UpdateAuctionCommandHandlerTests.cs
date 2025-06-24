@@ -71,7 +71,8 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Commands
                 AuctionFechaFin.Create(DateTime.UtcNow.AddDays(-3)),
                 AuctionCondiciones.Create("Old conditions"),
                 AuctionUserId.Create(userId),
-                AuctionProductId.Create(Guid.NewGuid())
+                AuctionProductId.Create(Guid.NewGuid()),
+                 AuctionBidId.Create(Guid.NewGuid())
             );
 
             _auctionRepositoryMongoMock

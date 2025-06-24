@@ -240,7 +240,25 @@ namespace AuctionMS.Controllers
             }
         }
 
-       // [Authorize(Policy = "SubastadorPolicy")]
+        //UPDATE STATUS SUBASTA
+
+       /* [HttpPut("/status/{id}")]
+        public async Task<IActionResult> UpdateStatusAuction(Guid id, [FromBody] string TipoActualizacion)
+        {
+            try
+            {
+                var command = new ModificarEstatusAuctionCommand(new ModificarEstatusDto(id, TipoActualizacion));
+                await Mediator.Send(command);
+                return Ok("Modificación Exitosa");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Ha ocurrido un error  al realizar la modificación");
+            }
+        }
+       */
+
+        // [Authorize(Policy = "SubastadorPolicy")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteAuction([FromRoute] Guid id, [FromQuery] Guid userId)

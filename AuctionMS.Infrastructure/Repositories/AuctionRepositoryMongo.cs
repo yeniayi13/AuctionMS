@@ -161,6 +161,35 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
+        //PUJA
+        public async Task<AuctionEntity?> GetBidByIdAndAuctionIdAsync(AuctionBidId auctionBidId)
+        {
+            Console.WriteLine($"Buscando subasta que contiene la puja con ID: {auctionBidId.Value}");
+
+            var filter = Builders<AuctionEntity>.Filter.And(
+               Builders<AuctionEntity>.Filter.Eq("AuctionBidId", auctionBidId.Value));
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var subasta = await _collection
+                .Find(filter)
+                .Project<GetAuctionDto>(projection)
+                .FirstOrDefaultAsync()
+                .ConfigureAwait(false);
+
+            if (subasta == null)
+            {
+                Console.WriteLine("No se encontró ninguna subasta que contenga esa puja.");
+            }
+            else
+            {
+                Console.WriteLine($"Subasta encontrada con ID: {subasta.AuctionId}");
+            }
+
+            var auctionEntity = _mapper.Map<AuctionEntity>(subasta);
+            return auctionEntity;
+        }
+
 
 
 

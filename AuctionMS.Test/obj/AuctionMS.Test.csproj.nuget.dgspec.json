@@ -304,6 +304,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MassTransit.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.3.3, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.5.0, )"
@@ -643,6 +647,14 @@
             "EntityFrameworkCore.Exceptions.PostgreSQL": {
               "target": "Package",
               "version": "[8.1.3, )"
+            },
+            "MassTransit.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.3.3, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.3.3, )"
             },
             "MediatR": {
               "target": "Package",

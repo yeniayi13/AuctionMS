@@ -25,6 +25,7 @@ namespace AuctionMS.Common.Dtos.Auction.Request
 
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }// Genera un nuevo GUID por defecto
+        public Guid AuctionBidId { get; init; }// Genera un nuevo GUID por defecto
     }
 }
 

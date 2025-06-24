@@ -17,7 +17,7 @@ namespace AuctionMS.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -27,8 +27,8 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.Property<Guid>("AuctionId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("AuctionCantidadProducto")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("AuctionCantidadProducto")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("AuctionCondiciones")
                         .IsRequired()
@@ -73,6 +73,9 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
+                    b.Property<int>("CurrentState")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
@@ -85,6 +88,48 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.HasKey("AuctionId");
 
                     b.ToTable("Auctions", (string)null);
+                });
+
+            modelBuilder.Entity("AuctionMS.Domain.Entities.Auction.EstadoAuction", b =>
+                {
+                    b.Property<Guid>("CorrelationId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("EstadoActual")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<DateTime>("UltimaActualizacion")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("CorrelationId");
+
+                    b.HasIndex("EstadoActual");
+
+                    b.ToTable("EstadoAuction", (string)null);
+                });
+
+            modelBuilder.Entity("AuctionMS.Domain.Entities.Auction.AuctionEntity", b =>
+                {
+                    b.OwnsOne("AuctionMS.Domain.Entities.Auction.ValueObjects.AuctionBidId", "AuctionBidId", b1 =>
+                        {
+                            b1.Property<Guid>("AuctionEntityAuctionId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uuid");
+
+                            b1.HasKey("AuctionEntityAuctionId");
+
+                            b1.ToTable("Auctions");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AuctionEntityAuctionId");
+                        });
+
+                    b.Navigation("AuctionBidId")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -9,7 +9,7 @@ namespace AuctionMS.Infrastructure.Database.Factory.Postgres
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=AuctionMS;Username=postgres;Password=yeniree0813");
+            optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=AuctionMS;Username=postgres;Password=17092002");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

@@ -20,9 +20,15 @@ using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Core.Service.User;
 using AuctionMS.Infrastructure.Services.Auction;
 //using AuctionMS.Core.Service.Product;
+using MassTransit;
 using AuctionMS.Infrastructure.Services.User;
 using RabbitMQ.Client;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver.Core.Configuration;
+using AuctionMS.Application.Saga;
+using AuctionMS.Infrastructure.Database.Configuration.Postgres;
+using AuctionMS.Infrastructure.Database.Context.Postgres;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -152,6 +158,39 @@ builder.Services.Configure<HttpClientUrl>(
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IUserService, UserService>();
 builder.Services.AddHttpClient<IProductService, ProductService>();
+
+
+//MASS TRANSIT
+builder.Services.AddMassTransit(cfg =>
+{
+    // Configura la saga con PostgreSQL
+    cfg.AddSagaStateMachine<MaquinaEstadoAuction, EstadoAuction>()
+        .EntityFrameworkRepository(r =>
+        {
+            r.ConcurrencyMode = ConcurrencyMode.Optimistic;
+            r.AddDbContext<DbContext, ApplicationDbContext>((provider, options) =>
+            {
+                var configuration = provider.GetRequiredService<IConfiguration>();
+                var dbConnectionString = configuration.GetConnectionString("PostgresConnection"); 
+                options.UseNpgsql(dbConnectionString, npgsqlOptions =>
+                {
+                    npgsqlOptions.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name);
+                });
+            });
+        });
+
+    // Configura RabbitMQ
+    cfg.UsingRabbitMq((context, rabbitCfg) =>
+    {
+        rabbitCfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        rabbitCfg.ConfigureEndpoints(context);
+    });
+});
 
 //Configurar Firebase Storage Settings desde appsettings.json
 

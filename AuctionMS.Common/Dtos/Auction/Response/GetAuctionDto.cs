@@ -28,6 +28,11 @@ namespace AuctionMS.Common.Dtos.Auction.Response
         public decimal AuctionCantidadProducto { get; init; }
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }// Genera un nuevo GUID por defecto
+
+        public Guid AuctionBidId { get; init; }
+
+
+
     }
 
      

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AuctionMS.Core.Database;
 using System.Diagnostics.CodeAnalysis;
+using AuctionMS.Domain.Entities.Auction;
 
 namespace AuctionMS.Infrastructure.Database.Context.Mongo
 {
@@ -71,7 +72,8 @@ namespace AuctionMS.Infrastructure.Database.Context.Mongo
                 var collectionNames = new[]
                 {
                    
-                    "Auction"
+                    "Auction",
+                     "EstadoAuction"
                 };
 
                 var existingCollections = new HashSet<string>(_database.ListCollectionNames().ToEnumerable());
@@ -94,7 +96,12 @@ namespace AuctionMS.Infrastructure.Database.Context.Mongo
             {
                 Console.WriteLine($"Error configuring collections: {e.Message}");
             }
+      
+        
         }
+
+        public IMongoCollection<EstadoAuction> EstadoAuctions =>
+       _database.GetCollection<EstadoAuction>("EstadoAuction");
     }
 
 }
