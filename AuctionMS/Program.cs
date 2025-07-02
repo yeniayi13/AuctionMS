@@ -29,6 +29,7 @@ using MongoDB.Driver.Core.Configuration;
 using AuctionMS.Application.Saga;
 using AuctionMS.Infrastructure.Database.Configuration.Postgres;
 using AuctionMS.Infrastructure.Database.Context.Postgres;
+using Microsoft.Win32;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -110,6 +111,13 @@ builder.Services.AddSingleton<IEventBus<GetAuctionDto>>(provider =>
 {
     var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
     return new RabbitMQProducer<GetAuctionDto>(rabbitMQConnection);
+});
+
+// Registra tu IEventBus específico para UpdateEstadoAuctionDto
+builder.Services.AddSingleton<IEventBus<UpdateEstadoAuctionDto>>(provider =>
+{
+    var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
+return new RabbitMQProducer<UpdateEstadoAuctionDto>(rabbitMQConnection);
 });
 
 builder.Services.AddSingleton<IMongoCollection<GetAuctionDto>>(provider =>

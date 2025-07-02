@@ -7,12 +7,14 @@ using AuctionMS.Application.Auction.Validators.Auctions;
 using AuctionMS.Core.RabbitMQ;
 using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Common.Dtos.Auction.Request;
+using AuctionMS.Application.Auction.Commands;
 
 namespace AuctionMS.Application.Auction.Handlers.Commands
 {
         public class UpdateEstadoAuctionCommandHandler : IRequestHandler<UpdateEstadoAuctionCommand, Guid>
         {
             private readonly IEventBus<UpdateEstadoAuctionDto> _eventBus;
+
 
             public UpdateEstadoAuctionCommandHandler(IEventBus<UpdateEstadoAuctionDto> eventBus)
             {

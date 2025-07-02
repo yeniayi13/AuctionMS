@@ -17,5 +17,21 @@ namespace AuctionMS.Domain.Entities.Auction
 
         // Fecha de última actualización del estado
         public DateTime UltimaActualizacion { get; set; }
+    
+
+     public EstadoAuction(Guid correlacionId, string estadoActual, DateTime ultimaActualizacion)
+        {
+            CorrelationId = correlacionId;
+            EstadoActual = estadoActual;
+            UltimaActualizacion = ultimaActualizacion;
+
+        }
+
     }
 }
+
+
+
+
+
+

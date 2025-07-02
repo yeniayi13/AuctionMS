@@ -1,23 +1,26 @@
 ﻿
 
+
 namespace AuctionMS.Application.Saga.Events
 {
+ 
+    public class AuctionCreatedEvent
+    {
+        public Guid AuctionId { get; set; }
+       
+
+        public AuctionCreatedEvent(Guid auctionId)
+        {
+            AuctionId = auctionId;
+        }
+    }
     public class AuctionStartedEvent
     {
         public Guid AuctionId { get; set; }
-    }
 
-    public class BidPlacedEvent
-    {
-        public Guid AuctionId { get; set; }
-        public Guid BidId { get; set; }
-        public Guid UserId { get; set; }
-
-        public BidPlacedEvent(Guid auctionId, Guid bidId, Guid userId)
+        public AuctionStartedEvent(Guid auctionId)
         {
             AuctionId = auctionId;
-            BidId = bidId;
-            UserId = userId;
         }
     }
 
@@ -41,55 +44,15 @@ namespace AuctionMS.Application.Saga.Events
         }
     }
 
-    public class PaymentReceivedEvent
+
+    public class AuctionCompletedEvent
     {
         public Guid AuctionId { get; set; }
-        public Guid PaymentId { get; set; }
-        public Guid UserId { get; set; }
 
-        public PaymentReceivedEvent(Guid auctionId, Guid paymentId, Guid userId)
+
+        public AuctionCompletedEvent(Guid auctionId)
         {
             AuctionId = auctionId;
-            PaymentId = paymentId;
-            UserId = userId;
         }
     }
 }
-
-
-
-
-
-/*
-namespace AuctionMS.Application.Saga.Events
-{
-    public class AuctionStartedEvent
-    {
-        public Guid AuctionId { get; set; }
-    }
-
-    public class BidPlacedEvent
-    {
-        public Guid AuctionId { get; set; }
-
-        public BidPlacedEvent(Guid auctionId)
-        {
-            AuctionId = auctionId;
-        }
-    }
-
-    public class AuctionEndedEvent { }
-
-    public class AuctionCanceledEvent
-    {
-        public Guid AuctionId { get; set; }
-
-        public AuctionCanceledEvent(Guid auctionId)
-        {
-            AuctionId = auctionId;
-        }
-    }
-
-    public class PaymentReceivedEvent { }
-}
-*/
