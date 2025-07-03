@@ -71,7 +71,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
 
                 // Crear la entidad Subasta
                 var auction = new AuctionEntity(
-                    AuctionId.Create(request.Auction.AuctionId),
+                    AuctionId.Create(Guid.NewGuid()),
                     AuctionName.Create(request.Auction.AuctionName),
                     AuctionImage.Create(request.Auction.AuctionImage),
                     AuctionPriceBase.Create(request.Auction.AuctionPriceBase),

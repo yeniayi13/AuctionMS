@@ -108,7 +108,7 @@ namespace AuctionMS.Controllers
 
        // [Authorize(Policy = "SubastadorPolicy")]
        // [Authorize(Policy = "PostorPolicy")]
-       // [HttpGet("name/auction/{name}")]
+       [HttpGet("name/auction/{name}")]
         public async Task<IActionResult> GetAllNameAuction([FromRoute] string name, [FromQuery] Guid userId)
         {
             try

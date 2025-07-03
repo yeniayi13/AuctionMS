@@ -27,6 +27,9 @@ namespace AuctionMS.Domain.Entities.Auction
 
         }
 
+        private EstadoAuction() { }
+
+
     }
 }
 

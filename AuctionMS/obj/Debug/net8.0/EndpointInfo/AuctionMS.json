@@ -139,6 +139,29 @@
         }
       }
     },
+    "/auction/id/{id}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auction/{id}": {
       "put": {
         "tags": [
@@ -211,6 +234,65 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/status/{id}": {
+      "put": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "CorrelationId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "NuevoEstado",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -323,6 +405,10 @@
             "format": "uuid"
           },
           "auctionProductId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auctionBidId": {
             "type": "string",
             "format": "uuid"
           }
