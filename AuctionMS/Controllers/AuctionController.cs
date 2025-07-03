@@ -205,11 +205,6 @@ namespace AuctionMS.Controllers
         }
 
 
-
-
-
-
-
         // [Authorize(Policy = "SubastadorPolicy")]
         [HttpPut]
         [Route("{id}")]
@@ -242,13 +237,13 @@ namespace AuctionMS.Controllers
 
         //UPDATE STATUS SUBASTA
 
-       /* [HttpPut("/status/{id}")]
-        public async Task<IActionResult> UpdateStatusAuction(Guid id, [FromBody] string TipoActualizacion)
+        [HttpPut("/status/{id}")]
+        public async Task<IActionResult> UpdateEstadoAuction(Guid CorrelationId, [FromBody] DateTime fechaActualizacion , string NuevoEstado)
         {
             try
             {
-                var command = new ModificarEstatusAuctionCommand(new ModificarEstatusDto(id, TipoActualizacion));
-                await Mediator.Send(command);
+                var command = new UpdateEstadoAuctionCommand(new UpdateEstadoAuctionDto(CorrelationId, NuevoEstado, fechaActualizacion));
+                await _mediator.Send(command);
                 return Ok("Modificación Exitosa");
             }
             catch (Exception e)
@@ -256,7 +251,7 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, "Ha ocurrido un error  al realizar la modificación");
             }
         }
-       */
+       
 
         // [Authorize(Policy = "SubastadorPolicy")]
         [HttpDelete]

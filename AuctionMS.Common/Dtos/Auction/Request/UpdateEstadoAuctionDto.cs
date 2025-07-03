@@ -11,6 +11,16 @@ namespace AuctionMS.Common.Dtos.Auction.Request
         public Guid CorrelationId { get; set; }
         public string NuevoEstado { get; set; } = null!;
         public DateTime FechaActualizacion { get; set; }
+    
+
+   
+        public UpdateEstadoAuctionDto(Guid id, string nuevoEstado, DateTime fechaActualizacion)
+        {
+            CorrelationId = id;
+            NuevoEstado = nuevoEstado;
+            FechaActualizacion = fechaActualizacion;
+
+        }
     }
 
 }
