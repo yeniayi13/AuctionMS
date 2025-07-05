@@ -66,7 +66,17 @@ namespace AuctionMS.Controllers
             }
         }
 
-       
+        [HttpGet("{auctionId}/state")]
+        public async Task<IActionResult> GetAuctionState(Guid auctionId)
+        {
+            var estado = await _mediator.Send(new GetAuctionStateQuery(auctionId));
+            if (estado == null)
+                return NotFound($"Estado para subasta {auctionId} no encontrado");
+
+            return Ok(new { AuctionId = auctionId, Estado = estado });
+        }
+
+
         //
         //  [Authorize(Policy = "PostorPolicy")]
         //  [Authorize(Policy = "SubastadorPolicy")]
