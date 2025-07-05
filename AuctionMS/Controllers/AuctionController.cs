@@ -65,10 +65,12 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, "An error occurred while trying to create an Auction");
             }
         }
-//
-      //  [Authorize(Policy = "PostorPolicy")]
-      //  [Authorize(Policy = "SubastadorPolicy")]
-      //  [Authorize(Policy = "AdministradorPolicy")]
+
+       
+        //
+        //  [Authorize(Policy = "PostorPolicy")]
+        //  [Authorize(Policy = "SubastadorPolicy")]
+        //  [Authorize(Policy = "AdministradorPolicy")]
         [HttpGet]
         public async Task<IActionResult> GetAllAuction([FromQuery] Guid userId)
         {
@@ -235,23 +237,10 @@ namespace AuctionMS.Controllers
             }
         }
 
-        //UPDATE STATUS SUBASTA
+      
 
-        [HttpPut("/status/{id}")]
-        public async Task<IActionResult> UpdateEstadoAuction(Guid CorrelationId, [FromBody] DateTime fechaActualizacion , string NuevoEstado)
-        {
-            try
-            {
-                var command = new UpdateEstadoAuctionCommand(new UpdateEstadoAuctionDto(CorrelationId, NuevoEstado, fechaActualizacion));
-                await _mediator.Send(command);
-                return Ok("Modificación Exitosa");
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, "Ha ocurrido un error  al realizar la modificación");
-            }
-        }
-       
+
+     
 
         // [Authorize(Policy = "SubastadorPolicy")]
         [HttpDelete]

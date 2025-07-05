@@ -23,16 +23,16 @@ namespace AuctionMS.Infrastructure.DataBase.Configuration.Postgres
                    .ValueGeneratedNever()
                    .IsRequired();
 
-            builder.Property(x => x.EstadoActual)
+            builder.Property(x => x.CurrentState)
                    .IsRequired()
                    .HasMaxLength(64);
 
-            // Si tienes una propiedad de fecha para la última actualización, puedes configurarla así
-            builder.Property(x => x.UltimaActualizacion)
+
+            builder.Property(x => x.FechaInicio)
                    .IsRequired();
 
-            // Opcional: puedes agregar índices para optimizar consultas
-            builder.HasIndex(x => x.EstadoActual);
+     
+            builder.HasIndex(x => x.CurrentState);
         }
     }
 

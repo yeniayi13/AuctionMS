@@ -1,51 +1,43 @@
-﻿using MediatR;
-using AuctionMS.Core.Repository;
-using AuctionMS.Domain.Entities.Auction;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using AuctionMS.Application.Auction.Commands;
 using AuctionMS.Domain.Entities.Auction.ValueObjects;
-using AuctionMS.Application.Auction.Commands;
-using AuctionMS.Application.Auction.Validators.Auctions;
 using AuctionMS.Core.RabbitMQ;
-using AuctionMS.Infrastructure.Exceptions;
-using AuctionMS.Common.Dtos.Auction.Request;
-using AuctionMS.Application.Auction.Commands;
+using MediatR;
+using AuctionMS.Application.Saga.Events;
 
 namespace AuctionMS.Application.Auction.Handlers.Commands
 {
-        public class UpdateEstadoAuctionCommandHandler : IRequestHandler<UpdateEstadoAuctionCommand, Guid>
+    public class UpdateEstadoAuctionCommandHandler : IRequestHandler<UpdateEstadoAuctionCommand, Unit>
+    {
+        private readonly IEventBus<AuctionStateChangedEvent> _eventBus;
+
+        public UpdateEstadoAuctionCommandHandler(IEventBus<AuctionStateChangedEvent> eventBus)
         {
-            private readonly IEventBus<UpdateEstadoAuctionDto> _eventBus;
+            _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
+        }
 
+        public async Task<Unit> Handle(UpdateEstadoAuctionCommand request, CancellationToken cancellationToken)
+        {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
 
-            public UpdateEstadoAuctionCommandHandler(IEventBus<UpdateEstadoAuctionDto> eventBus)
-            {
-                _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
-            }
+            var auctionEstado = AuctionEstado.Create(request.NuevoEstado);
 
-            public async Task<Guid> Handle(UpdateEstadoAuctionCommand request, CancellationToken cancellationToken)
-            {
-                if (request == null)
-                    throw new ArgumentNullException(nameof(request));
+            var estadoEvent = new AuctionStateChangedEvent(
+                request.AuctionId,
+                auctionEstado.Value,
+                DateTime.UtcNow
+            );
 
-                var validator = new UpdateEstadoAuctionValidator();
-                var validationResult = await validator.ValidateAsync(request.EstadoDto, cancellationToken);
-                if (!validationResult.IsValid)
-            {
-                throw new FluentValidation.ValidationException(validationResult.Errors);
+            await _eventBus.PublishMessageAsync(
+                estadoEvent,
+                "auctionStateQueue",
+                "AUCTION_STATE_UPDATED"
+            );
 
-            }
-
-
-            // Validar que el estado sea uno de los permitidos (por ejemplo)
-            var estadosValidos = new[] { "Pending", "Active", "Ended", "Canceled", "Completed" };
-                if (!estadosValidos.Contains(request.EstadoDto.NuevoEstado))
-                    throw new InvalidOperationException($"Estado no válido: {request.EstadoDto.NuevoEstado}");
-
-                // Publicar evento en bus, el consumer se encargará de procesar y actualizar la saga
-                await _eventBus.PublishMessageAsync(request.EstadoDto, "auctionStateQueue", "AUCTION_STATE_UPDATED");
-
-                return request.EstadoDto.CorrelationId;
-            }
+            return Unit.Value;
         }
     }
-
-
+}

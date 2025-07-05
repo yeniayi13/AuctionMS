@@ -45,9 +45,7 @@ namespace AuctionMS.Infrastructure.Database.Context.Postgres
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            //TODO: En teoria hacen lo mismo
-            //* Esto hara que no agarre la entidad como tal sino la adecuada para la BD
+           
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
             modelBuilder.Entity<AuctionEntity>().OwnsOne(a => a.AuctionBidId);
 

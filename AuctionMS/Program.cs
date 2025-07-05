@@ -171,7 +171,7 @@ builder.Services.AddHttpClient<IProductService, ProductService>();
 //MASS TRANSIT
 builder.Services.AddMassTransit(cfg =>
 {
-    // Configura la saga con PostgreSQL
+    
     cfg.AddSagaStateMachine<MaquinaEstadoAuction, EstadoAuction>()
         .EntityFrameworkRepository(r =>
         {
@@ -196,7 +196,9 @@ builder.Services.AddMassTransit(cfg =>
             h.Password("guest");
         });
 
+
         rabbitCfg.ConfigureEndpoints(context);
+
     });
 });
 

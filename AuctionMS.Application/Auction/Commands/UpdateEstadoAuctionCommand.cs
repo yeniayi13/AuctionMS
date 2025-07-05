@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AuctionMS.Common.Dtos.Auction.Request;
 using MediatR;
 
 namespace AuctionMS.Application.Auction.Commands
 {
-    
-    
-        public class UpdateEstadoAuctionCommand : IRequest<Guid>
+    public class UpdateEstadoAuctionCommand : IRequest<Unit>
     {
-            public UpdateEstadoAuctionCommand(UpdateEstadoAuctionDto estadoDto)
-            {
-                EstadoDto = estadoDto;
-            }
+        public Guid AuctionId { get; }
+        public string NuevoEstado { get; }
 
-            public UpdateEstadoAuctionDto EstadoDto { get; private set; }
+        public UpdateEstadoAuctionCommand(Guid auctionId, string nuevoEstado)
+        {
+            AuctionId = auctionId;
+            NuevoEstado = nuevoEstado ?? throw new ArgumentNullException(nameof(nuevoEstado));
         }
- }
-
+    }
+}

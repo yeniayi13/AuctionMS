@@ -62,7 +62,7 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     request.Auction.AuctionDescription != null ? AuctionDescription.Create(request.Auction.AuctionDescription) : oldAuction.AuctionDescription,
                     request.Auction.AuctionIncremento != null ? AuctionIncremento.Create(request.Auction.AuctionIncremento) : oldAuction.AuctionIncremento,
                     request.Auction.AuctionCantidadProducto != null ? AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto) : oldAuction.AuctionCantidadProducto,
-
+                    request.Auction.AuctionEstado != null ? AuctionEstado.Create(request.Auction.AuctionEstado) : oldAuction.AuctionEstado,
                     request.Auction.AuctionFechaInicio != null ? AuctionFechaInicio.Create(request.Auction.AuctionFechaInicio) : oldAuction.AuctionFechaInicio,
                      request.Auction.AuctionFechaFin != null ? AuctionFechaFin.Create(request.Auction.AuctionFechaFin) : oldAuction.AuctionFechaFin,
                     request.Auction.AuctionCondiciones != null ? AuctionCondiciones.Create(request.Auction.AuctionCondiciones) : oldAuction.AuctionCondiciones,

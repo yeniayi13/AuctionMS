@@ -8,30 +8,28 @@ using MassTransit;
 namespace AuctionMS.Domain.Entities.Auction
 {
 
-    public class EstadoAuction : SagaStateMachineInstance
-    {
-        public Guid CorrelationId { get; set; }
-
-        // Este es el estado actual de la saga 
-        public string EstadoActual { get; set; } = null!;
-
-        // Fecha de última actualización del estado
-        public DateTime UltimaActualizacion { get; set; }
-    
-
-     public EstadoAuction(Guid correlacionId, string estadoActual, DateTime ultimaActualizacion)
+        public class EstadoAuction : SagaStateMachineInstance
         {
-            CorrelationId = correlacionId;
-            EstadoActual = estadoActual;
-            UltimaActualizacion = ultimaActualizacion;
+            public Guid CorrelationId { get; set; }
+            public string CurrentState { get; set; }
+
+            public Guid AuctionId { get; set; }
+
+            public DateTime FechaInicio { get; set; }
+
+            public EstadoAuction(Guid correlationId, string currentState, Guid auctionId, DateTime fechaInicio)
+            {
+                CorrelationId = correlationId;
+                CurrentState = currentState;
+                AuctionId = auctionId;
+                FechaInicio = fechaInicio;
+
+            }
 
         }
 
-        private EstadoAuction() { }
-
-
     }
-}
+
 
 
 
