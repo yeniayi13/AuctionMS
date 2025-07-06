@@ -17,7 +17,7 @@ namespace AuctionMS.Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.5")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -35,6 +35,10 @@ namespace AuctionMS.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("AuctionDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AuctionEstado")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -73,9 +77,6 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<int>("CurrentState")
-                        .HasColumnType("integer");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
@@ -95,17 +96,20 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.Property<Guid>("CorrelationId")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("EstadoActual")
+                    b.Property<Guid>("AuctionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CurrentState")
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("character varying(64)");
 
-                    b.Property<DateTime>("UltimaActualizacion")
+                    b.Property<DateTime>("FechaInicio")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("CorrelationId");
 
-                    b.HasIndex("EstadoActual");
+                    b.HasIndex("CurrentState");
 
                     b.ToTable("EstadoAuction", (string)null);
                 });

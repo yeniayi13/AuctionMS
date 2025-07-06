@@ -13,6 +13,7 @@ namespace AuctionMS.Application.Saga
         public State Completed { get; private set; } = null!;
 
         public Event<AuctionStartedEvent> AuctionStarted { get; private set; } = null!;
+        public Event<ActivateAuctionEvent> ActivateAuction { get; private set; } = null!;
         public Event<BidPlacedEvent> BidPlaced { get; private set; } = null!;
         public Event<AuctionEndedEvent> AuctionEnded { get; private set; } = null!;
         public Event<PaymentReceivedEvent> PaymentReceived { get; private set; } = null!;
@@ -22,8 +23,8 @@ namespace AuctionMS.Application.Saga
         {
             InstanceState(x => x.CurrentState);
 
-            // Correlación por AuctionId
             Event(() => AuctionStarted, x => x.CorrelateById(ctx => ctx.Message.AuctionId));
+            Event(() => ActivateAuction, x => x.CorrelateById(ctx => ctx.Message.AuctionId));
             Event(() => BidPlaced, x => x.CorrelateById(ctx => ctx.Message.AuctionId));
             Event(() => AuctionEnded, x => x.CorrelateById(ctx => ctx.Message.AuctionId));
             Event(() => PaymentReceived, x => x.CorrelateById(ctx => ctx.Message.AuctionId));
@@ -35,7 +36,7 @@ namespace AuctionMS.Application.Saga
                     {
                         ctx.Saga.CorrelationId = ctx.Message.AuctionId;
                         ctx.Saga.AuctionId = ctx.Message.AuctionId;
-                        ctx.Saga.FechaInicio = ctx.Message.FechaInicio;
+                        ctx.Saga.FechaInicio = ctx.Message.AuctionFechaInicio;
                         Console.WriteLine($"[INIT] Saga creada para AuctionId: {ctx.Message.AuctionId}");
                     })
                     .ThenAsync(async ctx =>
@@ -49,30 +50,33 @@ namespace AuctionMS.Application.Saga
                     .TransitionTo(Pending)
             );
 
-            During(Pending,
-                When(BidPlaced)
-                    .Then(ctx => Console.WriteLine($"[BID] Primera puja recibida. Subasta {ctx.Saga.AuctionId} activa"))
-                    .ThenAsync(async ctx =>
-                    {
-                        await ctx.Publish(new AuctionStateChangedEvent(
-                            ctx.Saga.AuctionId,
-                            nameof(Active),
-                            ctx.Message.FechaBid
-                        ));
-                    })
-                    .TransitionTo(Active)
-            );
+             During(Pending,
+              When(ActivateAuction)
+                .If(
+                    ctx => ctx.Message.FechaActivacion >= ctx.Saga.FechaInicio,
+                    binder => binder
+                        .Then(ctx => Console.WriteLine($"[ACTIVATE] Activando subasta programada. AuctionId: {ctx.Saga.AuctionId}"))
+                        .ThenAsync(async ctx =>
+                        {
+                            await ctx.Publish(new AuctionStateChangedEvent(
+                                ctx.Saga.AuctionId,
+                                nameof(Active),
+                                ctx.Message.FechaActivacion
+                            ));
+                        })
+                        .TransitionTo(Active)
+                ),
+
+                    When(AuctionCanceled)
+                        .Then(ctx => Console.WriteLine("Subasta cancelada"))
+                        .TransitionTo(Canceled)
+              );
 
             During(Active,
                 When(BidPlaced)
-                    .Then(ctx =>
-                    {
-                        Console.WriteLine($"[BID] Nueva puja recibida en subasta {ctx.Saga.AuctionId}");
-                        // Aquí no cambia estado
-                    }),
+                    .Then(ctx => Console.WriteLine($"[BID] Puja recibida en subasta activa. AuctionId: {ctx.Saga.AuctionId}")),
 
                 When(AuctionEnded)
-                    .Then(ctx => Console.WriteLine($"[END] Subasta finalizada. Id: {ctx.Saga.AuctionId}"))
                     .ThenAsync(async ctx =>
                     {
                         await ctx.Publish(new AuctionStateChangedEvent(
@@ -84,7 +88,6 @@ namespace AuctionMS.Application.Saga
                     .TransitionTo(Ended),
 
                 When(AuctionCanceled)
-                    .Then(ctx => Console.WriteLine($"[CANCEL] Subasta cancelada desde Active. Id: {ctx.Saga.AuctionId}"))
                     .ThenAsync(async ctx =>
                     {
                         await ctx.Publish(new AuctionStateChangedEvent(
@@ -98,7 +101,6 @@ namespace AuctionMS.Application.Saga
 
             During(Ended,
                 When(PaymentReceived)
-                    .Then(ctx => Console.WriteLine($"[PAYMENT] Pago recibido. Id: {ctx.Saga.AuctionId}"))
                     .ThenAsync(async ctx =>
                     {
                         await ctx.Publish(new AuctionStateChangedEvent(
@@ -110,7 +112,6 @@ namespace AuctionMS.Application.Saga
                     .TransitionTo(Completed),
 
                 When(AuctionCanceled)
-                    .Then(ctx => Console.WriteLine($"[CANCEL] Subasta cancelada desde Ended. Id: {ctx.Saga.AuctionId}"))
                     .ThenAsync(async ctx =>
                     {
                         await ctx.Publish(new AuctionStateChangedEvent(

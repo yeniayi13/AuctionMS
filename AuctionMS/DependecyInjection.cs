@@ -35,6 +35,7 @@ namespace AuctionMS
 
 
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateAuctionCommandHandler).Assembly));
+                services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(UpdateEstadoAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(UpdateAuctionCommandHandler).Assembly));
             services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetNameAuctionQueryHandler).Assembly));

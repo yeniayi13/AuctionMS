@@ -30,6 +30,7 @@ namespace AuctionMS.Common.AutoMapper
             .ForMember(dest => dest.AuctionCantidadProducto, opt => opt.MapFrom(src => src.AuctionCantidadProducto.Value))
             .ForMember(dest => dest.AuctionUserId, opt => opt.MapFrom(src => src.AuctionUserId.Value))
             .ForMember(dest => dest.AuctionProductId, opt => opt.MapFrom(src => src.AuctionProductId.Value))
+             .ForMember(dest => dest.AuctionEstado, opt => opt.MapFrom(src => src.AuctionEstado.Value))
             .ForMember(destinationMember => destinationMember.AuctionBidId,
                 options => options.MapFrom(sourceMember => sourceMember.AuctionBidId.Value))
 

@@ -9,13 +9,20 @@ namespace AuctionMS.Application.Saga.Events
     public class AuctionStartedEvent
     {
         public Guid AuctionId { get; set; }
-        public DateTime FechaInicio { get; set; }
+        public DateTime AuctionFechaInicio { get; set; }
 
         public AuctionStartedEvent(Guid auctionId, DateTime fechaInicio)
         {
             AuctionId = auctionId;
-            FechaInicio = fechaInicio;
+            AuctionFechaInicio = fechaInicio;
         }
+        public AuctionStartedEvent() { }
+    }
+
+    public record ActivateAuctionEvent
+    {
+        public Guid AuctionId { get; set; }
+        public DateTime FechaActivacion { get; set; }
     }
 
     public class AuctionEndedEvent

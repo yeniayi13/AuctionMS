@@ -22,13 +22,14 @@ namespace AuctionMS.Common.Dtos.Auction.Response
         public DateTime AuctionFechaInicio { get; init; }
         public DateTime AuctionFechaFin { get; init; }
         public string? AuctionCondiciones { get; init; }
-        public decimal AuctionCantidadProducto { get; init; }
+        public int AuctionCantidadProducto { get; init; }
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }
         public Guid AuctionBidId { get; init; }
 
-      
-        public string? AuctionCurrentState { get; init; }
+
+        public string AuctionEstado { get; init; }
+
     }
 
 

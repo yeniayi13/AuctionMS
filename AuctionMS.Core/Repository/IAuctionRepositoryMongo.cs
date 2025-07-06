@@ -15,6 +15,7 @@ namespace AuctionMS.Core.Repository
         Task<AuctionEntity?> GetByNameAsync(AuctionName name, AuctionUserId userId);
 
         Task<List<AuctionEntity>> GetAllAsync(AuctionUserId userId);
+        Task<List<AuctionEntity?>> GetAllByEstadoAsync(string estado);
         Task<AuctionEntity?> ObtenerSubastaActivaPorProductoAsync(AuctionProductId productId,AuctionUserId userId);
 
         Task<AuctionEntity?> GetBidByIdAndAuctionIdAsync(AuctionBidId auctionBidId);

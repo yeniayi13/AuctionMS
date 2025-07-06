@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AuctionMS.Core.Repository;
+using MongoDB.Bson;
 
 namespace AuctionMS.Infrastructure.Repositories
 {
@@ -190,8 +191,29 @@ namespace AuctionMS.Infrastructure.Repositories
             return auctionEntity;
         }
 
+        public async Task<List<AuctionEntity>> GetAllByEstadoAsync(string estado)
+        {
+            var filter = Builders<AuctionEntity>.Filter.Regex(
+                "AuctionEstado",
+                new BsonRegularExpression($"^{estado}", "i") // 🎯 Permite búsqueda insensible a mayúsculas
+            );
 
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
 
+            var auctionDto = await _collection
+                .Find(filter)
+                .Project<GetAuctionDto>(projection)
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDto == null || auctionDto.Count == 0)
+            {
+                Console.WriteLine($"[BUSQUEDA] No se encontraron subastas con estado: {estado}");
+                return new List<AuctionEntity>();
+            }
+
+            return _mapper.Map<List<AuctionEntity>>(auctionDto);
+        }
 
 
     }

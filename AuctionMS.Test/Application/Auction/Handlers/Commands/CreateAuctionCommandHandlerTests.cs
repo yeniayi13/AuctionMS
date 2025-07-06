@@ -27,13 +27,14 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Commands
         private readonly Mock<IMapper> _mapperMock;
         private readonly CreateAuctionCommandHandler _handler;
 
-        public CreateAuctionCommandHandlerTests()
+      /*  public CreateAuctionCommandHandlerTests()
         {
             _auctionRepositoryMock = new Mock<IAuctionRepository>();
             _eventBusMock = new Mock<IEventBus<GetAuctionDto>>();
             _userServiceMock = new Mock<IUserService>();
             _productServiceMock = new Mock<IProductService>();
             _mapperMock = new Mock<IMapper>();
+            _publish
 
             _handler = new CreateAuctionCommandHandler(
                 _mapperMock.Object,
@@ -42,7 +43,7 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Commands
                 _eventBusMock.Object,
                 _productServiceMock.Object
             );
-        }
+        }*/
 
         [Fact]
         public async Task Handle_ShouldCreateAuctionAndPublishEvent()

@@ -48,12 +48,13 @@ public class DeleteAuctionCommandHandlerTests
             AuctionDescription.Create("Test Description"),
             AuctionIncremento.Create(10),
             AuctionCantidadProducto.Create(1),
+            AuctionEstado.Create("Pending"),
             AuctionFechaInicio.Create(DateTime.UtcNow),
             AuctionFechaFin.Create(DateTime.UtcNow.AddHours(1)),
             AuctionCondiciones.Create("Condiciones"),
             AuctionUserId.Create(userId),
             AuctionProductId.Create(Guid.NewGuid()),
-             AuctionBidId.Create(Guid.NewGuid())
+            AuctionBidId.Create(Guid.NewGuid())
         );
 
         _auctionRepositoryMongoMock.Setup(x => x.GetByIdAsync(It.IsAny<AuctionId>(), It.IsAny<AuctionUserId>()))

@@ -25,8 +25,9 @@ namespace AuctionMS.Domain.Entities.Auction
                 FechaInicio = fechaInicio;
 
             }
+         public EstadoAuction() { }
 
-        }
+    }
 
     }
 

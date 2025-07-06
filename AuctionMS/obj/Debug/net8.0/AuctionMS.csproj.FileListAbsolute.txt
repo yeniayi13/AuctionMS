@@ -1115,10 +1115,14 @@ C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\stati
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AuctionMS.props
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AuctionMS.props
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.csproj.Up2Date
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\refint\AuctionMS.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.pdb
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\AuctionMS.genruntimeconfig.cache
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\ref\AuctionMS.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\bin\Debug\net8.0\MassTransit.QuartzIntegration.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\bin\Debug\net8.0\Quartz.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\bin\Debug\net8.0\Quartz.Extensions.DependencyInjection.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS\bin\Debug\net8.0\Quartz.Extensions.Hosting.dll

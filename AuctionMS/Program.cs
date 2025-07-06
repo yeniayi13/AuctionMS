@@ -30,6 +30,9 @@ using AuctionMS.Application.Saga;
 using AuctionMS.Infrastructure.Database.Configuration.Postgres;
 using AuctionMS.Infrastructure.Database.Context.Postgres;
 using Microsoft.Win32;
+using AuctionMS.Application.Saga.Events;
+using AuctionMS.Application.Auction.ServiceBack;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,6 +55,7 @@ foreach (var profileType in profileTypes)
     builder.Services.AddAutoMapper(profileType);
 }
 
+builder.Services.AddHostedService<AuctionActivatorService>();
 
 builder.Services.AddSingleton<IApplicationDbContextMongo>(sp =>
 {
@@ -136,7 +140,17 @@ builder.Services.AddSingleton<RabbitMQConsumer>(provider =>
     return new RabbitMQConsumer(rabbitMQConnection, auctionCollection);
 });
 
+builder.Services.AddSingleton<IEventBus<UpdateEstadoAuctionDto>>(provider =>
+{
+    var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
+    return new RabbitMQProducer<UpdateEstadoAuctionDto>(rabbitMQConnection);
+});
 
+builder.Services.AddSingleton<IEventBus<AuctionStateChangedEvent>>(provider =>
+{
+    var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
+    return new RabbitMQProducer<AuctionStateChangedEvent>(rabbitMQConnection);
+});
 // Iniciar el consumidor automáticamente con `RabbitMQBackgroundService`
 builder.Services.AddHostedService<RabbitMQBackgroundService>();
 
@@ -168,39 +182,43 @@ builder.Services.AddHttpClient<IUserService, UserService>();
 builder.Services.AddHttpClient<IProductService, ProductService>();
 
 
-//MASS TRANSIT
-builder.Services.AddMassTransit(cfg =>
-{
-    
-    cfg.AddSagaStateMachine<MaquinaEstadoAuction, EstadoAuction>()
-        .EntityFrameworkRepository(r =>
-        {
-            r.ConcurrencyMode = ConcurrencyMode.Optimistic;
-            r.AddDbContext<DbContext, ApplicationDbContext>((provider, options) =>
+    // Add the necessary using directive for Quartz integration with MassTransit  
+   
+
+    // Update the MassTransit configuration to fix the error
+    builder.Services.AddMassTransit(cfg =>
+    {
+        cfg.AddSagaStateMachine<MaquinaEstadoAuction, EstadoAuction>()
+            .EntityFrameworkRepository(r =>
             {
-                var configuration = provider.GetRequiredService<IConfiguration>();
-                var dbConnectionString = configuration.GetConnectionString("PostgresConnection"); 
-                options.UseNpgsql(dbConnectionString, npgsqlOptions =>
+                r.ConcurrencyMode = ConcurrencyMode.Optimistic;
+                r.AddDbContext<DbContext, ApplicationDbContext>((provider, options) =>
                 {
-                    npgsqlOptions.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name);
+                    var configuration = provider.GetRequiredService<IConfiguration>();
+                    var dbConnectionString = configuration.GetConnectionString("PostgresConnection");
+                    options.UseNpgsql(dbConnectionString, npgsqlOptions =>
+                    {
+                        npgsqlOptions.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name);
+                    });
                 });
             });
-        });
 
-    // Configura RabbitMQ
-    cfg.UsingRabbitMq((context, rabbitCfg) =>
-    {
-        rabbitCfg.Host("localhost", "/", h =>
+      
+
+        // Configure RabbitMQ
+        cfg.UsingRabbitMq((context, rabbitCfg) =>
         {
-            h.Username("guest");
-            h.Password("guest");
+            rabbitCfg.Host("localhost", "/", h =>
+            {
+                h.Username("guest");
+                h.Password("guest");
+            });
+
+           
+
+            rabbitCfg.ConfigureEndpoints(context);
         });
-
-
-        rabbitCfg.ConfigureEndpoints(context);
-
     });
-});
 
 //Configurar Firebase Storage Settings desde appsettings.json
 

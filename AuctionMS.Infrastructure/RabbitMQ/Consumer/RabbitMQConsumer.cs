@@ -60,7 +60,9 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
                             .Set(a => a.AuctionImage, eventMessageD.Data.AuctionImage)
                             .Set(a => a.AuctionPriceBase, eventMessageD.Data.AuctionPriceBase)
                             .Set(a => a.AuctionPriceReserva, eventMessageD.Data.AuctionPriceReserva)
-
+                            .Set(a => a.AuctionEstado, eventMessageD.Data.AuctionEstado)
+                            .Set(a => a.AuctionBidId, eventMessageD.Data.AuctionBidId)
+                            . Set(a => a.AuctionPriceReserva, eventMessageD.Data.AuctionPriceReserva)
                             .Set(a => a.AuctionDescription, eventMessageD.Data.AuctionDescription)
                             .Set(a => a.AuctionCondiciones, eventMessageD.Data.AuctionCondiciones)
                             .Set(a => a.AuctionFechaInicio, eventMessageD.Data.AuctionFechaInicio)
@@ -72,7 +74,7 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Consumer
 
 
 
-
+                        Console.WriteLine($"Actualizando subasta en MongoDB con Estado: {eventMessageD.Data.AuctionEstado}");
 
                         await _collection.UpdateOneAsync(filter, update);
                         Console.WriteLine($"Subasta actualizado en MongoDB: {JsonConvert.SerializeObject(eventMessageD.Data)}");

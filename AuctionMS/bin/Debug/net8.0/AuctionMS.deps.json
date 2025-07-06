@@ -13,6 +13,7 @@
           "AuctionMS.Infrastructure": "1.0.0",
           "EntityFrameworkCore.Exceptions.PostgreSQL": "8.1.3",
           "MassTransit.EntityFrameworkCore": "8.3.3",
+          "MassTransit.Quartz": "8.5.0",
           "MassTransit.RabbitMQ": "8.3.3",
           "MediatR": "12.5.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -22,6 +23,7 @@
           "Microsoft.IdentityModel.Tokens": "8.9.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.21.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "Quartz": "3.14.0",
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
@@ -185,9 +187,9 @@
           }
         }
       },
-      "MassTransit/8.3.3": {
+      "MassTransit/8.5.0": {
         "dependencies": {
-          "MassTransit.Abstractions": "8.3.3",
+          "MassTransit.Abstractions": "8.5.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.5",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "9.0.0",
@@ -196,22 +198,22 @@
         },
         "runtime": {
           "lib/net8.0/MassTransit.dll": {
-            "assemblyVersion": "8.3.3.0",
-            "fileVersion": "8.3.3.0"
+            "assemblyVersion": "8.5.0.0",
+            "fileVersion": "8.5.0.0"
           }
         }
       },
-      "MassTransit.Abstractions/8.3.3": {
+      "MassTransit.Abstractions/8.5.0": {
         "runtime": {
           "lib/net8.0/MassTransit.Abstractions.dll": {
-            "assemblyVersion": "8.3.3.0",
-            "fileVersion": "8.3.3.0"
+            "assemblyVersion": "8.5.0.0",
+            "fileVersion": "8.5.0.0"
           }
         }
       },
       "MassTransit.EntityFrameworkCore/8.3.3": {
         "dependencies": {
-          "MassTransit": "8.3.3",
+          "MassTransit": "8.5.0",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.5"
         },
         "runtime": {
@@ -221,9 +223,22 @@
           }
         }
       },
+      "MassTransit.Quartz/8.5.0": {
+        "dependencies": {
+          "MassTransit": "8.5.0",
+          "Quartz": "3.14.0",
+          "Quartz.Extensions.Hosting": "3.14.0"
+        },
+        "runtime": {
+          "lib/net8.0/MassTransit.QuartzIntegration.dll": {
+            "assemblyVersion": "8.5.0.0",
+            "fileVersion": "8.5.0.0"
+          }
+        }
+      },
       "MassTransit.RabbitMQ/8.3.3": {
         "dependencies": {
-          "MassTransit": "8.3.3",
+          "MassTransit": "8.5.0",
           "RabbitMQ.Client": "7.1.2"
         },
         "runtime": {
@@ -1020,6 +1035,42 @@
           "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "9.0.4.0",
             "fileVersion": "9.0.4.0"
+          }
+        }
+      },
+      "Quartz/3.14.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.5"
+        },
+        "runtime": {
+          "lib/net8.0/Quartz.dll": {
+            "assemblyVersion": "3.14.0.0",
+            "fileVersion": "3.14.0.0"
+          }
+        }
+      },
+      "Quartz.Extensions.DependencyInjection/3.14.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.5",
+          "Microsoft.Extensions.Options": "9.0.5",
+          "Quartz": "3.14.0"
+        },
+        "runtime": {
+          "lib/net8.0/Quartz.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "3.14.0.0",
+            "fileVersion": "3.14.0.0"
+          }
+        }
+      },
+      "Quartz.Extensions.Hosting/3.14.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting.Abstractions": "9.0.0",
+          "Quartz.Extensions.DependencyInjection": "3.14.0"
+        },
+        "runtime": {
+          "lib/net8.0/Quartz.Extensions.Hosting.dll": {
+            "assemblyVersion": "3.14.0.0",
+            "fileVersion": "3.14.0.0"
           }
         }
       },
@@ -2035,19 +2086,19 @@
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
-    "MassTransit/8.3.3": {
+    "MassTransit/8.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2us7sfVj67qOpS3RVNtPUyiEURyLvbUBzHULwQAweo8bTXFIw20kPn+sFYuWWH0EB6i5NxhqA7LtDw3a06JyFA==",
-      "path": "masstransit/8.3.3",
-      "hashPath": "masstransit.8.3.3.nupkg.sha512"
+      "sha512": "sha512-K0dkuWGqSD3i23Qnmeltk7igEHlnrm93IuKV8ZfspoxfyKPzvqMfQVkC8V1/UxHbwIevdhdRhtV7SArNAda6aw==",
+      "path": "masstransit/8.5.0",
+      "hashPath": "masstransit.8.5.0.nupkg.sha512"
     },
-    "MassTransit.Abstractions/8.3.3": {
+    "MassTransit.Abstractions/8.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Qwtjfc7msYm3JERdm/2ejyvuys0GVkzh9p7BnD+gi0m8ugu1+S0Wm/pLV0k9AiM3w77ubNdss8NdzHMYxvJcpA==",
-      "path": "masstransit.abstractions/8.3.3",
-      "hashPath": "masstransit.abstractions.8.3.3.nupkg.sha512"
+      "sha512": "sha512-Dkc+LudZCkg0HSO9z/WfdO18x4czA82SMkBBrtliBo+gIeXu39/Y8xgPiyN2/3TJ0fbmg6C5w/dBTHXFS2TH6g==",
+      "path": "masstransit.abstractions/8.5.0",
+      "hashPath": "masstransit.abstractions.8.5.0.nupkg.sha512"
     },
     "MassTransit.EntityFrameworkCore/8.3.3": {
       "type": "package",
@@ -2055,6 +2106,13 @@
       "sha512": "sha512-y9/TFEPCA9By57z3EhcJBoDXZQH8LyLk7IvxgdQzDsC5e98/kv6JoA3IpfhuSeJvwBVLG2Z+jnx9pocDOuXo+g==",
       "path": "masstransit.entityframeworkcore/8.3.3",
       "hashPath": "masstransit.entityframeworkcore.8.3.3.nupkg.sha512"
+    },
+    "MassTransit.Quartz/8.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fb4E2/4naWkmF1wqB4nEDDgermcxfKnQcCy8j+CgNETED/hQc95XzU0k/LrizgW7PE/VyfXCZawKx7sCSr5F+Q==",
+      "path": "masstransit.quartz/8.5.0",
+      "hashPath": "masstransit.quartz.8.5.0.nupkg.sha512"
     },
     "MassTransit.RabbitMQ/8.3.3": {
       "type": "package",
@@ -2454,6 +2512,27 @@
       "sha512": "sha512-mw5vcY2IEc7L+IeGrxpp/J5OSnCcjkjAgJYCm/eD52wpZze8zsSifdqV7zXslSMmfJG2iIUGZyo3KuDtEFKwMQ==",
       "path": "npgsql.entityframeworkcore.postgresql/9.0.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512"
+    },
+    "Quartz/3.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j8mY6S0FWbtuEFbStUEZAkkGpZLbSuTT0us1w0DUQqhi+vwg/7XXS36TeH3o34zZoqYGyXvk6jrKnW/p6kS8sg==",
+      "path": "quartz/3.14.0",
+      "hashPath": "quartz.3.14.0.nupkg.sha512"
+    },
+    "Quartz.Extensions.DependencyInjection/3.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CUY9ZaUsmnl8YxPcl3eXmg/1UVWv1NdyATKGaBjfxf8MYH36vgCoerv7aCSjM/oRbdiaBwNnPfNgHMzxUu1p1g==",
+      "path": "quartz.extensions.dependencyinjection/3.14.0",
+      "hashPath": "quartz.extensions.dependencyinjection.3.14.0.nupkg.sha512"
+    },
+    "Quartz.Extensions.Hosting/3.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kbxBND5Nift+qwOud8cjywoLvjcQX+aLt6R7qQcQVg8w84NUNjTsjzZ5zIod9vz7ricSvIaQXGVbhpm7X6yVQA==",
+      "path": "quartz.extensions.hosting/3.14.0",
+      "hashPath": "quartz.extensions.hosting.3.14.0.nupkg.sha512"
     },
     "RabbitMQ.Client/7.1.2": {
       "type": "package",

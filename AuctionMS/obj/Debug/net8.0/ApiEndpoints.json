@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_12",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_14",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -29,6 +29,22 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "GetAuctionState",
+    "RelativePath": "auction/{auctionId}/state",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "auctionId",
+        "Type": "System.Guid",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -181,37 +197,6 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuctionMS.Controllers.AuctionController",
-    "Method": "UpdateEstadoAuction",
-    "RelativePath": "status/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "CorrelationId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "fechaActualizacion",
-        "Type": "System.DateTime",
-        "IsRequired": true
-      },
-      {
-        "Name": "NuevoEstado",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
