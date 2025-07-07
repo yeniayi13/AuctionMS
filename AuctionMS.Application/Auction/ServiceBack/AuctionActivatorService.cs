@@ -42,7 +42,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
 
                 var repository = scope.ServiceProvider.GetRequiredService<IAuctionRepositoryMongo>();
                 var sender = scope.ServiceProvider.GetRequiredService<ISendEndpointProvider>();
-                var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+                var mediator = scope.ServiceProvider.GetRequiredService<MassTransit.Mediator.IMediator>();
 
                 // 🟢 Activar subastas
                var pendientes = await repository.GetAllByEstadoAsync("Pending");
