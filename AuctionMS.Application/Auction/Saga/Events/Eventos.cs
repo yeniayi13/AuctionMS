@@ -40,10 +40,12 @@ namespace AuctionMS.Application.Saga.Events
     public class AuctionCanceledEvent
     {
         public Guid AuctionId { get; set; }
+        public DateTime Fecha {  get; set; }
 
-        public AuctionCanceledEvent(Guid auctionId)
+        public AuctionCanceledEvent(Guid auctionId, DateTime fecha)
         {
             AuctionId = auctionId;
+            Fecha = fecha;  
         }
     }
 

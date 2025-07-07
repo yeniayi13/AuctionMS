@@ -187,6 +187,23 @@ namespace AuctionMS.Controllers
             }
         }
 
+        //Cancelar subasta
+
+        [HttpPost("{auctionId:guid}/cancel")]
+        public async Task<IActionResult> CancelAuction(Guid auctionId, [FromQuery] Guid userId)
+        {
+            try
+            {
+                var command = new CancelAuctionCommand(auctionId, userId);
+                await _mediator.Send(command);
+                return Ok(new { message = $"Subasta {auctionId} cancelada correctamente." });
+            }
+           
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = $"Error al cancelar la subasta: {ex.Message}" });
+            }
+        }
         //BUSCAR SUBASTA SOLO POR ID
 
         [HttpGet("id/{id}")]

@@ -2,7 +2,9 @@
 using AuctionMS.Application.Saga.Events;
 using AuctionMS.Common.Dtos.Auction.Request;
 using AuctionMS.Core.Repository;
+using AuctionMS.Core.Service.Auction;
 using MassTransit;
+using MassTransit.Mediator;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace AuctionMS.Application.Auction.ServiceBack
 {
@@ -27,7 +30,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            Console.WriteLine("[AUCTION-CYCLE] 🔁 Servicio activación/cierre iniciado ✅");
+            Console.WriteLine("[AUCTION-CYCLE] Servicio activación/cierre iniciado ");
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -42,7 +45,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
                 var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
 
                 // 🟢 Activar subastas
-              /*  var pendientes = await repository.GetAllByEstadoAsync("Pending");
+               var pendientes = await repository.GetAllByEstadoAsync("Pending");
 
                 if (pendientes is { Count: > 0 })
                 {
@@ -92,7 +95,39 @@ namespace AuctionMS.Application.Auction.ServiceBack
                 else
                 {
                     Console.WriteLine($"[ACTIVATE] ❌ No hay subastas pendientes");
-                }*/
+                }
+
+                //  Cancelar subastas pendientes 
+                var pendientesCancelables = await repository.GetAllByEstadoAsync("Pending");
+
+                if (pendientesCancelables is { Count: > 0 })
+                {
+                    Console.WriteLine($"[CANCEL] Subastas pendientes a evaluar para cancelación: {pendientesCancelables.Count}");
+
+                    foreach (var auction in pendientesCancelables)
+                    {
+                        if (auction.AuctionFechaInicio.Value.AddMinutes(10) < ahoraCaracas)
+                        {
+                            try
+                            {
+                                await mediator.Send(new CancelAuctionCommand(
+                                    auction.AuctionId.Value,
+                                    auction.AuctionUserId.Value
+                                ));
+
+                                Console.WriteLine($"[CANCEL] Auction {auction.AuctionId.Value} cancelada por fecha de inicio vencida");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"[CANCEL] Error al cancelar Auction {auction.AuctionId.Value}: {ex.Message}");
+                            }
+
+                            await Task.Delay(100); 
+                        }
+                    }
+                }
+
+                //Pago recibido, subasta completed
 
                 // 🔴 Finalizar subastas activas
                 var activas = await repository.GetAllByEstadoAsync("Active");
@@ -156,6 +191,68 @@ namespace AuctionMS.Application.Auction.ServiceBack
                 Console.WriteLine("[AUCTION-CYCLE]  Esperando siguiente ciclo...");
                 await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
             }
+
+         /*   // 🟣 Marcar subastas como Completed si tienen un pago confirmado
+            var subastasFinalizadas = await repository.GetAllByEstadoAsync("Ended");
+
+            if (subastasFinalizadas is { Count: > 0 })
+            {
+                Console.WriteLine($"[COMPLETE] Evaluando {subastasFinalizadas.Count} subastas finalizadas para marcar como Completed...");
+
+                var paymentService = scope.ServiceProvider.GetRequiredService<IPaymentService>();
+
+                foreach (var auction in subastasFinalizadas)
+                {
+                    try
+                    {
+                        var paymentId = await paymentService.GetPaymentIdByAuctionIdAsync(auction.AuctionId.Value);
+
+                        if (!string.IsNullOrEmpty(paymentId))
+                        {
+                            var updateDto = new UpdateAuctionDto
+                            {
+                                AuctionID = auction.AuctionId.Value,
+                                AuctionName = auction.AuctionName.Value,
+                                AuctionImage = auction.AuctionImage.Url,
+                                AuctionPriceBase = auction.AuctionPriceBase.Value,
+                                AuctionPriceReserva = auction.AuctionPriceReserva.Value,
+                                AuctionDescription = auction.AuctionDescription.Value,
+                                AuctionIncremento = auction.AuctionIncremento.Value,
+                                AuctionCantidadProducto = auction.AuctionCantidadProducto.Value,
+                                AuctionEstado = "Completed",
+                                AuctionFechaInicio = auction.AuctionFechaInicio.Value,
+                                AuctionFechaFin = auction.AuctionFechaFin.Value,
+                                AuctionCondiciones = auction.AuctionCondiciones.Value,
+                                AuctionUserId = auction.AuctionUserId.Value,
+                                AuctionProductId = auction.AuctionProductId.Value,
+                                AuctionBidId = auction.AuctionBidId.Value,
+                                AuctionPaymentId = auction.AuctionPaymentId.Value, // asegúrate que el DTO lo tenga
+                            };
+
+                            await mediator.Send(new UpdateAuctionCommand(
+                                auction.AuctionId.Value,
+                                updateDto,
+                                auction.AuctionUserId.Value
+                            ));
+
+                            Console.WriteLine($"[COMPLETE] ✅ Subasta {auction.AuctionId.Value} marcada como Completed (pago confirmado)");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"[COMPLETE] ⏳ Subasta {auction.AuctionId.Value} aún sin pago confirmado");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[COMPLETE] ❌ Error procesando subasta {auction.AuctionId.Value}: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine($"[COMPLETE] No hay subastas finalizadas ('Ended') para procesar");
+            }*/
+
 
             Console.WriteLine("[AUCTION-CYCLE]  Servicio detenido");
         }
