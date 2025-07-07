@@ -38,11 +38,11 @@ namespace AuctionMS.Infrastructure.Services.Auction
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {headerToken}");
         }
 
-        public async Task<bool> ProductExist(Guid auctionProductId,Guid auctionUserId)
+        public async Task<bool> ProductExist(Guid auctionProductId, Guid auctionUserId)
         {
             try
             {
-                var response = await _httpClient.GetAsync($"auctioneer/product/{auctionProductId}?userId={ auctionUserId}");
+                var response = await _httpClient.GetAsync($"auctioneer/product/{auctionProductId}?userId={auctionUserId}");
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -64,7 +64,7 @@ namespace AuctionMS.Infrastructure.Services.Auction
             }
         }
 
- 
+
 
         public async Task<decimal?> GetProductStock(Guid auctionProductId, Guid auctionUserId)
         {
@@ -132,7 +132,7 @@ namespace AuctionMS.Infrastructure.Services.Auction
                 Console.WriteLine($"Stock actual: {currentStock}, Nuevo stock: {newStock}, Disponibilidad actualizada: {updatedAvailability}");
 
                 productData.ProductStock = newStock;
-                Console.WriteLine($" Nuevo stock: {productData.ProductStock}, Disponibilidad actualizada: {updatedAvailability}");
+                      Console.WriteLine($" Nuevo stock: {productData.ProductStock}, Disponibilidad actualizada: {updatedAvailability}");
 
                 // 4️⃣ Crear el payload con la lógica aplicada
                 var updatePayload = new GetProduct
@@ -176,10 +176,6 @@ namespace AuctionMS.Infrastructure.Services.Auction
                 throw;
             }
         }
-
-
-
-
     }
 }
 
