@@ -91,8 +91,8 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                     AuctionCondiciones.Create(request.Auction.AuctionCondiciones),
                     AuctionUserId.Create(request.Auction.AuctionUserId), // Asignar el ID del usuario
                     AuctionProductId.Create(request.Auction.AuctionProductId),
-                     AuctionBidId.Create(request.Auction.AuctionBidId)
-
+                     AuctionBidId.Create(request.Auction.AuctionBidId),
+                     AuctionPaymentId.Create(request.Auction.AuctionPaymentId)
 
                 );
 

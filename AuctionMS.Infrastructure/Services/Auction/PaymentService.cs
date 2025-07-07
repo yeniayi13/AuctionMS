@@ -35,7 +35,7 @@ namespace AuctionMS.Infrastructure.Services.Auction
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    return null; // No hay pago registrado
+                    return null; 
                 }
 
                 await using var responseStream = await response.Content.ReadAsStreamAsync();

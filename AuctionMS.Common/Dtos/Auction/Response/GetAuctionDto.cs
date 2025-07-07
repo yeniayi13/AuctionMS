@@ -26,6 +26,7 @@ namespace AuctionMS.Common.Dtos.Auction.Response
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }
         public Guid AuctionBidId { get; init; }
+        public Guid AuctionPaymentId { get; init; }
 
 
         public string AuctionEstado { get; init; }

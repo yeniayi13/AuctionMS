@@ -34,13 +34,15 @@ namespace AuctionMS.Domain.Entities.Auction
 
         public AuctionBidId AuctionBidId { get; private set; } //FK
 
+        public AuctionPaymentId AuctionPaymentId { get; private set; } //FK
+
 
 
 
         public AuctionEntity (AuctionId auctionId, AuctionName auctionName, AuctionImage auctionImage, AuctionPriceBase auctionPriceBase,
             AuctionPriceReserva auctionPriceReserva, AuctionDescription auctionDescription, AuctionIncremento auctionIncremento,
            AuctionCantidadProducto auctionCantidadProducto, AuctionEstado auctionEstado ,AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId,
-           AuctionProductId auctionProductId, AuctionBidId auctionBidId)
+           AuctionProductId auctionProductId, AuctionBidId auctionBidId, AuctionPaymentId auctionPaymentId)
         {
             AuctionId = auctionId;
             AuctionName = auctionName;
@@ -59,10 +61,7 @@ namespace AuctionMS.Domain.Entities.Auction
             AuctionUserId = auctionUserId;
             AuctionProductId = auctionProductId;
             AuctionBidId = auctionBidId;
-
-          
-        
-
+            AuctionPaymentId = auctionPaymentId;
 
         }
 
@@ -72,7 +71,8 @@ namespace AuctionMS.Domain.Entities.Auction
 
         public static AuctionEntity Update(AuctionEntity auction, AuctionName name, AuctionImage image, 
             AuctionPriceBase priceBase, AuctionPriceReserva priceReserva, AuctionDescription description, 
-            AuctionIncremento incremento, AuctionCantidadProducto auctionCantidadProducto,AuctionEstado auctionEstado, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones condiciones, AuctionUserId auctionUserId, AuctionProductId  auctionProductId)
+            AuctionIncremento incremento, AuctionCantidadProducto auctionCantidadProducto,AuctionEstado auctionEstado, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones condiciones, AuctionUserId auctionUserId,
+            AuctionProductId  auctionProductId)
         {
 
             var updates = new List<Action>()

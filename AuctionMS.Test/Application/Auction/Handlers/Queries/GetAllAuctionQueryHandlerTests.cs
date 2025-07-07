@@ -51,7 +51,9 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                     AuctionCondiciones.Create("Cond 1"),
                     AuctionUserId.Create(userId),
                     AuctionProductId.Create(Guid.NewGuid()),
-                    AuctionBidId.Create(Guid.NewGuid())
+                    AuctionBidId.Create(Guid.NewGuid()),
+                    AuctionPaymentId.Create(Guid.NewGuid())
+
                 ),
                 new AuctionEntity(
                     AuctionId.Create(Guid.NewGuid()),
@@ -68,7 +70,8 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                     AuctionCondiciones.Create("Cond 2"),
                     AuctionUserId.Create(userId),
                     AuctionProductId.Create(Guid.NewGuid()),
-                     AuctionBidId.Create(Guid.NewGuid())
+                     AuctionBidId.Create(Guid.NewGuid()),
+                      AuctionPaymentId.Create(Guid.NewGuid())
                 )
             };
 
