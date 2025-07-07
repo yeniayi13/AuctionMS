@@ -27,8 +27,8 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.Property<Guid>("AuctionId")
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("AuctionCantidadProducto")
-                        .HasColumnType("numeric");
+                    b.Property<int>("AuctionCantidadProducto")
+                        .HasColumnType("integer");
 
                     b.Property<string>("AuctionCondiciones")
                         .IsRequired()
@@ -58,6 +58,9 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.Property<string>("AuctionName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<Guid>("AuctionPaymentId")
+                        .HasColumnType("uuid");
 
                     b.Property<decimal>("AuctionPriceBase")
                         .HasColumnType("numeric");

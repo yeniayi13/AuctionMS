@@ -23,7 +23,7 @@ namespace AuctionMS.Infrastructure.Services.Auction
             _httpClientUrl = httpClientUrl.Value.ApiUrl;
 
             var headerToken = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].ToString()?.Replace("Bearer ", "");
-            _httpClient.BaseAddress = new Uri("http://localhost:18084/"); // Cambia al host real del microservicio de pagos
+            _httpClient.BaseAddress = new Uri("http://localhost:18088/"); // Cambia al host real del microservicio de pagos
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {headerToken}");
         }
 

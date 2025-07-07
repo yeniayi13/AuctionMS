@@ -73,7 +73,8 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Commands
                 AuctionCondiciones.Create("Old conditions"),
                 AuctionUserId.Create(userId),
                 AuctionProductId.Create(Guid.NewGuid()),
-                 AuctionBidId.Create(Guid.NewGuid())
+                 AuctionBidId.Create(Guid.NewGuid()),
+                 AuctionPaymentId.Create(Guid.NewGuid())
             );
 
             _auctionRepositoryMongoMock

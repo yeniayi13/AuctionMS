@@ -35,6 +35,27 @@
   },
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "CancelAuction",
+    "RelativePath": "auction/{auctionId}/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "auctionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetAuctionState",
     "RelativePath": "auction/{auctionId}/state",
     "HttpMethod": "GET",

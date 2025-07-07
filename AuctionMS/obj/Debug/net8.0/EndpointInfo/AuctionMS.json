@@ -162,6 +162,37 @@
         }
       }
     },
+    "/auction/{auctionId}/cancel": {
+      "post": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "auctionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auction/id/{id}": {
       "get": {
         "tags": [
@@ -375,6 +406,10 @@
           "auctionBidId": {
             "type": "string",
             "format": "uuid"
+          },
+          "auctionPaymentId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -439,6 +474,10 @@
             "format": "uuid"
           },
           "auctionProductId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "auctionPaymentId": {
             "type": "string",
             "format": "uuid"
           }

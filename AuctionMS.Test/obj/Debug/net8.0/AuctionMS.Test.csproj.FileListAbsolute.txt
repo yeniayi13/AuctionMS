@@ -547,3 +547,7 @@ C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.pdb
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\AuctionMS.Test.genruntimeconfig.cache
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\obj\Debug\net8.0\ref\AuctionMS.Test.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\MassTransit.QuartzIntegration.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Quartz.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Quartz.Extensions.DependencyInjection.dll
+C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Quartz.Extensions.Hosting.dll

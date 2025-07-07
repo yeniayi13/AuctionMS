@@ -58,7 +58,8 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                 AuctionCondiciones.Create("Conditions"),
                 AuctionUserId.Create(userId),
                 AuctionProductId.Create(Guid.NewGuid()),
-                 AuctionBidId.Create(Guid.NewGuid())
+                 AuctionBidId.Create(Guid.NewGuid()),
+                 AuctionPaymentId.Create(Guid.NewGuid())
             );
 
             var auctionDto = new GetAuctionDto
