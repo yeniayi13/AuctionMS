@@ -107,7 +107,7 @@ namespace AuctionMS.Controllers
 
         //Buscar todas las subastas por estado
 
-        [Authorize(Policy = "SubastadorOPostorPolicy")]
+       // [Authorize(Policy = "SubastadorOPostorPolicy")]
         [HttpGet("state/{estado}")]
         public async Task<IActionResult> GetAuctionsByState(string estado)
         {
@@ -118,7 +118,7 @@ namespace AuctionMS.Controllers
                 if (result == null || !result.Any())
                 {
                     _logger.LogWarning("No se encontraron subastas con estado '{Estado}'.", estado);
-                    return NotFound($"No se encontraron subastas con estado '{estado}'.");
+                    return Ok(new List<GetAuctionDto>());
                 }
 
                 return Ok(result);
@@ -154,7 +154,7 @@ namespace AuctionMS.Controllers
                 if (auctions == null || !auctions.Any())
                 {
                     _logger.LogWarning("No se encontraron subastas para el usuario con ID {UserId}.", userId);
-                    return NotFound("No se encontraron subastas.");
+                    return Ok(null);
                 }
 
                 return Ok(auctions);
@@ -259,7 +259,7 @@ namespace AuctionMS.Controllers
                 await _mediator.Send(command);
 
                 _logger.LogInformation("Subasta {AuctionId} cancelada exitosamente por el usuario {UserId}.", auctionId, userId);
-                return Ok(new { mensaje = $"Subasta {auctionId} cancelada correctamente." });
+                return Ok(null);
             }
             catch (AuctionNotFoundException e)
             {
@@ -282,7 +282,7 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, new { error = "Ocurrió un error inesperado al cancelar la subasta." });
             }
         }
-        [Authorize(Policy = "SubastadorOPostorPolicy")]
+       // [Authorize(Policy = "SubastadorOPostorPolicy")]
         [HttpGet("id/{id}")] // Buscar subasta solo por ID
         public async Task<IActionResult> GetAuctionById([FromRoute] Guid id)
         {
@@ -300,7 +300,7 @@ namespace AuctionMS.Controllers
                 if (auction == null)
                 {
                     _logger.LogInformation("No se encontró ninguna subasta con ID {AuctionId}.", id);
-                    return NotFound($"No se encontró ninguna subasta con ID {id}.");
+                    return Ok(null);
                 }
 
                 _logger.LogInformation("Subasta con ID {AuctionId} recuperada exitosamente.", id);
@@ -329,7 +329,7 @@ namespace AuctionMS.Controllers
         }
 
 
-        [Authorize(Policy = "SubastadorPolicy")]
+        //[Authorize(Policy = "SubastadorPolicy")]
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId)
@@ -414,7 +414,7 @@ namespace AuctionMS.Controllers
                 if (auctionDto == null)
                 {
                     _logger.LogInformation("No se encontró subasta activa para el producto con ID {ProductId}.", productId);
-                    return NotFound($"No se encontró subasta activa para el producto con ID {productId}.");
+                    return Ok(null);
                 }
 
                 return Ok(auctionDto);
