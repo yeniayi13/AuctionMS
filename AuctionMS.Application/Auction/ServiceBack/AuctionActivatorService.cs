@@ -195,7 +195,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
 
 
                 // 🔵 Marcar subastas como Completed si se ha recibido el pago
-                var finalizadas = await repository.GetAllByEstadoAsync("Ended");
+             /*   var finalizadas = await repository.GetAllByEstadoAsync("Ended");
 
                 if (finalizadas is { Count: > 0 })
                 {
@@ -249,7 +249,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
                 else
                 {
                     Console.WriteLine("[COMPLETE] ❌ No hay subastas finalizadas con pago aún.");
-                }
+                }*/
             }
 
            

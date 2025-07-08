@@ -9,6 +9,7 @@ using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Infrastructure.Exceptions;
 using AuctionMS.Application.Auctions.Queries;
 using AuctionMS.Infrastructure.Repositories;
+using AuctionMS.Common.Dtos.Auction.Response;
 
 namespace AuctionMS.Controllers
 {
@@ -315,7 +316,8 @@ namespace AuctionMS.Controllers
                 var auctionDto = await _mediator.Send(query);
 
                 if (auctionDto == null)
-                    return NotFound("No hay una subasta activa para este producto.");
+                    return Ok(null); // Esto resulta en 200 OK y un body nulo
+
 
                 return Ok(auctionDto);
             }
