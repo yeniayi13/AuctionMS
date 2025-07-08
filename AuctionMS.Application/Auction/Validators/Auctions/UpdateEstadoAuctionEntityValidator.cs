@@ -3,9 +3,9 @@ using AuctionMS.Common.Dtos.Auction.Request;
 
 namespace AuctionMS.Application.Auction.Validators.Auctions
 {
-    public class UpdateEstadoAuctionValidator : AbstractValidator<UpdateEstadoAuctionDto>
+    public class UpdateEstadoAuctionEntityValidator : ValidatorBase<UpdateEstadoAuctionDto>
     {
-        public UpdateEstadoAuctionValidator()
+        public UpdateEstadoAuctionEntityValidator()
         {
             RuleFor(x => x.CorrelationId).NotEmpty();
             RuleFor(x => x.CurrentState)

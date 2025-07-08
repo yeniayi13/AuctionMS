@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
+using AuctionMS.Application.Auction.Validators.Auctions;
 
 namespace AuctionMS.Application.Auction.Handlers.Queries
 {
@@ -27,15 +29,39 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 
         public async Task<List<GetAuctionDto>> Handle(GetAuctionsByStateQuery request, CancellationToken cancellationToken)
         {
-            if (string.IsNullOrWhiteSpace(request.Estado))
-                throw new NullAttributeException("El estado de la subasta es requerido.");
+            try
+            {
+                var allowedStates = new[] { "Pending", "Canceled", "Active", "Completed" };
+                if (!allowedStates.Contains(request.Estado, StringComparer.OrdinalIgnoreCase))
+                    throw new InvalidStateException($"El Estado '{request.Estado}' es invalido");
 
-            var estado = AuctionEstado.Create(request.Estado);
-            var subastas = await _auctionRepository.GetByEstadoAsync(estado);
 
-            var subastasDto = _mapper.Map<List<GetAuctionDto>>(subastas);
+                //  Crear estado del dominio
+                var auctionState = AuctionEstado.Create(request.Estado);
 
-            return subastasDto;
+                //  Obtener subastas según estado
+                var auctions = await _auctionRepository.GetByEstadoAsync(auctionState);
+
+                //  Mapear a DTOs
+                var auctionDtos = _mapper.Map<List<GetAuctionDto>>(auctions);
+
+                return auctionDtos;
+            }
+            catch (ValidationException ex)
+            {
+
+                throw;
+            }
+            catch (InvalidStateException ex)
+            {
+                // 🔥 Estado inválido
+                throw ;
+            }
+            catch (Exception ex)
+            {
+                // ⚠️ Falla inesperada
+                throw;
+            }
         }
     }
 }
