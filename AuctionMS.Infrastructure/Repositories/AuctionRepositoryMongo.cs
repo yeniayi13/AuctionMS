@@ -215,6 +215,31 @@ namespace AuctionMS.Infrastructure.Repositories
             return _mapper.Map<List<AuctionEntity>>(auctionDto);
         }
 
+        public async Task<List<AuctionEntity>> GetByEstadoAsync(AuctionEstado estado)
+        {
+            var filter = Builders<AuctionEntity>.Filter.Eq("AuctionEstado", estado.Value);
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDto = await _collection
+                .Find(filter)
+                .Project<GetAuctionDto>(projection)
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDto == null || auctionDto.Count == 0)
+            {
+                Console.WriteLine($"[BUSQUEDA] No se encontraron subastas con estado: {estado.Value}");
+                return new List<AuctionEntity>();
+            }
+
+            return _mapper.Map<List<AuctionEntity>>(auctionDto);
+        }
+
+
+
+
+
 
     }
 }

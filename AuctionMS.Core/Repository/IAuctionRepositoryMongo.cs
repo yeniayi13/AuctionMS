@@ -20,8 +20,9 @@ namespace AuctionMS.Core.Repository
 
         Task<AuctionEntity?> GetBidByIdAndAuctionIdAsync(AuctionBidId auctionBidId);
 
-        Task<AuctionEntity?> GetByEstadoAsync(AuctionEstado auctionEstado);
+        Task<List<AuctionEntity>> GetByEstadoAsync(AuctionEstado estado);
 
+      
 
     }
 }
