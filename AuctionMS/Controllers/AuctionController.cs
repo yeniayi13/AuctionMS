@@ -26,7 +26,7 @@ namespace AuctionMS.Controllers
             _mediator = mediator;
         }
 
-       // [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "SubastadorPolicy")]
 
         [HttpPost("addAuction/{userId}/{productId}")]
         public async Task<IActionResult> CreateAuction([FromBody] CreateAuctionDto createAuctionDto, [FromRoute] Guid userId, [FromRoute] Guid productId)
@@ -67,6 +67,11 @@ namespace AuctionMS.Controllers
             }
         }
 
+        //buscar 1 subasta por su estado
+
+        [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "PostorPolicy")]
+
         [HttpGet("{auctionId}/state")]
         public async Task<IActionResult> GetAuctionState(Guid auctionId)
         {
@@ -77,11 +82,26 @@ namespace AuctionMS.Controllers
             return Ok(new { AuctionId = auctionId, Estado = estado });
         }
 
+        //Buscar todas las subastas por estado
+        [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "PostorPolicy")]
 
-        //
-        //  [Authorize(Policy = "PostorPolicy")]
-        //  [Authorize(Policy = "SubastadorPolicy")]
-        //  [Authorize(Policy = "AdministradorPolicy")]
+        [HttpGet("state/{estado}")]
+        public async Task<IActionResult> GetAuctionsByState(string estado)
+        {
+            var subastas = await _mediator.Send(new GetAuctionsByStateQuery(estado));
+            if (subastas == null )
+                return NotFound($"No se encontraron subastas con el estado '{estado}'");
+
+            return Ok(subastas);
+        }
+
+
+
+        
+          [Authorize(Policy = "PostorPolicy")]
+          [Authorize(Policy = "SubastadorPolicy")]
+          [Authorize(Policy = "AdministradorPolicy")]
         [HttpGet]
         public async Task<IActionResult> GetAllAuction([FromQuery] Guid userId)
         {
@@ -119,8 +139,9 @@ namespace AuctionMS.Controllers
         }
 
 
-       // [Authorize(Policy = "SubastadorPolicy")]
-       // [Authorize(Policy = "PostorPolicy")]
+       
+        [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "PostorPolicy")]
        [HttpGet("name/auction/{name}")]
         public async Task<IActionResult> GetAllNameAuction([FromRoute] string name, [FromQuery] Guid userId)
         {
@@ -158,8 +179,8 @@ namespace AuctionMS.Controllers
             }
         }
 
-       // [Authorize(Policy = "SubastadorPolicy")]
-       // [Authorize(Policy = "PostorPolicy")]
+        [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "PostorPolicy")]
 
         [HttpGet("product/{productId}")]
         public async Task<IActionResult> GetAuction( [FromQuery] Guid userId, [FromRoute] Guid productId)
@@ -188,6 +209,9 @@ namespace AuctionMS.Controllers
             }
         }
 
+
+        [Authorize(Policy = "SubastadorPolicy")]
+       
         //Cancelar subasta
 
         [HttpPost("{auctionId:guid}/cancel")]
@@ -205,6 +229,9 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, new { error = $"Error al cancelar la subasta: {ex.Message}" });
             }
         }
+
+        [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "PostorPolicy")]
         //BUSCAR SUBASTA SOLO POR ID
 
         [HttpGet("id/{id}")]
@@ -235,7 +262,7 @@ namespace AuctionMS.Controllers
         }
 
 
-        // [Authorize(Policy = "SubastadorPolicy")]
+         [Authorize(Policy = "SubastadorPolicy")]
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateAuction([FromRoute] Guid id, [FromBody] UpdateAuctionDto updateAuctionDto, [FromQuery] Guid userId)
@@ -270,7 +297,7 @@ namespace AuctionMS.Controllers
 
      
 
-        // [Authorize(Policy = "SubastadorPolicy")]
+        [Authorize(Policy = "SubastadorPolicy")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteAuction([FromRoute] Guid id, [FromQuery] Guid userId)
@@ -300,8 +327,8 @@ namespace AuctionMS.Controllers
             }
         }
 
-      //  [Authorize(Policy = "SubastadorPolicy")]
-      //  [Authorize(Policy = "PostorPolicy")]
+       [Authorize(Policy = "SubastadorPolicy")]
+       [Authorize(Policy = "PostorPolicy")]
         [HttpGet("producto-activo/{productId}")] //Trae los productos activos de una subasta
         public async Task<IActionResult> GetProductoActivo(
      [FromRoute] Guid productId,
