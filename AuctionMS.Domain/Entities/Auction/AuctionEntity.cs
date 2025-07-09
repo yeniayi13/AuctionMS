@@ -32,9 +32,9 @@ namespace AuctionMS.Domain.Entities.Auction
 
         public AuctionProductId AuctionProductId { get; private set; } //FK
 
-        public AuctionBidId AuctionBidId { get; private set; } //FK
+       // public AuctionBidId AuctionBidId { get; private set; } //FK
 
-        public AuctionPaymentId AuctionPaymentId { get; private set; } //FK
+      //  public AuctionPaymentId AuctionPaymentId { get; private set; } //FK
 
 
 
@@ -42,7 +42,7 @@ namespace AuctionMS.Domain.Entities.Auction
         public AuctionEntity (AuctionId auctionId, AuctionName auctionName, AuctionImage auctionImage, AuctionPriceBase auctionPriceBase,
             AuctionPriceReserva auctionPriceReserva, AuctionDescription auctionDescription, AuctionIncremento auctionIncremento,
            AuctionCantidadProducto auctionCantidadProducto, AuctionEstado auctionEstado ,AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId,
-           AuctionProductId auctionProductId, AuctionBidId auctionBidId, AuctionPaymentId auctionPaymentId)
+           AuctionProductId auctionProductId/* AuctionBidId auctionBidId*/ /*AuctionPaymentId auctionPaymentId*/)
         {
             AuctionId = auctionId;
             AuctionName = auctionName;
@@ -60,8 +60,8 @@ namespace AuctionMS.Domain.Entities.Auction
             AuctionCondiciones = auctionCondiciones;
             AuctionUserId = auctionUserId;
             AuctionProductId = auctionProductId;
-            AuctionBidId = auctionBidId;
-            AuctionPaymentId = auctionPaymentId;
+          //  AuctionBidId = auctionBidId;
+         //   AuctionPaymentId = auctionPaymentId;
 
         }
 

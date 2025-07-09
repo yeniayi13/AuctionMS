@@ -70,7 +70,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
                                 AuctionCondiciones = auction.AuctionCondiciones.Value,
                                 AuctionUserId = auction.AuctionUserId.Value,
                                 AuctionProductId = auction.AuctionProductId.Value,
-                                AuctionBidId = auction.AuctionBidId.Value
+                               // AuctionBidId = auction.AuctionBidId.Value
                             };
 
                             await mediator.Send(new UpdateAuctionCommand
@@ -163,8 +163,8 @@ namespace AuctionMS.Application.Auction.ServiceBack
                                 AuctionFechaFin = auction.AuctionFechaFin.Value,
                                 AuctionCondiciones = auction.AuctionCondiciones.Value,
                                 AuctionUserId = auction.AuctionUserId.Value,
-                                AuctionProductId = auction.AuctionProductId.Value,
-                                AuctionBidId = auction.AuctionBidId.Value
+                                AuctionProductId = auction.AuctionProductId.Value
+                              //  AuctionBidId = auction.AuctionBidId.Value
 
 
 

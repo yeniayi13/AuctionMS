@@ -404,7 +404,6 @@ C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\LENOVO\ProyectoAuction-Nuevo\AuctionMS\AuctionMS.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll

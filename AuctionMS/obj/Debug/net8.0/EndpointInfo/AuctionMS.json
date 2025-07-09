@@ -424,14 +424,6 @@
           "auctionProductId": {
             "type": "string",
             "format": "uuid"
-          },
-          "auctionBidId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "auctionPaymentId": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -487,19 +479,11 @@
             "type": "string",
             "nullable": true
           },
-          "auctionBidId": {
-            "type": "string",
-            "format": "uuid"
-          },
           "auctionUserId": {
             "type": "string",
             "format": "uuid"
           },
           "auctionProductId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "auctionPaymentId": {
             "type": "string",
             "format": "uuid"
           }

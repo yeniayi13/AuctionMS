@@ -50,9 +50,9 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                     AuctionFechaFin.Create(DateTime.UtcNow.AddDays(5)),
                     AuctionCondiciones.Create("Cond 1"),
                     AuctionUserId.Create(userId),
-                    AuctionProductId.Create(Guid.NewGuid()),
-                    AuctionBidId.Create(Guid.NewGuid()),
-                    AuctionPaymentId.Create(Guid.NewGuid())
+                    AuctionProductId.Create(Guid.NewGuid())
+                   // AuctionBidId.Create(Guid.NewGuid()),
+                   // AuctionPaymentId.Create(Guid.NewGuid())
 
                 ),
                 new AuctionEntity(
@@ -69,9 +69,9 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                     AuctionFechaFin.Create(DateTime.UtcNow.AddDays(10)),
                     AuctionCondiciones.Create("Cond 2"),
                     AuctionUserId.Create(userId),
-                    AuctionProductId.Create(Guid.NewGuid()),
-                     AuctionBidId.Create(Guid.NewGuid()),
-                      AuctionPaymentId.Create(Guid.NewGuid())
+                    AuctionProductId.Create(Guid.NewGuid())
+                    // AuctionBidId.Create(Guid.NewGuid()),
+                    //  AuctionPaymentId.Create(Guid.NewGuid())
                 )
             };
 

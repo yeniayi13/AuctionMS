@@ -221,7 +221,7 @@ namespace AuctionMS.Controllers
             }
         }
 
-        [Authorize(Policy = "SubastadorOPostorPolicy")]
+      /*  [Authorize(Policy = "SubastadorOPostorPolicy")]
         [HttpGet("product/{productId}")]
         public async Task<IActionResult> GetAuction([FromQuery] Guid userId, [FromRoute] Guid productId)
         {
@@ -246,8 +246,8 @@ namespace AuctionMS.Controllers
             {
                 _logger.LogError("Error inesperado al buscar la subasta del producto {ProductId} para el usuario {UserId}: {Message}", productId, userId, e.Message);
                 return StatusCode(500, "Ocurrió un error al buscar la subasta.");
-            }
-        }
+           }
+        }*/
 
         [Authorize(Policy = "SubastadorPolicy")]
         [HttpPost("{auctionId:guid}/cancel")]

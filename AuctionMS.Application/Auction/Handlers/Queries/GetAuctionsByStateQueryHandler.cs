@@ -31,7 +31,7 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
         {
             try
             {
-                var allowedStates = new[] { "Pending", "Canceled", "Active", "Completed" };
+                var allowedStates = new[] { "Pending", "Canceled", "Active", "Completed", "Ended" };
                 if (!allowedStates.Contains(request.Estado, StringComparer.OrdinalIgnoreCase))
                     throw new InvalidStateException($"El Estado '{request.Estado}' es invalido");
 

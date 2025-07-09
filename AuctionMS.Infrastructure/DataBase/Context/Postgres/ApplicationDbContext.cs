@@ -47,7 +47,7 @@ namespace AuctionMS.Infrastructure.Database.Context.Postgres
         {
            
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-            modelBuilder.Entity<AuctionEntity>().OwnsOne(a => a.AuctionBidId);
+           // modelBuilder.Entity<AuctionEntity>().OwnsOne(a => a.AuctionBidId);
 
 
 

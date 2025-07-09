@@ -30,7 +30,7 @@ namespace AuctionMS.Infrastructure.Repositories
 
         public async Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId)
         {
-            Console.WriteLine($"Buscando una subasta con ID: {id} y usuario: {userId.Value} ");
+            Console.WriteLine($"Buscando una subasta con ID: {id.Value} y usuario: {userId.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value),
@@ -57,7 +57,7 @@ namespace AuctionMS.Infrastructure.Repositories
 
         public async Task<AuctionEntity?> GetByIdAsync(AuctionId id)
         {
-            Console.WriteLine($"Buscando una subasta con ID: {id} ");
+            Console.WriteLine($"Buscando una subasta con ID: {id.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value)
@@ -83,7 +83,7 @@ namespace AuctionMS.Infrastructure.Repositories
             Console.WriteLine($"Buscando subasta con nombre: {name} usuario: {userId.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
-                Builders<AuctionEntity>.Filter.Eq("AuctionName", name.Value),
+                Builders<AuctionEntity>.Filter.Eq("AuctionName", new BsonRegularExpression($"^{name.Value}", "i")),
                 Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value)
             );
 

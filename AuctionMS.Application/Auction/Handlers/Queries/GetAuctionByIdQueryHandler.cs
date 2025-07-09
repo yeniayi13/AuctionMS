@@ -6,6 +6,7 @@ using AuctionMS.Domain.Entities.Auction.ValueObjects;
 using AuctionMS.Infrastructure.Exceptions;
 using AutoMapper;
 using MediatR;
+using System.Data;
 
 namespace AuctionMS.Application.Auction.Handlers.Queries
 {
@@ -27,20 +28,31 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 
         public async Task<GetAuctionDto> Handle(GetAuctionByIdQuery request, CancellationToken cancellationToken)
         {
-            if (request.Id == Guid.Empty)
+           try
             {
-                throw new NullAttributeException("Auction ID is required.");
+                if (request.Id == Guid.Empty)
+                {
+                    throw new NullAttributeException("Auction ID is required.");
+                }
+
+                var auctionId = AuctionId.Create(request.Id);
+                var auction = await _auctionRepository.GetByIdAsync(auctionId!);
+
+                if (auction == null)
+                {
+                    throw new AuctionNotFoundException("Auction not found.");
+                }
+
+                return _mapper.Map<GetAuctionDto>(auction);
             }
-
-            var auctionId = AuctionId.Create(request.Id);
-            var auction = await _auctionRepository.GetByIdAsync(auctionId!);
-
-            if (auction == null)
+            catch (AuctionNotFoundException e)
             {
-                throw new AuctionNotFoundException("Auction not found.");
+                throw;
             }
-
-            return _mapper.Map<GetAuctionDto>(auction);
+            catch(Exception e)
+            {
+                throw;
+            }
         }
     }
 }

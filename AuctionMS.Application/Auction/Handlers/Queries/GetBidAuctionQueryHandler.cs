@@ -22,14 +22,19 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 
         public async Task<GetAuctionDto> Handle(GetBidAuctionQuery request, CancellationToken cancellationToken)
         {
-            var auctionBidId = AuctionBidId.Create(request.AuctionBidId);
-            // Obtener la puja por ID y subasta
-             var bid = await _auctionRepository.GetBidByIdAndAuctionIdAsync(auctionBidId);
+            try
+            {
+                var auctionBidId = AuctionBidId.Create(request.AuctionBidId);
+                var bid = await _auctionRepository.GetBidByIdAndAuctionIdAsync(auctionBidId);
+                if (bid == null) return null;
 
-             if (bid == null) return null;
-
-            // Mapear entidad a DTO de respuesta
-            return _mapper.Map<GetAuctionDto>(bid);
+                return _mapper.Map<GetAuctionDto>(bid);
+            }
+            catch (Exception ex)
+            {
+               
+                throw;
+            }
         }
     }
 }
