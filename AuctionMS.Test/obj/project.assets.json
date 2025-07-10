@@ -9228,23 +9228,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Users\\Paola\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Test\\AuctionMS.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Test\\AuctionMS.Test.csproj",
       "projectName": "AuctionMS.Test",
-      "projectPath": "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Test\\AuctionMS.Test.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Test\\obj\\",
+      "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Test\\AuctionMS.Test.csproj",
+      "packagesPath": "C:\\Users\\Paola\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Paola\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9260,14 +9260,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj"
+            "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj": {
+              "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Application\\AuctionMS.Application.csproj"
             },
-            "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj"
+            "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj": {
+              "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS.Core\\AuctionMS.Core.csproj"
             },
-            "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS\\AuctionMS.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\ProyectoAuction-Nuevo\\AuctionMS\\AuctionMS\\AuctionMS.csproj"
+            "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS\\AuctionMS.csproj": {
+              "projectPath": "C:\\Users\\Paola\\OneDrive\\Desktop\\subastas1\\AuctionMS\\AuctionMS\\AuctionMS.csproj"
             }
           }
         }
@@ -9343,7 +9343,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
