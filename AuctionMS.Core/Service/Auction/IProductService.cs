@@ -12,7 +12,7 @@ namespace AuctionMS.Core.Service.Auction
 
         Task<bool> ProductExist(Guid productId,Guid userId);
         Task<decimal?> GetProductStock(Guid auctionProductId, Guid auctionUserId);
-        Task<GetProduct?> GetProductAsync(Guid auctionProductId;
+        Task<GetProduct?> GetProductAsync(Guid auctionProductId);
         Task<bool> UpdateProductStockAsync(Guid productId, decimal newStock, Guid auctionUserId);
 
 

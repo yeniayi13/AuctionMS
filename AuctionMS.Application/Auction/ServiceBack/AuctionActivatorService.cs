@@ -193,8 +193,73 @@ namespace AuctionMS.Application.Auction.ServiceBack
 
 
 
+                // ESTADO COMPLETED
 
-                // 🔵 Marcar subastas como Completed si se ha recibido el pago
+                var finalizadas = await repository.GetAllByEstadoAsync("Ended");
+
+                if (finalizadas is { Count: > 0 })
+                {
+                    Console.WriteLine($"[COMPLETE] Subastas finalizadas encontradas: {finalizadas.Count}");
+
+                    var paymentService = scope.ServiceProvider.GetRequiredService<IPaymentService>();
+
+                    foreach (var auction in finalizadas)
+                    {
+                        var paymentId = await paymentService.GetPaymentIdByAuctionIdAsync(auction.AuctionId.Value.ToString());
+
+                        if (!string.IsNullOrEmpty(paymentId))
+                        {
+                            var updateDto = new UpdateAuctionDto
+                            {
+                                AuctionID = auction.AuctionId.Value,
+                                AuctionName = auction.AuctionName.Value,
+                                AuctionImage = auction.AuctionImage.Url,
+                                AuctionPriceBase = auction.AuctionPriceBase.Value,
+                                AuctionPriceReserva = auction.AuctionPriceReserva.Value,
+                                AuctionDescription = auction.AuctionDescription.Value,
+                                AuctionIncremento = auction.AuctionIncremento.Value,
+                                AuctionCantidadProducto = auction.AuctionCantidadProducto.Value,
+                                AuctionEstado = "Completed",
+                                AuctionFechaInicio = auction.AuctionFechaInicio.Value,
+                                AuctionFechaFin = auction.AuctionFechaFin.Value,
+                                AuctionCondiciones = auction.AuctionCondiciones.Value,
+                                AuctionUserId = auction.AuctionUserId.Value,
+                                AuctionProductId = auction.AuctionProductId.Value,
+                               // AuctionBidId = auction.AuctionBidId.Value,
+                               // IdPayment = paymentId
+                            };
+
+                            await mediator.Send(new UpdateAuctionCommand(
+                                auction.AuctionId.Value,
+                                updateDto,
+                                auction.AuctionUserId.Value
+                            ));
+
+                            var endpoint = await sender.GetSendEndpoint(new Uri("queue:EstadoAuction"));
+                            await endpoint.Send(new PaymentReceivedEvent(
+                                auction.AuctionId.Value,
+                                ahoraCaracas
+                            ));
+
+                            Console.WriteLine($"[COMPLETE] ✅ Subasta {auction.AuctionId} marcada como 'Completed' por pago confirmado.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"[COMPLETE] ⏳ Subasta {auction.AuctionId} aún no tiene pago confirmado.");
+                        }
+
+                        await Task.Delay(TimeSpan.FromSeconds(5));
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("[COMPLETE] ❌ No hay subastas finalizadas pendientes por pago.");
+                }
+
+
+
+
+              /*  // 🔵 Marcar subastas como Completed si se ha recibido el pago
                 var finalizadas = await repository.GetAllByEstadoAsync("Ended");
 
                 if (finalizadas is { Count: > 0 })
@@ -228,7 +293,7 @@ namespace AuctionMS.Application.Auction.ServiceBack
                 else
                 {
                     Console.WriteLine("[COMPLETE] ❌ No hay subastas finalizadas pendientes por pago.");
-                }
+                }*/
 
             }
 
