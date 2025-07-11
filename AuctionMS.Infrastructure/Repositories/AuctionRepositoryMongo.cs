@@ -237,6 +237,47 @@ namespace AuctionMS.Infrastructure.Repositories
         }
 
 
+        public async Task<List<AuctionEntity>> GetAuctionFilteredAsync(DateTime? startDate = null, DateTime? endDate = null)
+        {
+            Console.WriteLine("Ejecutando GetAuctionFilteredAsync...");
+
+            var filters = new List<FilterDefinition<AuctionEntity>>();
+            var builder = Builders<AuctionEntity>.Filter;
+
+            if (startDate.HasValue)
+            {
+                Console.WriteLine($"Filtrando por fecha mínima de inicio: {startDate.Value}");
+                filters.Add(builder.Gte("AuctionFechaInicio", startDate.Value));
+            }
+
+            if (endDate.HasValue)
+            {
+                Console.WriteLine($"Filtrando por fecha máxima de finalización: {endDate.Value}");
+                filters.Add(builder.Lte("AuctionFechaFin", endDate.Value));
+            }
+
+            var finalFilter = filters.Any() ? builder.And(filters) : builder.Empty;
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDtos = await _collection
+                .Find(finalFilter)
+                .Project<GetAuctionDto>(projection)
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDtos == null)
+            {
+                Console.WriteLine("No se encontraron subastas en el rango de fechas.");
+                return new List<AuctionEntity>();
+            }
+
+            var auctionEntities = _mapper.Map<List<AuctionEntity>>(auctionDtos);
+            return auctionEntities;
+        }
+
+
+
 
 
 

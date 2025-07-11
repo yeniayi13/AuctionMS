@@ -117,9 +117,63 @@ namespace AuctionMS.Controllers
             }
         }
 
+        //Buscar subasta por fechas
+        [HttpGet("Get-Auction-Filtered")]
+        public async Task<IActionResult> GetFilteredAuctions(
+        [FromQuery] DateTime? startTime = null,
+        [FromQuery] DateTime? endTime = null)
+        {
+            try
+            {
+                if (startTime.HasValue && endTime.HasValue && startTime > endTime)
+                {
+                    return BadRequest("La fecha de inicio no puede ser mayor que la fecha de fin.");
+                }
+
+                var query = new GetAuctionFilteredQuery(startTime, endTime);
+                var auctions = await _mediator.Send(query);
+
+                if (auctions == null || !auctions.Any())
+                {
+                    return NoContent(); // o Ok(null), t? decides
+                }
+
+                return Ok(auctions);
+            }
+            catch (ArgumentException ex)
+            {
+                _logger.LogError("Error de par?metros de entrada: {Message}", ex.Message);
+                return BadRequest($"Par?metro inv?lido: {ex.Message}");
+            }
+            catch (TimeoutException ex)
+            {
+                _logger.LogError("Tiempo de espera excedido: {Message}", ex.Message);
+                return StatusCode(408, $"Tiempo de espera excedido: {ex.Message}");
+            }
+            catch (HttpRequestException e) when (e.Message.Contains("401"))
+            {
+                _logger.LogError("Error de autenticaci?n: {Message}", e.Message);
+                return StatusCode(401, "Acceso denegado. Verifica tus credenciales.");
+            }
+            catch (HttpRequestException ex)
+            {
+                _logger.LogError("Error de comunicaci?n con el servidor: {Message}", ex.Message);
+                return StatusCode(503, $"Servicio no disponible: {ex.Message}");
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                _logger.LogError("Acceso no autorizado: {Message}", e.Message);
+                return StatusCode(401, "No tienes permisos para acceder a este recurso.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error inesperado en GetFilteredAuctions: {Message}", ex.Message);
+                return StatusCode(500, $"Ocurri? un error inesperado al obtener las subastas, {ex.Message}");
+            }
+        }
         //Buscar todas las subastas por estado
 
-       // [Authorize(Policy = "SubastadorOPostorPolicy")]
+        // [Authorize(Policy = "SubastadorOPostorPolicy")]
         [HttpGet("state/{estado}")]
         public async Task<IActionResult> GetAuctionsByState(string estado)
         {

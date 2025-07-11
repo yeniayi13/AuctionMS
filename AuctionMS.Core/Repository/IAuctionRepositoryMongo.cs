@@ -22,7 +22,9 @@ namespace AuctionMS.Core.Repository
 
         Task<List<AuctionEntity>> GetByEstadoAsync(AuctionEstado estado);
 
-      
+
+        Task<List<AuctionEntity>> GetAuctionFilteredAsync(DateTime? startDate, DateTime? endDate);
+
 
     }
 }
