@@ -11,6 +11,11 @@ using AuctionMS.Application.Auctions.Queries;
 using AuctionMS.Infrastructure.Repositories;
 using AuctionMS.Common.Dtos.Auction.Response;
 using FluentValidation;
+using AuctionMS.Core.Service.Auction;
+using AuctionMS.Infrastructure.Services.Auction;
+using AuctionMS.Core.Repository;
+using AuctionMS.Domain.Entities.Auction;
+using AutoMapper;
 
 namespace AuctionMS.Controllers
 {
@@ -20,13 +25,20 @@ namespace AuctionMS.Controllers
     {
         private readonly ILogger<AuctionController> _logger;
         private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
 
-        public AuctionController(ILogger<AuctionController> logger, IMediator mediator)
+        private readonly IAuctionRepositoryMongo _auctionRepositoryMongo;
+        private readonly IClaimPrizeRepository _claimPrizeRepository;
+        private readonly IProductService _productService;
+        public AuctionController( ILogger<AuctionController> logger, IMediator mediator, IMapper mapper, IAuctionRepositoryMongo auctionRepositoryMongo, IProductService productService, IClaimPrizeRepository claimPrizeRepository)
         {
             _logger = logger;
             _mediator = mediator;
+            _auctionRepositoryMongo = auctionRepositoryMongo;
+            _productService = productService;
+            _claimPrizeRepository = claimPrizeRepository;
+            _mapper = mapper;
         }
-
         [Authorize(Policy = "SubastadorPolicy")]
 
         [HttpPost("addAuction/{userId}/{productId}")]
@@ -282,7 +294,71 @@ namespace AuctionMS.Controllers
                 return StatusCode(500, new { error = "Ocurrió un error inesperado al cancelar la subasta." });
             }
         }
-       // [Authorize(Policy = "SubastadorOPostorPolicy")]
+
+        //Producto por subasta ganadora le pasas el id de la subasta ganada
+
+        [HttpGet("{auctionId}/product")]
+        public async Task<IActionResult> GetProductFromAuction(Guid auctionId)
+        {
+            try
+            {
+                var auction = await _auctionRepositoryMongo.GetByIdAsync(AuctionId.Create(auctionId), AuctionUserId.Create("usuarioActual")); 
+
+                if (auction == null)
+                    return NotFound("La subasta no fue encontrada.");
+
+                var product = await _productService.GetProductAsync(auction.AuctionProductId.Value);
+
+                if (product == null)
+                    return NotFound("No se encontró el producto asociado a esta subasta.");
+
+                return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error al obtener producto de subasta {AuctionId}: {Message}", auctionId, ex.Message);
+                return StatusCode(500, "Error interno al obtener el producto.");
+            }
+        }
+
+        //confirma el detalle del producto y ahora envia el formulario
+
+        [HttpPost("claimPrize/{userId}/{bidId}/{auctionId}")]
+        public async Task<IActionResult> ClaimPrize(
+        [FromBody] ClaimPrizeDto claimDto,[FromRoute] Guid userId,[FromRoute] Guid bidId,[FromRoute] Guid auctionId)
+        {
+            try
+            {
+
+               
+                claimDto.UserId = userId;
+                claimDto.BidId = bidId;
+                claimDto.AuctionId = auctionId;
+
+                var claimEntity = _mapper.Map<ClaimPrizeAuction>(claimDto);
+             
+
+                // Guarda en Mongo
+                await _claimPrizeRepository.AddAsync(claimEntity);    
+
+                return Ok(claimEntity);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error al reclamar premio de subasta {AuctionId}: {Message}", auctionId, e.Message);
+                return StatusCode(500, "Ocurrió un error inesperado al reclamar el premio.");
+            }
+        }
+
+      
+
+
+            
+
+
+
+
+        // [Authorize(Policy = "SubastadorOPostorPolicy")]
         [HttpGet("id/{id}")] // Buscar subasta solo por ID
         public async Task<IActionResult> GetAuctionById([FromRoute] Guid id)
         {

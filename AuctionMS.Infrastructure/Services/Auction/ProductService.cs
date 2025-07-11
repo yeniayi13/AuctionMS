@@ -96,6 +96,37 @@ namespace AuctionMS.Infrastructure.Services.Auction
                 throw;
             }
         }
+        public async Task<GetProduct?> GetProductAsync(Guid auctionProductId)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"auctioneer/product/{auctionProductId}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException($"Error al obtener el producto: {response.StatusCode}");
+                }
+
+                await using var responseStream = await response.Content.ReadAsStreamAsync();
+                var product = await JsonSerializer.DeserializeAsync<GetProduct>(responseStream, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                if (product == null)
+                {
+                    throw new InvalidOperationException("El producto no fue encontrado.");
+                }
+
+                return product;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        
 
         public async Task<bool> UpdateProductStockAsync(Guid productId, decimal newStock, Guid auctionUserId)
         {
