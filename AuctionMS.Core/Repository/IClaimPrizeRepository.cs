@@ -9,9 +9,9 @@ namespace AuctionMS.Core.Repository
 {
     public interface IClaimPrizeRepository
     {
-        Task AddAsync(ClaimPrizeAuction claim);
+       /* Task AddAsync(ClaimPrizeAuction claim);
         Task<List<ClaimPrizeAuction>> GetByUserIdAsync(Guid userId);
-        Task<ClaimPrizeAuction?> GetByAuctionIdAsync(Guid auctionId);
+        Task<ClaimPrizeAuction?> GetByAuctionIdAsync(Guid auctionId);*/
     }
 
 }

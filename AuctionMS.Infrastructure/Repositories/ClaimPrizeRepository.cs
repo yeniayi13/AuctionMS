@@ -24,7 +24,7 @@ namespace AuctionMS.Infrastructure.Repositories
                 _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             }
 
-            public async Task AddAsync(ClaimPrizeAuction claim)
+          /*  public async Task AddAsync(ClaimPrizeAuction claim)
             {
                 await _dbContext.PrizeClaims.AddAsync(claim);
                 await _dbContext.SaveEfContextChanges("");
@@ -41,10 +41,10 @@ namespace AuctionMS.Infrastructure.Repositories
             {
                 return await _dbContext.PrizeClaims
                     .FirstOrDefaultAsync(c => c.AuctionId == auctionId);
-            }
+            }*/
 
            
         }
-    }
+    
 
 }

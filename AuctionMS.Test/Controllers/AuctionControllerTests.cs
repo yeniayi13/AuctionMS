@@ -13,6 +13,7 @@ using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Infrastructure.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 
 namespace AuctionMS.Tests.Controllers
 {
@@ -21,13 +22,14 @@ namespace AuctionMS.Tests.Controllers
         private readonly Mock<IMediator> _mockMediator;
         private readonly Mock<ILogger<AuctionController>> _mockLogger;
         private readonly AuctionController _controller;
+        private readonly Mock<IMapper> _mockMapper;
 
-        public AuctionControllerTests()
+       /* public AuctionControllerTests()
         {
             _mockMediator = new Mock<IMediator>();
             _mockLogger = new Mock<ILogger<AuctionController>>();
-            _controller = new AuctionController(_mockLogger.Object, _mockMediator.Object);
-        }
+            _controller = new AuctionController(_mockLogger.Object, _mockMediator.Object, _mockMapper.Object);
+        }*/
 
         [Fact]
         public async Task CreateAuction_ShouldReturnOk_WhenAuctionCreatedSuccessfully()

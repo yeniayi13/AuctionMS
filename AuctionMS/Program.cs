@@ -180,6 +180,7 @@ builder.Services.Configure<HttpClientUrl>(
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IUserService, UserService>();
 builder.Services.AddHttpClient<IProductService, ProductService>();
+builder.Services.AddHttpClient<IPaymentService, PaymentService>();
 
 
     // Add the necessary using directive for Quartz integration with MassTransit  

@@ -182,27 +182,6 @@
   },
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
-    "Method": "GetAuction",
-    "RelativePath": "auction/product/{productId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetProductoActivo",
     "RelativePath": "auction/producto-activo/{productId}",
     "HttpMethod": "GET",

@@ -188,10 +188,6 @@ namespace AuctionMS.Application.Auction.ServiceBack
                     Console.WriteLine($"[FINISH]  No hay subastas activas para finalizar");
                 }
 
-                Console.WriteLine("[AUCTION-CYCLE]  Esperando siguiente ciclo...");
-                await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
-
-
 
                 // ESTADO COMPLETED
 
@@ -205,9 +201,9 @@ namespace AuctionMS.Application.Auction.ServiceBack
 
                     foreach (var auction in finalizadas)
                     {
-                        var paymentId = await paymentService.GetPaymentIdByAuctionIdAsync(auction.AuctionId.Value.ToString());
+                        var payments = await paymentService.GetPaymentsByAuctionIdAsync(auction.AuctionId.Value);
 
-                        if (!string.IsNullOrEmpty(paymentId))
+                        if (payments is { Count: > 0 })
                         {
                             var updateDto = new UpdateAuctionDto
                             {
@@ -225,8 +221,8 @@ namespace AuctionMS.Application.Auction.ServiceBack
                                 AuctionCondiciones = auction.AuctionCondiciones.Value,
                                 AuctionUserId = auction.AuctionUserId.Value,
                                 AuctionProductId = auction.AuctionProductId.Value,
-                               // AuctionBidId = auction.AuctionBidId.Value,
-                               // IdPayment = paymentId
+                                // AuctionBidId = auction.AuctionBidId.Value,
+                                // IdPayment = payments.First().Id // Si quieres asociar el primer pago
                             };
 
                             await mediator.Send(new UpdateAuctionCommand(
@@ -255,6 +251,16 @@ namespace AuctionMS.Application.Auction.ServiceBack
                 {
                     Console.WriteLine("[COMPLETE] ❌ No hay subastas finalizadas pendientes por pago.");
                 }
+
+
+
+
+                Console.WriteLine("[AUCTION-CYCLE]  Esperando siguiente ciclo...");
+                await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
+
+
+
+             
 
 
 

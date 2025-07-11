@@ -37,6 +37,8 @@ namespace AuctionMS.Infrastructure.Database.Context.Postgres
        public virtual DbSet<AuctionEntity> Auctions { get; set; } = null!;
         public virtual DbSet<EstadoAuction> AuctionStates { get; set; } = null!;
 
+       // public virtual DbSet<ClaimPrizeAuction> PrizeClaims { get; set; } = null!;
+
 
         public IDbContextTransactionProxy BeginTransaction()
         {

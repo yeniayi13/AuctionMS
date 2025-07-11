@@ -25,7 +25,7 @@ namespace AuctionMS.Domain.Entities.Auction
         public AuctionCondiciones AuctionCondiciones { get; private set; }
 
         public AuctionCantidadProducto AuctionCantidadProducto { get; private set; }
-        public AuctionEstado AuctionEstado { get; private set; }
+        public AuctionEstado AuctionEstado { get;  set; }
 
 
         public AuctionUserId AuctionUserId { get; private set; } //FK

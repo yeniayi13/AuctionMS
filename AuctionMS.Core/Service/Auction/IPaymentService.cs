@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using AuctionMS.Common.Dtos.Auction.Response;
+using System.Threading.Tasks;
 
 namespace AuctionMS.Core.Service.Auction
 {
     public interface IPaymentService
     {
-        Task<string?> GetPaymentIdByAuctionIdAsync(string auctionId);
-        
+        Task<List<GetPaymentDto>> GetPaymentsByAuctionIdAsync(Guid auctionId);
+
+
 
     }
 }

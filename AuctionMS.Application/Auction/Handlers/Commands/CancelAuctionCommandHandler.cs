@@ -59,14 +59,14 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 if (auction.AuctionUserId.Value != request.UserId)
                     throw new ValidationException("No tienes permisos para cancelar esta subasta.");
 
-               
-            
+               auction.AuctionEstado = AuctionEstado.Create("Canceled");
+
 
                 await _auctionRepository.UpdateAsync(auction);
 
                 var auctionDto = _mapper.Map<GetAuctionDto>(auction);
 
-                await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_CANCELED");
+                await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_UPDATED");
 
                 await _publishEndpoint.Publish(new AuctionCanceledEvent
                 (

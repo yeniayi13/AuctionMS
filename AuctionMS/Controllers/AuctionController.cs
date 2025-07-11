@@ -28,15 +28,15 @@ namespace AuctionMS.Controllers
         private readonly IMapper _mapper;
 
         private readonly IAuctionRepositoryMongo _auctionRepositoryMongo;
-        private readonly IClaimPrizeRepository _claimPrizeRepository;
+        //private readonly IClaimPrizeRepository _claimPrizeRepository;
         private readonly IProductService _productService;
-        public AuctionController( ILogger<AuctionController> logger, IMediator mediator, IMapper mapper, IAuctionRepositoryMongo auctionRepositoryMongo, IProductService productService, IClaimPrizeRepository claimPrizeRepository)
+        public AuctionController( ILogger<AuctionController> logger, IMediator mediator, IMapper mapper, IAuctionRepositoryMongo auctionRepositoryMongo, IProductService productService /*IClaimPrizeRepository claimPrizeRepository*/)
         {
             _logger = logger;
             _mediator = mediator;
             _auctionRepositoryMongo = auctionRepositoryMongo;
             _productService = productService;
-            _claimPrizeRepository = claimPrizeRepository;
+          //  _claimPrizeRepository = claimPrizeRepository;
             _mapper = mapper;
         }
         [Authorize(Policy = "SubastadorPolicy")]
@@ -297,7 +297,7 @@ namespace AuctionMS.Controllers
 
         //Producto por subasta ganadora le pasas el id de la subasta ganada
 
-        [HttpGet("{auctionId}/product")]
+     /*   [HttpGet("{auctionId}/product")]
         public async Task<IActionResult> GetProductFromAuction(Guid auctionId)
         {
             try
@@ -348,7 +348,7 @@ namespace AuctionMS.Controllers
                 _logger.LogError("Error al reclamar premio de subasta {AuctionId}: {Message}", auctionId, e.Message);
                 return StatusCode(500, "Ocurrió un error inesperado al reclamar el premio.");
             }
-        }
+        }*/
 
       
 

@@ -153,37 +153,6 @@
         }
       }
     },
-    "/auction/product/{productId}": {
-      "get": {
-        "tags": [
-          "Auction"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "productId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auction/{auctionId}/cancel": {
       "post": {
         "tags": [
