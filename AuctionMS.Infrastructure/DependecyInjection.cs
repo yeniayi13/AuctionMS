@@ -32,7 +32,8 @@ namespace AuctionMS.Infrastructure
 
             services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
             services.AddScoped<IAuctionRepository, AuctionRepository>();
-            
+            services.AddScoped<IAuctionRepositoryMongo, AuctionRepositoryMongo>();
+
 
             return services;
         }

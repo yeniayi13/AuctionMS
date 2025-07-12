@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_10",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_14",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -29,6 +29,43 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "CancelAuction",
+    "RelativePath": "auction/{auctionId}/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "auctionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "GetAuctionState",
+    "RelativePath": "auction/{auctionId}/state",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "auctionId",
+        "Type": "System.Guid",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -108,6 +145,22 @@
   },
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "GetAuctionById",
+    "RelativePath": "auction/id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetAllNameAuction",
     "RelativePath": "auction/name/auction/{name}",
     "HttpMethod": "GET",
@@ -129,27 +182,6 @@
   },
   {
     "ContainingType": "AuctionMS.Controllers.AuctionController",
-    "Method": "GetAuction",
-    "RelativePath": "auction/product/{productId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuctionMS.Controllers.AuctionController",
     "Method": "GetProductoActivo",
     "RelativePath": "auction/producto-activo/{productId}",
     "HttpMethod": "GET",
@@ -165,6 +197,22 @@
         "Name": "userId",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuctionMS.Controllers.AuctionController",
+    "Method": "GetAuctionsByState",
+    "RelativePath": "auction/state/{estado}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

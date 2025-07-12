@@ -45,11 +45,15 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                     AuctionDescription.Create("Desc 1"),
                     AuctionIncremento.Create(10),
                     AuctionCantidadProducto.Create(2),
+                    AuctionEstado.Create("Active"),
                     AuctionFechaInicio.Create(DateTime.UtcNow),
                     AuctionFechaFin.Create(DateTime.UtcNow.AddDays(5)),
                     AuctionCondiciones.Create("Cond 1"),
                     AuctionUserId.Create(userId),
                     AuctionProductId.Create(Guid.NewGuid())
+                   // AuctionBidId.Create(Guid.NewGuid()),
+                   // AuctionPaymentId.Create(Guid.NewGuid())
+
                 ),
                 new AuctionEntity(
                     AuctionId.Create(Guid.NewGuid()),
@@ -60,11 +64,14 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                     AuctionDescription.Create("Desc 2"),
                     AuctionIncremento.Create(20),
                     AuctionCantidadProducto.Create(1),
+                    AuctionEstado.Create("Active"),
                     AuctionFechaInicio.Create(DateTime.UtcNow),
                     AuctionFechaFin.Create(DateTime.UtcNow.AddDays(10)),
                     AuctionCondiciones.Create("Cond 2"),
                     AuctionUserId.Create(userId),
                     AuctionProductId.Create(Guid.NewGuid())
+                    // AuctionBidId.Create(Guid.NewGuid()),
+                    //  AuctionPaymentId.Create(Guid.NewGuid())
                 )
             };
 

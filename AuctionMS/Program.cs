@@ -20,9 +20,19 @@ using AuctionMS.Domain.Entities.Auction;
 using AuctionMS.Core.Service.User;
 using AuctionMS.Infrastructure.Services.Auction;
 //using AuctionMS.Core.Service.Product;
+using MassTransit;
 using AuctionMS.Infrastructure.Services.User;
 using RabbitMQ.Client;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver.Core.Configuration;
+using AuctionMS.Application.Saga;
+using AuctionMS.Infrastructure.Database.Configuration.Postgres;
+using AuctionMS.Infrastructure.Database.Context.Postgres;
+using Microsoft.Win32;
+using AuctionMS.Application.Saga.Events;
+using AuctionMS.Application.Auction.ServiceBack;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,6 +55,7 @@ foreach (var profileType in profileTypes)
     builder.Services.AddAutoMapper(profileType);
 }
 
+builder.Services.AddHostedService<AuctionActivatorService>();
 
 builder.Services.AddSingleton<IApplicationDbContextMongo>(sp =>
 {
@@ -106,6 +117,13 @@ builder.Services.AddSingleton<IEventBus<GetAuctionDto>>(provider =>
     return new RabbitMQProducer<GetAuctionDto>(rabbitMQConnection);
 });
 
+// Registra tu IEventBus específico para UpdateEstadoAuctionDto
+builder.Services.AddSingleton<IEventBus<UpdateEstadoAuctionDto>>(provider =>
+{
+    var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
+return new RabbitMQProducer<UpdateEstadoAuctionDto>(rabbitMQConnection);
+});
+
 builder.Services.AddSingleton<IMongoCollection<GetAuctionDto>>(provider =>
 {
     var mongoClient = new MongoClient("mongodb+srv://yadefreitas19:08092001@cluster0.owy2d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
@@ -122,7 +140,17 @@ builder.Services.AddSingleton<RabbitMQConsumer>(provider =>
     return new RabbitMQConsumer(rabbitMQConnection, auctionCollection);
 });
 
+builder.Services.AddSingleton<IEventBus<UpdateEstadoAuctionDto>>(provider =>
+{
+    var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
+    return new RabbitMQProducer<UpdateEstadoAuctionDto>(rabbitMQConnection);
+});
 
+builder.Services.AddSingleton<IEventBus<AuctionStateChangedEvent>>(provider =>
+{
+    var rabbitMQConnection = provider.GetRequiredService<IConnectionRabbbitMQ>();
+    return new RabbitMQProducer<AuctionStateChangedEvent>(rabbitMQConnection);
+});
 // Iniciar el consumidor automáticamente con `RabbitMQBackgroundService`
 builder.Services.AddHostedService<RabbitMQBackgroundService>();
 
@@ -152,6 +180,46 @@ builder.Services.Configure<HttpClientUrl>(
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IUserService, UserService>();
 builder.Services.AddHttpClient<IProductService, ProductService>();
+builder.Services.AddHttpClient<IPaymentService, PaymentService>();
+
+
+    // Add the necessary using directive for Quartz integration with MassTransit  
+   
+
+    // Update the MassTransit configuration to fix the error
+    builder.Services.AddMassTransit(cfg =>
+    {
+        cfg.AddSagaStateMachine<MaquinaEstadoAuction, EstadoAuction>()
+            .EntityFrameworkRepository(r =>
+            {
+                r.ConcurrencyMode = ConcurrencyMode.Optimistic;
+                r.AddDbContext<DbContext, ApplicationDbContext>((provider, options) =>
+                {
+                    var configuration = provider.GetRequiredService<IConfiguration>();
+                    var dbConnectionString = configuration.GetConnectionString("PostgresConnection");
+                    options.UseNpgsql(dbConnectionString, npgsqlOptions =>
+                    {
+                        npgsqlOptions.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name);
+                    });
+                });
+            });
+
+      
+
+        // Configure RabbitMQ
+        cfg.UsingRabbitMq((context, rabbitCfg) =>
+        {
+            rabbitCfg.Host("localhost", "/", h =>
+            {
+                h.Username("guest");
+                h.Password("guest");
+            });
+
+           
+
+            rabbitCfg.ConfigureEndpoints(context);
+        });
+    });
 
 //Configurar Firebase Storage Settings desde appsettings.json
 

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AuctionMS.Core.Repository;
+using MongoDB.Bson;
 
 namespace AuctionMS.Infrastructure.Repositories
 {
@@ -29,7 +30,7 @@ namespace AuctionMS.Infrastructure.Repositories
 
         public async Task<AuctionEntity?> GetByIdAsync(AuctionId id, AuctionUserId userId)
         {
-            Console.WriteLine($"Buscando una subasta con ID: {id} y usuario: {userId.Value} ");
+            Console.WriteLine($"Buscando una subasta con ID: {id.Value} y usuario: {userId.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value),
@@ -56,7 +57,7 @@ namespace AuctionMS.Infrastructure.Repositories
 
         public async Task<AuctionEntity?> GetByIdAsync(AuctionId id)
         {
-            Console.WriteLine($"Buscando una subasta con ID: {id} ");
+            Console.WriteLine($"Buscando una subasta con ID: {id.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
                 Builders<AuctionEntity>.Filter.Eq("AuctionId", id.Value)
@@ -82,7 +83,7 @@ namespace AuctionMS.Infrastructure.Repositories
             Console.WriteLine($"Buscando subasta con nombre: {name} usuario: {userId.Value} ");
 
             var filters = Builders<AuctionEntity>.Filter.And(
-                Builders<AuctionEntity>.Filter.Eq("AuctionName", name.Value),
+                Builders<AuctionEntity>.Filter.Eq("AuctionName", new BsonRegularExpression($"^{name.Value}", "i")),
                 Builders<AuctionEntity>.Filter.Eq("AuctionUserId", userId.Value)
             );
 
@@ -160,6 +161,122 @@ namespace AuctionMS.Infrastructure.Repositories
             var auctionEntity = _mapper.Map<AuctionEntity>(subastaActiva);
             return auctionEntity;
         }
+
+        //PUJA
+        public async Task<AuctionEntity?> GetBidByIdAndAuctionIdAsync(AuctionBidId auctionBidId)
+        {
+            Console.WriteLine($"Buscando subasta que contiene la puja con ID: {auctionBidId.Value}");
+
+            var filter = Builders<AuctionEntity>.Filter.And(
+               Builders<AuctionEntity>.Filter.Eq("AuctionBidId", auctionBidId.Value));
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var subasta = await _collection
+                .Find(filter)
+                .Project<GetAuctionDto>(projection)
+                .FirstOrDefaultAsync()
+                .ConfigureAwait(false);
+
+            if (subasta == null)
+            {
+                Console.WriteLine("No se encontró ninguna subasta que contenga esa puja.");
+            }
+            else
+            {
+                Console.WriteLine($"Subasta encontrada con ID: {subasta.AuctionId}");
+            }
+
+            var auctionEntity = _mapper.Map<AuctionEntity>(subasta);
+            return auctionEntity;
+        }
+
+        public async Task<List<AuctionEntity>> GetAllByEstadoAsync(string estado)
+        {
+            var filter = Builders<AuctionEntity>.Filter.Regex(
+                "AuctionEstado",
+                new BsonRegularExpression($"^{estado}", "i") // 🎯 Permite búsqueda insensible a mayúsculas
+            );
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDto = await _collection
+                .Find(filter)
+                .Project<GetAuctionDto>(projection)
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDto == null || auctionDto.Count == 0)
+            {
+                Console.WriteLine($"[BUSQUEDA] No se encontraron subastas con estado: {estado}");
+                return new List<AuctionEntity>();
+            }
+
+            return _mapper.Map<List<AuctionEntity>>(auctionDto);
+        }
+
+        public async Task<List<AuctionEntity>> GetByEstadoAsync(AuctionEstado estado)
+        {
+            var filter = Builders<AuctionEntity>.Filter.Eq("AuctionEstado", estado.Value);
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDto = await _collection
+                .Find(filter)
+                .Project<GetAuctionDto>(projection)
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDto == null || auctionDto.Count == 0)
+            {
+                Console.WriteLine($"[BUSQUEDA] No se encontraron subastas con estado: {estado.Value}");
+                return new List<AuctionEntity>();
+            }
+
+            return _mapper.Map<List<AuctionEntity>>(auctionDto);
+        }
+
+
+        public async Task<List<AuctionEntity>> GetAuctionFilteredAsync(DateTime? startDate = null, DateTime? endDate = null)
+        {
+            Console.WriteLine("Ejecutando GetAuctionFilteredAsync...");
+
+            var filters = new List<FilterDefinition<AuctionEntity>>();
+            var builder = Builders<AuctionEntity>.Filter;
+
+            if (startDate.HasValue)
+            {
+                Console.WriteLine($"Filtrando por fecha mínima de inicio: {startDate.Value}");
+                filters.Add(builder.Gte("AuctionFechaInicio", startDate.Value));
+            }
+
+            if (endDate.HasValue)
+            {
+                Console.WriteLine($"Filtrando por fecha máxima de finalización: {endDate.Value}");
+                filters.Add(builder.Lte("AuctionFechaFin", endDate.Value));
+            }
+
+            var finalFilter = filters.Any() ? builder.And(filters) : builder.Empty;
+
+            var projection = Builders<AuctionEntity>.Projection.Exclude("_id");
+
+            var auctionDtos = await _collection
+                .Find(finalFilter)
+                .Project<GetAuctionDto>(projection)
+                .ToListAsync()
+                .ConfigureAwait(false);
+
+            if (auctionDtos == null)
+            {
+                Console.WriteLine("No se encontraron subastas en el rango de fechas.");
+                return new List<AuctionEntity>();
+            }
+
+            var auctionEntities = _mapper.Map<List<AuctionEntity>>(auctionDtos);
+            return auctionEntities;
+        }
+
+
 
 
 

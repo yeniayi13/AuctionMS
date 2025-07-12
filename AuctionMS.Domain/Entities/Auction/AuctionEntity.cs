@@ -5,8 +5,12 @@ using AuctionMS.Common.Primitives;
 
 namespace AuctionMS.Domain.Entities.Auction
 {
+
     public sealed class AuctionEntity : AggregateRoot
     {
+     
+
+    
         public AuctionId AuctionId { get; private set; }
         public AuctionName AuctionName { get; private set; }
         public AuctionImage AuctionImage { get; private set; }
@@ -21,17 +25,24 @@ namespace AuctionMS.Domain.Entities.Auction
         public AuctionCondiciones AuctionCondiciones { get; private set; }
 
         public AuctionCantidadProducto AuctionCantidadProducto { get; private set; }
-
+        public AuctionEstado AuctionEstado { get;  set; }
 
 
         public AuctionUserId AuctionUserId { get; private set; } //FK
 
         public AuctionProductId AuctionProductId { get; private set; } //FK
 
+       // public AuctionBidId AuctionBidId { get; private set; } //FK
+
+      //  public AuctionPaymentId AuctionPaymentId { get; private set; } //FK
+
+
+
 
         public AuctionEntity (AuctionId auctionId, AuctionName auctionName, AuctionImage auctionImage, AuctionPriceBase auctionPriceBase,
             AuctionPriceReserva auctionPriceReserva, AuctionDescription auctionDescription, AuctionIncremento auctionIncremento,
-           AuctionCantidadProducto auctionCantidadProducto, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId, AuctionProductId auctionProductId)
+           AuctionCantidadProducto auctionCantidadProducto, AuctionEstado auctionEstado ,AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones auctionCondiciones, AuctionUserId auctionUserId,
+           AuctionProductId auctionProductId/* AuctionBidId auctionBidId*/ /*AuctionPaymentId auctionPaymentId*/)
         {
             AuctionId = auctionId;
             AuctionName = auctionName;
@@ -40,23 +51,28 @@ namespace AuctionMS.Domain.Entities.Auction
             AuctionPriceReserva = auctionPriceReserva;
             AuctionDescription = auctionDescription;
             AuctionIncremento = auctionIncremento;
+       
             AuctionCantidadProducto = auctionCantidadProducto;
+            AuctionEstado = AuctionEstado.Pending(); 
+
             AuctionFechaInicio = auctionFechaInicio;
             AuctionFechaFin = auctionFechaFin;
             AuctionCondiciones = auctionCondiciones;
             AuctionUserId = auctionUserId;
             AuctionProductId = auctionProductId;
-
+          //  AuctionBidId = auctionBidId;
+         //   AuctionPaymentId = auctionPaymentId;
 
         }
 
         public AuctionEntity() { }
 
 
-        //actualiza las propiedades de un objeto
+
         public static AuctionEntity Update(AuctionEntity auction, AuctionName name, AuctionImage image, 
             AuctionPriceBase priceBase, AuctionPriceReserva priceReserva, AuctionDescription description, 
-            AuctionIncremento incremento, AuctionCantidadProducto auctionCantidadProducto, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones condiciones, AuctionUserId auctionUserId, AuctionProductId  auctionProductId)
+            AuctionIncremento incremento, AuctionCantidadProducto auctionCantidadProducto,AuctionEstado auctionEstado, AuctionFechaInicio auctionFechaInicio, AuctionFechaFin auctionFechaFin, AuctionCondiciones condiciones, AuctionUserId auctionUserId,
+            AuctionProductId  auctionProductId)
         {
 
             var updates = new List<Action>()
@@ -68,8 +84,8 @@ namespace AuctionMS.Domain.Entities.Auction
                     () => { if (description != null) auction.AuctionDescription = description; },
 
                     () => { if (incremento != null) auction.AuctionIncremento = incremento; },
-                     () => { if (auctionCantidadProducto != null) auction.AuctionCantidadProducto = auctionCantidadProducto; }, 
-
+                     () => { if (auctionCantidadProducto != null) auction.AuctionCantidadProducto = auctionCantidadProducto; },
+                       () => { if (auctionEstado != null) auction.AuctionEstado = auctionEstado; },
                     () => { if (auctionFechaInicio != null) auction.AuctionFechaInicio = auctionFechaInicio; },
                     () => { if (auctionFechaFin != null) auction.AuctionFechaFin = auctionFechaFin; },
 
@@ -86,6 +102,9 @@ namespace AuctionMS.Domain.Entities.Auction
             updates.ForEach(update => update());
             return auction;
         }
+
+    
+      
 
     }
 }

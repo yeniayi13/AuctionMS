@@ -11,6 +11,8 @@ using AuctionMS.Common.Dtos.Auction.Response;
 using AuctionMS.Core.RabbitMQ;
 using AuctionMS.Core.Service.Auction;
 using AuctionMS.Core.Service.User;
+using MassTransit;
+using AuctionMS.Application.Saga.Events;
 
 
 
@@ -24,16 +26,20 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
         private readonly IUserService _userService;
         private readonly IProductService _productService;
         private readonly IMapper _mapper;
+        private readonly IPublishEndpoint _publishEndpoint;
 
 
 
 
-        public CreateAuctionCommandHandler(IMapper mapper, IUserService userService, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus, IProductService productService)
+
+
+        public CreateAuctionCommandHandler(IMapper mapper, IUserService userService, IAuctionRepository auctionRepository, IEventBus<GetAuctionDto> eventBus, IProductService productService, IPublishEndpoint publishEndpoint)
 
         {
             _auctionRepository = auctionRepository;
             _eventBus = eventBus;
             _userService = userService;
+            _publishEndpoint = publishEndpoint;
 
             _mapper = mapper;
             _productService = productService;
@@ -71,21 +77,22 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
 
                 // Crear la entidad Subasta
                 var auction = new AuctionEntity(
-                    AuctionId.Create(request.Auction.AuctionId),
+                    AuctionId.Create(Guid.NewGuid()),
                     AuctionName.Create(request.Auction.AuctionName),
                     AuctionImage.Create(request.Auction.AuctionImage),
                     AuctionPriceBase.Create(request.Auction.AuctionPriceBase),
                     AuctionPriceReserva.Create(request.Auction.AuctionPriceReserva),
                     AuctionDescription.Create(request.Auction.AuctionDescription),
                     AuctionIncremento.Create(request.Auction.AuctionIncremento),
-                    AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto),            
+                    AuctionCantidadProducto.Create(request.Auction.AuctionCantidadProducto),  
+                    AuctionEstado.Create(request.Auction.AuctionEstado),
                     AuctionFechaInicio.Create(request.Auction.AuctionFechaInicio),
                     AuctionFechaFin.Create(request.Auction.AuctionFechaFin),
                     AuctionCondiciones.Create(request.Auction.AuctionCondiciones),
                     AuctionUserId.Create(request.Auction.AuctionUserId), // Asignar el ID del usuario
                     AuctionProductId.Create(request.Auction.AuctionProductId)
-
-
+                  //   AuctionBidId.Create(request.Auction.AuctionBidId),
+                   //  AuctionPaymentId.Create(request.Auction.AuctionPaymentId)
 
                 );
 
@@ -111,6 +118,15 @@ namespace AuctionMS.Application.Auction.Handlers.Commands
                 }
                 await _auctionRepository.AddAsync(auction);
                 await _eventBus.PublishMessageAsync(auctionDto, "auctionQueue", "AUCTION_CREATED");
+
+                await _publishEndpoint.Publish(new AuctionStartedEvent
+                (
+                   auction.AuctionId.Value,
+                   auction.AuctionFechaInicio.Value
+                ));
+
+
+
                 // Retornar el ID de la subasta registrada
                 return auction.AuctionId.Value;
             }

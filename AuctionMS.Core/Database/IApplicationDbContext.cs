@@ -12,6 +12,7 @@ namespace AuctionMS.Core.Database
     {
         DbContext DbContext { get; }
         DbSet<AuctionEntity> Auctions { get; set; }
+       // DbSet<ClaimPrizeAuction> PrizeClaims { get; set; }
 
 
         IDbContextTransactionProxy BeginTransaction();

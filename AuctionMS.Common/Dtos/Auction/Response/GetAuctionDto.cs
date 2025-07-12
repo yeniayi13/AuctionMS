@@ -12,24 +12,27 @@ namespace AuctionMS.Common.Dtos.Auction.Response
 {
     public class GetAuctionDto
     {
-        public Guid AuctionId { get; init; } 
+        public Guid AuctionId { get; init; }
         public string? AuctionName { get; init; }
         public string? AuctionImage { get; init; }
         public decimal AuctionPriceBase { get; init; }
         public decimal AuctionPriceReserva { get; init; }
         public string? AuctionDescription { get; init; }
-
         public decimal AuctionIncremento { get; init; }
-
         public DateTime AuctionFechaInicio { get; init; }
         public DateTime AuctionFechaFin { get; init; }
         public string? AuctionCondiciones { get; init; }
-
-        public decimal AuctionCantidadProducto { get; init; }
+        public int AuctionCantidadProducto { get; init; }
         public Guid AuctionUserId { get; init; }
-        public Guid AuctionProductId { get; init; }// Genera un nuevo GUID por defecto
+        public Guid AuctionProductId { get; init; }
+       // public Guid AuctionBidId { get; init; }
+       // public Guid AuctionPaymentId { get; init; }
+
+
+        public string AuctionEstado { get; init; }
+
     }
 
-     
+
 
 }

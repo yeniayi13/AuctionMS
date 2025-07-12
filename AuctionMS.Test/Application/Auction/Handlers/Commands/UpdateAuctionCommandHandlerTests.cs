@@ -67,11 +67,14 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Commands
                 AuctionDescription.Create("Old Description"),
                 AuctionIncremento.Create(5),
                 AuctionCantidadProducto.Create(3),
+                AuctionEstado.Create("Pending"),
                 AuctionFechaInicio.Create(DateTime.UtcNow.AddDays(-10)),
                 AuctionFechaFin.Create(DateTime.UtcNow.AddDays(-3)),
                 AuctionCondiciones.Create("Old conditions"),
                 AuctionUserId.Create(userId),
                 AuctionProductId.Create(Guid.NewGuid())
+                // AuctionBidId.Create(Guid.NewGuid()),
+                // AuctionPaymentId.Create(Guid.NewGuid())
             );
 
             _auctionRepositoryMongoMock

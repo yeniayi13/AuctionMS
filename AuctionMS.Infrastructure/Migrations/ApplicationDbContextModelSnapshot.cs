@@ -38,6 +38,10 @@ namespace AuctionMS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("AuctionEstado")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("AuctionFechaFin")
                         .HasColumnType("timestamp with time zone");
 
@@ -85,6 +89,29 @@ namespace AuctionMS.Infrastructure.Migrations
                     b.HasKey("AuctionId");
 
                     b.ToTable("Auctions", (string)null);
+                });
+
+            modelBuilder.Entity("AuctionMS.Domain.Entities.Auction.EstadoAuction", b =>
+                {
+                    b.Property<Guid>("CorrelationId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AuctionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CurrentState")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("CorrelationId");
+
+                    b.HasIndex("CurrentState");
+
+                    b.ToTable("EstadoAuction", (string)null);
                 });
 #pragma warning restore 612, 618
         }

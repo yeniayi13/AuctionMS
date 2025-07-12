@@ -7,6 +7,8 @@ using EntityFramework.Exceptions.PostgreSQL;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
+
+
 using AuctionMS.Domain.Entities.Auction;
 
 
@@ -33,7 +35,9 @@ namespace AuctionMS.Infrastructure.Database.Context.Postgres
         }
 
        public virtual DbSet<AuctionEntity> Auctions { get; set; } = null!;
+        public virtual DbSet<EstadoAuction> AuctionStates { get; set; } = null!;
 
+       // public virtual DbSet<ClaimPrizeAuction> PrizeClaims { get; set; } = null!;
 
 
         public IDbContextTransactionProxy BeginTransaction()
@@ -43,11 +47,15 @@ namespace AuctionMS.Infrastructure.Database.Context.Postgres
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            //TODO: En teoria hacen lo mismo
-            //* Esto hara que no agarre la entidad como tal sino la adecuada para la BD
+           
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+           // modelBuilder.Entity<AuctionEntity>().OwnsOne(a => a.AuctionBidId);
+
+
+
         }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

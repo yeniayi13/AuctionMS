@@ -52,11 +52,14 @@ namespace AuctionMS.Test.Application.Auction.Handlers.Queries
                 AuctionDescription.Create("Desc"),
                 AuctionIncremento.Create(10),
                 AuctionCantidadProducto.Create(1),
+                AuctionEstado.Create("Active"),
                 AuctionFechaInicio.Create(DateTime.UtcNow),
                 AuctionFechaFin.Create(DateTime.UtcNow.AddDays(5)),
                 AuctionCondiciones.Create("Conditions"),
                 AuctionUserId.Create(userId),
                 AuctionProductId.Create(Guid.NewGuid())
+                // AuctionBidId.Create(Guid.NewGuid()),
+                // AuctionPaymentId.Create(Guid.NewGuid())
             );
 
             var auctionDto = new GetAuctionDto

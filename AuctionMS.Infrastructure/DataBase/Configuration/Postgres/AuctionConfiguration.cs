@@ -66,13 +66,21 @@ namespace AuctionMS.Infrastructure.Database.Configuration.Postgres
 
 
             builder.Property(s => s.AuctionUserId)
-                               .HasConversion(AuctionUserId => AuctionUserId.Value, value => AuctionUserId.Create(value)!)
+                               .HasConversion(auctionUserId => auctionUserId.Value, value => AuctionUserId.Create(value)!)
                                .IsRequired();
 
             builder.Property(s => s.AuctionProductId)
-                              .HasConversion(AuctionProductId => AuctionProductId.Value, value => AuctionProductId.Create(value)!)
+                              .HasConversion(auctionProductId => auctionProductId.Value, value => AuctionProductId.Create(value)!)
                               .IsRequired();
 
+           /* builder.Property(s => s.AuctionPaymentId)
+                             .HasConversion(auctionPaymentId => auctionPaymentId.Value, value => AuctionPaymentId.Create(value)!)
+                             .IsRequired();*/
+
+
+            builder.Property(s => s.AuctionEstado)
+                            .HasConversion(auctionEstado => auctionEstado.Value, value => AuctionEstado.Create(value)!)
+                            .IsRequired();
         }
     }
 }

@@ -24,12 +24,29 @@ namespace AuctionMS.Application.Auction.Handlers.Queries
 
         public async Task<List<GetAuctionDto>> Handle(GetAllAuctionQuery request, CancellationToken cancellationToken)
         {
-            var auction = await _auctionRepository.GetAllAsync(AuctionUserId.Create(request.UserId));
+            try
+            {
+                var auction = await _auctionRepository.GetAllAsync(AuctionUserId.Create(request.UserId));
 
-            if (auction == null) throw new AuctionNotFoundException("Auctions are empty");
-            var auctionDto = _mapper.Map<List<GetAuctionDto>>(auction);
+                if (auction == null) throw new AuctionNotFoundException("Auctions are empty");
+                var auctionDto = _mapper.Map<List<GetAuctionDto>>(auction);
 
-            return auctionDto;
+                return auctionDto;
+            }
+            catch(AuctionNotFoundException e)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+
+
+
+
+
         }
     }
 }

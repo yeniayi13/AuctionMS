@@ -56,6 +56,51 @@
         }
       }
     },
+    "/auction/{auctionId}/state": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "auctionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction/state/{estado}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auction": {
       "get": {
         "tags": [
@@ -108,12 +153,21 @@
         }
       }
     },
-    "/auction/product/{productId}": {
-      "get": {
+    "/auction/{auctionId}/cancel": {
+      "post": {
         "tags": [
           "Auction"
         ],
         "parameters": [
+          {
+            "name": "auctionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "userId",
             "in": "query",
@@ -121,9 +175,23 @@
               "type": "string",
               "format": "uuid"
             }
-          },
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auction/id/{id}": {
+      "get": {
+        "tags": [
+          "Auction"
+        ],
+        "parameters": [
           {
-            "name": "productId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -274,10 +342,6 @@
       "AuctionMS.Common.Dtos.Auction.Request.CreateAuctionDto": {
         "type": "object",
         "properties": {
-          "auctionId": {
-            "type": "string",
-            "format": "uuid"
-          },
           "auctionName": {
             "type": "string",
             "nullable": true
@@ -317,6 +381,10 @@
           "auctionCantidadProducto": {
             "type": "integer",
             "format": "int32"
+          },
+          "auctionEstado": {
+            "type": "string",
+            "nullable": true
           },
           "auctionUserId": {
             "type": "string",
@@ -375,6 +443,10 @@
           "auctionCantidadProducto": {
             "type": "integer",
             "format": "int32"
+          },
+          "auctionEstado": {
+            "type": "string",
+            "nullable": true
           },
           "auctionUserId": {
             "type": "string",

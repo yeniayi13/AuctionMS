@@ -19,6 +19,8 @@ namespace AuctionMS.Infrastructure.RabbitMQ.Connection
             Console.WriteLine(" Esperando la inicialización de RabbitMQ...");
 
             await Task.Delay(3000); // Pequeño retraso para asegurar la inicialización
+
+
             await _rabbitMQConsumer.ConsumeMessagesAsync("auctionQueue");
 
             Console.WriteLine(" Consumidor de RabbitMQ iniciado.");

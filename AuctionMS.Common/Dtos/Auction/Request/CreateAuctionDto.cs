@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AuctionMS.Common.Dtos.Auction.Request
 {
     public record CreateAuctionDto
     {
+        [JsonIgnore]
         public Guid AuctionId { get; init; } = Guid.NewGuid(); // Genera un nuevo GUID por defecto
         public string? AuctionName { get; init; }
         public string? AuctionImage { get; init; }
@@ -23,8 +25,12 @@ namespace AuctionMS.Common.Dtos.Auction.Request
 
         public int AuctionCantidadProducto { get; init; }
 
+        public string AuctionEstado {  get; init; }
+
         public Guid AuctionUserId { get; init; }
         public Guid AuctionProductId { get; init; }// Genera un nuevo GUID por defecto
+       // public Guid AuctionBidId { get; init; }// Genera un nuevo GUID por defecto
+      //  public Guid AuctionPaymentId { get; init; }// Genera un nuevo GUID por defecto
     }
 }
 
